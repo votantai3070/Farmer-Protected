@@ -64,14 +64,22 @@
     <Compile Include="Assets\_Data\Scripts\Player\Player.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PlayerManager.cs" />
+    <Compile Include="Assets\_Data\Scripts\Pools\ArrowPool.cs" />
+    <Compile Include="Assets\_Data\Scripts\Weapons\ArrowMovement.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PotionManager.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\ArrowManager.cs" />
+    <Compile Include="Assets\_Data\Scripts\InputManager.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\StoneManager.cs" />
+    <Compile Include="Assets\_Data\Scripts\ScriptableObjects\WeaponData.cs" />
     <Compile Include="Assets\_Data\Scripts\Character.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\CharacterData.cs" />
+    <Compile Include="Assets\_Data\Scripts\ScriptableObjects\ItemData.cs" />
     <Compile Include="Assets\Enemy Galore 1 - Pixel Art\Script\EnemyTest.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\ShotController.cs" />
+    <Compile Include="Assets\_Data\Scripts\Weapons\Weapon.cs" />
+    <Compile Include="Assets\_Data\Scripts\Player\PlayerAttack.cs" />
     <Compile Include="Assets\TopDown 2D RPG BE3\ReadMe\Scripts\ReadmeBE3.cs" />
+    <Compile Include="Assets\_Data\Scripts\Weapons\ArrowDestroy.cs" />
     <Compile Include="Assets\Enemy Galore 1 - Pixel Art\Script\EnemySelector.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\PlayerAnimation.cs" />
   </ItemGroup>
@@ -1229,6 +1237,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Splines.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Splines.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.2D.Aseprite.Common">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Aseprite.Common.dll</HintPath>
       <Private>False</Private>
@@ -1239,10 +1251,6 @@
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Splines.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Splines.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Collections.Editor">
@@ -1303,10 +1311,6 @@
     </Reference>
     <Reference Include="Unity.Settings.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Settings.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">

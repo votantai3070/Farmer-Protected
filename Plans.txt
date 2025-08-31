@@ -1,0 +1,22 @@
+- Player
+ + Attack
+ + Hp
+ + Mana
+ + Stamina (có hoặc kh)
+
+- Enemy (Slime, enemy bay,...)
+ + Attack (đánh thường, bắn,...)
+ + Hp
+
+- Boss
+ + Attack (thay đổi theo phase)
+ + Có 2 phase
+ + Có spell (ít nhất là 2 spell)
+
+- Map
+ + Dùng tilemap
+ + Có 2-3 map
+
+- Có sử dụng A* path cho enemy tìm player
+
+
