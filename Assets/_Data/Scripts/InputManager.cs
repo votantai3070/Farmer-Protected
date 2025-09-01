@@ -11,8 +11,7 @@ public class InputManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!player.isAttacked)
-            HandleMovementInput();
+        HandleMovementInput();
     }
 
     private void HandleMovementInput()

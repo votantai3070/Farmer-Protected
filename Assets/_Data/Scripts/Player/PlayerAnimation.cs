@@ -43,7 +43,15 @@ public class PlayerAnimation : MonoBehaviour
                 break;
             case "BOW":
                 animator.SetTrigger("Bow");
-                animator.SetBool("isAttack", true);
+                break;
+            case "SLASH":
+                animator.SetTrigger("Slash");
+                break;
+            case "THROW":
+                animator.SetTrigger("Throw");
+                break;
+            case "DAMAGE":
+                animator.SetTrigger("Damage");
                 break;
             default:
                 Debug.LogWarning("Unknown animation state: " + state);

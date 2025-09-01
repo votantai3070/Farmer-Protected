@@ -65,8 +65,9 @@
     <Compile Include="Assets\_Data\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PlayerManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Pools\ArrowPool.cs" />
-    <Compile Include="Assets\_Data\Scripts\Weapons\ArrowMovement.cs" />
+    <Compile Include="Assets\_Data\Scripts\Pools\StonePool.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PotionManager.cs" />
+    <Compile Include="Assets\_Data\Scripts\Weapons\RangeWeaponMovement.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\ArrowManager.cs" />
     <Compile Include="Assets\_Data\Scripts\InputManager.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\StoneManager.cs" />

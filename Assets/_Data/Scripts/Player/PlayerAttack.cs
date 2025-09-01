@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public Rigidbody2D rb;
     public Transform firePoint;
     public ArrowPool arrowPool;
+    public StonePool stonePool;
 
     private float attackCooldown = 0.5f;
 
@@ -15,11 +16,45 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !player.isAttacked)
         {
-            StartCoroutine(HandlePlayerAttack());
+            StartCoroutine(HandlePlayerSlashAttack());
+        }
+        else if (Input.GetKeyDown(KeyCode.Q) && !player.isAttacked)
+        {
+            StartCoroutine(HandlePlayerBowAttack());
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && !player.isAttacked)
+        {
+            StartCoroutine(HandlePlayerThrowAttack());
         }
     }
 
-    IEnumerator HandlePlayerAttack()
+    IEnumerator HandlePlayerSlashAttack()
+    {
+        player.HandleAttack();
+        rb.linearVelocity = Vector2.zero;
+
+        playerAnimation.SwitchAnimationState("SLASH");
+        playerAnimation.animator.SetBool("Walk", false);
+
+        yield return new WaitForSeconds(attackCooldown);
+        player.StopAttack();
+    }
+
+    IEnumerator HandlePlayerThrowAttack()
+    {
+        player.HandleAttack();
+        rb.linearVelocity = Vector2.zero;
+
+        GetRockFromPool();
+
+        playerAnimation.SwitchAnimationState("THROW");
+        playerAnimation.animator.SetBool("Walk", false);
+
+        yield return new WaitForSeconds(attackCooldown);
+        player.StopAttack();
+    }
+
+    IEnumerator HandlePlayerBowAttack()
     {
         player.HandleAttack();
         rb.linearVelocity = Vector2.zero;
@@ -27,9 +62,9 @@ public class PlayerAttack : MonoBehaviour
         GetArrowFromPool();
 
         playerAnimation.SwitchAnimationState("BOW");
+        playerAnimation.animator.SetBool("Walk", false);
 
         yield return new WaitForSeconds(attackCooldown);
-        playerAnimation.animator.SetBool("isAttack", false);
         player.StopAttack();
     }
 
@@ -49,6 +84,25 @@ public class PlayerAttack : MonoBehaviour
         arrow.transform.position = firePoint.position;
         arrow.transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        arrow.GetComponent<ArrowMovement>().HandleArrowMovement();
+        arrow.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement();
+    }
+
+    private void GetRockFromPool()
+    {
+        if (stonePool == null)
+        {
+            Debug.LogError("StonePool reference is missing!"); return;
+        }
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector3 lookDir = (mousePos - transform.position).normalized;
+
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+
+        GameObject stone = stonePool.GetStone();
+        stone.transform.position = firePoint.position;
+        stone.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        stone.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement();
     }
 }
