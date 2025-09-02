@@ -8,7 +8,6 @@ public class ArrowDestroy : MonoBehaviour
     private void Start()
     {
         arrowPool = FindAnyObjectByType<ArrowPool>();
-
     }
 
     private void OnEnable()

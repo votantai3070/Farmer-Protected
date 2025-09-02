@@ -84,7 +84,7 @@ public class PlayerAttack : MonoBehaviour
         arrow.transform.position = firePoint.position;
         arrow.transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        arrow.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement();
+        arrow.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
     }
 
     private void GetRockFromPool()
@@ -103,6 +103,6 @@ public class PlayerAttack : MonoBehaviour
         stone.transform.position = firePoint.position;
         stone.transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        stone.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement();
+        stone.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
     }
 }

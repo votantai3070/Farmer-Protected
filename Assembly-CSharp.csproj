@@ -68,6 +68,7 @@
     <Compile Include="Assets\_Data\Scripts\Pools\StonePool.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PotionManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\RangeWeaponMovement.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Bat\BatAnimation.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\ArrowManager.cs" />
     <Compile Include="Assets\_Data\Scripts\InputManager.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\StoneManager.cs" />
@@ -75,13 +76,18 @@
     <Compile Include="Assets\_Data\Scripts\Character.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\CharacterData.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\ItemData.cs" />
+    <Compile Include="Assets\_Data\Scripts\Interface\IDamagable.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Bat\BatAttack.cs" />
     <Compile Include="Assets\Enemy Galore 1 - Pixel Art\Script\EnemyTest.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\ShotController.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\PlayerAttack.cs" />
     <Compile Include="Assets\TopDown 2D RPG BE3\ReadMe\Scripts\ReadmeBE3.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\ArrowDestroy.cs" />
     <Compile Include="Assets\Enemy Galore 1 - Pixel Art\Script\EnemySelector.cs" />
+    <Compile Include="Assets\_Data\Scripts\Weapons\StoneDestroy.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\EnemyRangeMovement.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\PlayerAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -572,6 +578,10 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@d6f9955a5d5f\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+      <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
@@ -1375,6 +1385,18 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{B13E125F-AAA8-7FB3-9994-71A015870A08}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{956CA77E-9CDE-E48A-570D-5AD6BADF8AA5}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{C467DC49-921F-AA34-E252-D75FD60297CD}</Project>
+      <Name>AstarPathfindingProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{43E7AF0E-F07D-3B3E-D573-665E6BDD445D}</Project>
+      <Name>PackageToolsEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

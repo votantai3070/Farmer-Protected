@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1753798775158499273}
   - component: {fileID: 2266361229288070881}
   - component: {fileID: 6857027402599389113}
+  - component: {fileID: 90449965597291919}
   m_Layer: 3
   m_Name: Stone
   m_TagString: Untagged
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -152844137
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 898308359, guid: 3f7136c83a4a8eb45a61652884907ba8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -166,3 +167,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 7cc2460750d2388438f29e10d6a75854, type: 2}
+--- !u!114 &90449965597291919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519717574271983928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59f93fb7ec4e324a868c0c867abb1a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 5
