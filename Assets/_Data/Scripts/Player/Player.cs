@@ -2,12 +2,8 @@ using UnityEngine;
 
 public class Player : Character
 {
+    [Header("Player Setting")]
     [HideInInspector] public bool isAttacked = false;
-
-    private void Update()
-    {
-        Debug.Log(isAttacked);
-    }
 
     public void HandleAttack()
     {

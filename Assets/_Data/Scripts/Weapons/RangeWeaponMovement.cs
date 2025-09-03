@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RangeWeaponMovement : Weapon
 {
+    [Header("Range Weapon Movement Setting")]
     private Rigidbody2D rb;
     private Transform player;
 

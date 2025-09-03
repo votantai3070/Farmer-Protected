@@ -2,14 +2,19 @@ using UnityEngine;
 
 public class EnemyRangeMovement : MonoBehaviour
 {
+    [Header("Enemy Range Movement Setting")]
     public Enemy enemy;
-    public Transform player;
+    private Transform player;
     public Rigidbody2D rb;
     public BatAttack batAttack;
 
     private float currentAngle = 0f;
     private bool isOrbiting = false;
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     private void Update()
     {

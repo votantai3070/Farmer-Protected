@@ -85,10 +85,14 @@
     <Compile Include="Assets\TopDown 2D RPG BE3\ReadMe\Scripts\ReadmeBE3.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\ArrowDestroy.cs" />
+    <Compile Include="Assets\_Data\Scripts\Player\PlayerStamina.cs" />
     <Compile Include="Assets\Enemy Galore 1 - Pixel Art\Script\EnemySelector.cs" />
+    <Compile Include="Assets\_Data\Scripts\Pools\EnemyPool.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\StoneDestroy.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Bat\BatController.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\EnemyRangeMovement.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\PlayerAnimation.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\SpawnEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\IsometricElfFreeVer\Readme_en.txt" />

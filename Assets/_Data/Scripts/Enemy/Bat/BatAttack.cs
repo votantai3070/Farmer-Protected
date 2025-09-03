@@ -3,14 +3,21 @@ using UnityEngine;
 
 public class BatAttack : MonoBehaviour
 {
+    [Header("Bat Enemy Setting")]
     public Weapon weapon;
     public GameObject stonePrefab;
     public Transform stoneSpawnPoint;
-    public StonePool stonePool;
-    public Transform player;
+    private StonePool stonePool;
+    private Transform player;
     public BatAnimation batAnimation;
 
-    public bool isAttacking = false;
+    [HideInInspector] public bool isAttacking = false;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        stonePool = FindAnyObjectByType<StonePool>();
+    }
 
     public IEnumerator HandleBatThrowAttack()
     {
