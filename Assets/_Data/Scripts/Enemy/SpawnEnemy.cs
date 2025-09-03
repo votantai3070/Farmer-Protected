@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,20 +26,17 @@ public class SpawnEnemy : MonoBehaviour
 
         GameObject enemy = selectedPool.Get();
 
-        Vector3 spawnPos = GetRandomPosionNearPlayer();
+        Vector3 spawnPos = GetrRandomPositionNearPlayer();
 
         enemy.transform.position = spawnPos;
 
         activeEnemies.Add(enemy);
     }
-
-
-    private Vector3 GetRandomPosionNearPlayer()
+    private Vector3 GetrRandomPositionNearPlayer()
     {
-        Vector2 randomCircle = Random.insideUnitCircle.normalized * spawnRadius;
-        return player.position + new Vector3(randomCircle.x, randomCircle.y, 0);
+        Vector3 pos = Random.insideUnitCircle.normalized * spawnRadius;
+        return player.position + new Vector3(pos.x, pos.y, 0);
     }
-
     public void ReturnEnemy(GameObject enemy, EnemyPool pool)
     {
         pool.ReturnPool(enemy);
