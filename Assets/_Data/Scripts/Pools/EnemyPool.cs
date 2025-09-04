@@ -12,6 +12,7 @@ public class EnemyPool : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
+            if (enemyPrefab != null) return;
             GameObject bat = Instantiate(enemyPrefab);
             enemyPool.Add(bat);
             bat.SetActive(false);

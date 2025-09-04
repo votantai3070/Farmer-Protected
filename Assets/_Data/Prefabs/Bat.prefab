@@ -41,10 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2515396427504598193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 018c1eee08fab254fb45a8b65d3829da, type: 3}
+  m_Script: {fileID: 11500000, guid: 36dee87f88984c941963e271d03972eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 902425865165999656}
+  animator: {fileID: 6739653776826328525}
 --- !u!1 &2516736325646423409
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 408242068192791416}
   - component: {fileID: 2577536158642009251}
-  - component: {fileID: 902425865165999656}
+  - component: {fileID: 6739653776826328525}
   - component: {fileID: 246816817557865396}
   - component: {fileID: 4857028345986539142}
   - component: {fileID: 8032778163319847894}
@@ -438,7 +438,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &902425865165999656
+--- !u!95 &6739653776826328525
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -537,6 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: 116f25965d7e5e74cac1f33c274a4e02, type: 2}
   charhealthSlider: {fileID: 4417087498985336552}
+  batAnimation: {fileID: 6389108461902939355}
 --- !u!1 &7396056957106492193
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +583,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 8032778163319847894}
-  player: {fileID: 0}
   rb: {fileID: 246816817557865396}
   batAttack: {fileID: 8057980534929725542}
 --- !u!1 &7654961351863067405
@@ -632,8 +632,6 @@ MonoBehaviour:
   weapon: {fileID: 6857027402599389113, guid: 62b8eb074c4a7834393fe734d65eaa32, type: 3}
   stonePrefab: {fileID: 4519717574271983928, guid: 62b8eb074c4a7834393fe734d65eaa32, type: 3}
   stoneSpawnPoint: {fileID: 3369439958023382748}
-  stonePool: {fileID: 0}
-  player: {fileID: 0}
   batAnimation: {fileID: 6389108461902939355}
   isAttacking: 0
 --- !u!1 &8796456405480951385

@@ -6,7 +6,7 @@ public class Character : MonoBehaviour, IDamagable
     [Header("Character Setting")]
     public CharacterData characterData;
     public Slider charhealthSlider;
-    float CurrentHealth { get; set; }
+    public float CurrentHealth { get; set; }
     float MaxHealth => characterData.maxHealth;
 
     private void OnEnable()

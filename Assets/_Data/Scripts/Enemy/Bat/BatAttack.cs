@@ -9,7 +9,7 @@ public class BatAttack : MonoBehaviour
     public Transform stoneSpawnPoint;
     private StonePool stonePool;
     private Transform player;
-    public BatAnimation batAnimation;
+    public EnemyAnimation batAnimation;
 
     [HideInInspector] public bool isAttacking = false;
 
@@ -24,10 +24,10 @@ public class BatAttack : MonoBehaviour
         isAttacking = true;
         GetStoneFromPool();
         if (batAnimation != null && isAttacking)
-            batAnimation.SwitchAnimation("ATTACK");
+            batAnimation.SwitchBatAnimation("ATTACK");
         yield return new WaitForSeconds(1f);
         if (batAnimation != null && !isAttacking)
-            batAnimation.SwitchAnimation("FLY");
+            batAnimation.SwitchBatAnimation("FLY");
         isAttacking = false;
     }
 

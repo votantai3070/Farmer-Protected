@@ -26,13 +26,13 @@ public class SpawnEnemy : MonoBehaviour
 
         GameObject enemy = selectedPool.Get();
 
-        Vector3 spawnPos = GetrRandomPositionNearPlayer();
+        Vector3 spawnPos = GetRandomPositionNearPlayer();
 
         enemy.transform.position = spawnPos;
 
         activeEnemies.Add(enemy);
     }
-    private Vector3 GetrRandomPositionNearPlayer()
+    private Vector3 GetRandomPositionNearPlayer()
     {
         Vector3 pos = Random.insideUnitCircle.normalized * spawnRadius;
         return player.position + new Vector3(pos.x, pos.y, 0);

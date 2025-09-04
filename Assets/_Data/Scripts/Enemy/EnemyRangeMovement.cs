@@ -23,6 +23,7 @@ public class EnemyRangeMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         EnemyRangeMove(this.transform.parent);
     }
 
@@ -32,20 +33,29 @@ public class EnemyRangeMovement : MonoBehaviour
 
         Vector2 direction = (player.position - enemyRange.position).normalized;
 
-        if (Vector2.Distance(enemyRange.position, player.position) > enemy.characterData.range)
+        if (enemy.CurrentHealth <= 0)
         {
-            rb.linearVelocity = direction * enemy.characterData.speed;
-            isOrbiting = false;
+            rb.linearVelocity = Vector2.zero;
+            enabled = false;
+            return;
         }
         else
         {
-            if (!isOrbiting)
+            if (Vector2.Distance(enemyRange.position, player.position) > enemy.characterData.range)
             {
-                Vector2 offset = enemyRange.position - player.position;
-                currentAngle = Mathf.Atan2(offset.y, offset.x);
-                isOrbiting = true;
+                rb.linearVelocity = direction * enemy.characterData.speed;
+                isOrbiting = false;
             }
-            MoveAroundPlayer(enemyRange);
+            else
+            {
+                if (!isOrbiting)
+                {
+                    Vector2 offset = enemyRange.position - player.position;
+                    currentAngle = Mathf.Atan2(offset.y, offset.x);
+                    isOrbiting = true;
+                }
+                MoveAroundPlayer(enemyRange);
+            }
         }
     }
 
