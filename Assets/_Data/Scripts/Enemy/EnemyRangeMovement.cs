@@ -23,7 +23,6 @@ public class EnemyRangeMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         EnemyRangeMove(this.transform.parent);
     }
 
@@ -46,7 +45,7 @@ public class EnemyRangeMovement : MonoBehaviour
                 rb.linearVelocity = direction * enemy.characterData.speed;
                 isOrbiting = false;
             }
-            else
+            else if (enemy.characterData.characterName == "Bat")
             {
                 if (!isOrbiting)
                 {

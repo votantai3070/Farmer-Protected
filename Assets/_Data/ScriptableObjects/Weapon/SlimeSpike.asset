@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a51ebf723d531bf4d8154426f7afa80a, type: 3}
-  m_Name: Slime
+  m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
+  m_Name: SlimeSpike
   m_EditorClassIdentifier: 
-  characterName: Slime
-  speed: 3
-  maxHealth: 3
-  stamina: 0
-  range: 1.5
+  weaponName: Slime Spike
+  icon: {fileID: 0}
+  damage: 2
+  range: 0
+  speed: 0

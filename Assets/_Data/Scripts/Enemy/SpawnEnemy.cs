@@ -5,7 +5,7 @@ public class SpawnEnemy : MonoBehaviour
 {
     [Header("Spawn Enemy Setting")]
     public Transform player;
-    public List<EnemyPool> enemyPools = new();
+    public List<ObjectPool> enemyPools = new();
     public float spawnRadius = 20f;
     public int maxEnemies = 5;
 
@@ -22,7 +22,7 @@ public class SpawnEnemy : MonoBehaviour
 
         if (activeEnemies.Count >= maxEnemies) return;
 
-        EnemyPool selectedPool = enemyPools[Random.Range(0, enemyPools.Count)];
+        ObjectPool selectedPool = enemyPools[Random.Range(0, enemyPools.Count)];
 
         GameObject enemy = selectedPool.Get();
 
@@ -37,7 +37,7 @@ public class SpawnEnemy : MonoBehaviour
         Vector3 pos = Random.insideUnitCircle.normalized * spawnRadius;
         return player.position + new Vector3(pos.x, pos.y, 0);
     }
-    public void ReturnEnemy(GameObject enemy, EnemyPool pool)
+    public void ReturnEnemy(GameObject enemy, ObjectPool pool)
     {
         pool.ReturnPool(enemy);
         activeEnemies.Remove(enemy);

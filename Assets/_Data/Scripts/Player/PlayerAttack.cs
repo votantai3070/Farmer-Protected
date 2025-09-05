@@ -9,11 +9,10 @@ public class PlayerAttack : MonoBehaviour
     public PlayerAnimation playerAnimation;
     public Rigidbody2D rb;
     public Transform firePoint;
-    public ArrowPool arrowPool;
-    public StonePool stonePool;
+    public ObjectPool arrowPool;
+    public ObjectPool stonePool;
 
     private float attackCooldown = 0.5f;
-
 
     [Header("Stamina Setting")]
     public float bowStamina = 10;
@@ -83,7 +82,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (arrowPool == null)
         {
-            Debug.LogError("ArrowPool reference is missing!"); return;
+            Debug.LogError("objectPool reference is missing!"); return;
         }
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -91,11 +90,11 @@ public class PlayerAttack : MonoBehaviour
 
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
 
-        GameObject arrow = arrowPool.GetArrow();
-        arrow.transform.position = firePoint.position;
-        arrow.transform.rotation = Quaternion.Euler(0, 0, angle);
+        GameObject obj = arrowPool.Get();
+        obj.transform.position = firePoint.position;
+        obj.transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        arrow.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
+        obj.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
     }
 
     private void GetRockFromPool()
@@ -110,7 +109,7 @@ public class PlayerAttack : MonoBehaviour
 
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
 
-        GameObject stone = stonePool.GetStone();
+        GameObject stone = stonePool.Get();
         stone.transform.position = firePoint.position;
         stone.transform.rotation = Quaternion.Euler(0, 0, angle);
 

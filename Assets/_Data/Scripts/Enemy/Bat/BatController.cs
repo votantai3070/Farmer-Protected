@@ -4,13 +4,13 @@ using UnityEngine;
 public class BatController : Enemy
 {
     [Header("Bat Controller Setting")]
-    private EnemyPool batPool;
+    private ObjectPool batPool;
     private SpawnEnemy spawnEnemy;
     public EnemyAnimation batAnimation;
 
     private void Awake()
     {
-        batPool = GameObject.Find("BatPool").GetComponent<EnemyPool>();
+        batPool = GameObject.Find("BatPool").GetComponent<ObjectPool>();
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
     }
 

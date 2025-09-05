@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 
     public void Attack(IDamagable target)
     {
+        Debug.Log("Target: " + target);
         UseWeapon(target);
     }
 

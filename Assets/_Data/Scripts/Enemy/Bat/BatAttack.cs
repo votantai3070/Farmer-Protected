@@ -7,7 +7,7 @@ public class BatAttack : MonoBehaviour
     public Weapon weapon;
     public GameObject stonePrefab;
     public Transform stoneSpawnPoint;
-    private StonePool stonePool;
+    private ObjectPool stonePool;
     private Transform player;
     public EnemyAnimation batAnimation;
 
@@ -16,7 +16,7 @@ public class BatAttack : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        stonePool = FindAnyObjectByType<StonePool>();
+        stonePool = GameObject.Find("StonePool").GetComponent<ObjectPool>();
     }
 
     public IEnumerator HandleBatThrowAttack()
@@ -33,7 +33,7 @@ public class BatAttack : MonoBehaviour
 
     void GetStoneFromPool()
     {
-        GameObject stone = stonePool.GetStone();
+        GameObject stone = stonePool.Get();
         stone.transform.position = stoneSpawnPoint.position;
 
         stone.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(true);

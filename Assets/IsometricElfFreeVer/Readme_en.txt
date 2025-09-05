@@ -13,7 +13,7 @@ Here is a sample DEMO animation:
 ・Direction keys Move/stop up/down/left/right along the isometric map chip
 ・Z:　 normal attack
 ・X:　 throwing attack
-・C:　 Bow and arrow attack
+・C:　 Bow and obj attack
 ・V:　 Defense
 ・B: 　Items used
 ・N: 　attack

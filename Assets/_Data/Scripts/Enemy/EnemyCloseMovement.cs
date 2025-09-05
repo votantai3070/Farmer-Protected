@@ -29,6 +29,12 @@ public class EnemyCloseMovement : MonoBehaviour
 
         Vector2 direction = (player.position - enemyClose.position).normalized;
 
+        if (enemy.CurrentHealth <= 0)
+        {
+            rb.linearVelocity = Vector3.zero;
+            return;
+        }
+
         if (Vector3.Distance(player.position, enemyClose.position) > enemy.characterData.range)
         {
             enemyAnimation.SwitchSlimeAnimation("RUN");

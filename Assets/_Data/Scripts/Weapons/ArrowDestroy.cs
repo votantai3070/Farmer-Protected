@@ -3,11 +3,11 @@ using UnityEngine;
 public class ArrowDestroy : MonoBehaviour
 {
     public float lifetime = 5f;
-    private ArrowPool arrowPool;
+    private ObjectPool objectPool;
 
     private void Start()
     {
-        arrowPool = FindAnyObjectByType<ArrowPool>();
+        objectPool = GameObject.Find("ArrowPool").GetComponent<ObjectPool>();
     }
 
     private void OnEnable()
@@ -22,9 +22,9 @@ public class ArrowDestroy : MonoBehaviour
 
     private void DestroyArrow()
     {
-        if (arrowPool != null)
+        if (objectPool != null)
         {
-            arrowPool.ReturnArrow(gameObject);
+            objectPool.ReturnPool(gameObject);
         }
     }
 }
