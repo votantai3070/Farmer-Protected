@@ -49,11 +49,11 @@ TagManager:
   - name: ForceGround
     uniqueID: 3917749097
     locked: 0
-  - name: Enemy
-    uniqueID: 1727415109
-    locked: 0
   - name: Player
     uniqueID: 2525711559
+    locked: 0
+  - name: Enemy
+    uniqueID: 1727415109
     locked: 0
   - name: Item
     uniqueID: 4142123159

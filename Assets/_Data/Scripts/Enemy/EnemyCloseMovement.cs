@@ -43,9 +43,11 @@ public class EnemyCloseMovement : MonoBehaviour
         else
         {
             if (enemy.characterData.characterName == "Slime")
-            {
                 enemyAnimation.SwitchSlimeAnimation("ATTACK");
-            }
+
+            else if (enemy.characterData.characterName == "Rat")
+                enemyAnimation.SwitchRatAnimation("ATTACK");
+
             rb.linearVelocity = Vector3.zero;
         }
     }

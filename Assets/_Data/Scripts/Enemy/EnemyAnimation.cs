@@ -40,4 +40,42 @@ public class EnemyAnimation : MonoBehaviour
                 break;
         }
     }
+
+    public void SwitchBoneAnimation(string ani)
+    {
+        switch (ani)
+        {
+            case "ATTACK":
+                animator.SetTrigger("Attack");
+                break;
+            case "RUN":
+                animator.SetTrigger("Run");
+                break;
+            case "DEAD":
+                animator.SetTrigger("Dead");
+                break;
+            default:
+                Debug.LogWarning("");
+                break;
+        }
+    }
+
+    public void SwitchRatAnimation(string ani)
+    {
+        switch (ani)
+        {
+            case "ATTACK":
+                animator.SetTrigger("Attack");
+                break;
+            case "RUN":
+                animator.SetTrigger("Run");
+                break;
+            case "DEAD":
+                animator.SetTrigger("Dead");
+                break;
+            default:
+                Debug.LogWarning("");
+                break;
+        }
+    }
 }

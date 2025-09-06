@@ -7,6 +7,7 @@ public class EnemyRangeMovement : MonoBehaviour
     private Transform player;
     public Rigidbody2D rb;
     public BatAttack batAttack;
+    public EnemyAnimation enemyAnimation;
 
     private float currentAngle = 0f;
     private bool isOrbiting = false;
@@ -55,6 +56,11 @@ public class EnemyRangeMovement : MonoBehaviour
                 }
                 MoveAroundPlayer(enemyRange);
             }
+            else if (enemy.characterData.characterName == "Bone")
+            {
+                rb.linearVelocity = Vector2.zero;
+                enemyAnimation.SwitchBoneAnimation("ATTACK");
+            }
         }
     }
 
@@ -71,8 +77,14 @@ public class EnemyRangeMovement : MonoBehaviour
 
         enemyRange.position = Vector2.Lerp(enemyRange.position, targetPos, smoothSpeed);
 
-        if (!batAttack.isAttacking)
-            batAttack.StartCoroutine(batAttack.HandleBatThrowAttack());
+        HandleEnemiesAttack();
+    }
+
+    void HandleEnemiesAttack()
+    {
+        if (enemy.characterData.characterName == "Bat")
+            if (!batAttack.isAttacking)
+                batAttack.StartCoroutine(batAttack.HandleBatThrowAttack());
     }
 
     void Flip(Transform enemyRange)

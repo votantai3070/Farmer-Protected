@@ -61,13 +61,17 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.56f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Data\Scripts\Enemy\Rat\RatAttackCollider.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\Attack.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\EnemyAnimation.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\Player.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PlayerManager.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneAttackAMS.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\AttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Slime\SlimeController.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Rat\RatAttack.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PotionManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Pools\ObjectPool.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\RangeWeaponMovement.cs" />
@@ -76,6 +80,8 @@
     <Compile Include="Assets\_Data\Scripts\InputManager.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\StoneManager.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\WeaponData.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneAttackCollider.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Rat\RatController.cs" />
     <Compile Include="Assets\_Data\Scripts\Character.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\CharacterData.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\ItemData.cs" />
@@ -91,9 +97,11 @@
     <Compile Include="Assets\_Data\Scripts\Player\PlayerStamina.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Slime\SlimeAttack.cs" />
     <Compile Include="Assets\Enemy Galore 1 - Pixel Art\Script\EnemySelector.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneController.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\EnemyCloseMovement.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\StoneDestroy.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Bat\BatController.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Rat\RatAttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\EnemyRangeMovement.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\PlayerAnimation.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\SpawnEnemy.cs" />
