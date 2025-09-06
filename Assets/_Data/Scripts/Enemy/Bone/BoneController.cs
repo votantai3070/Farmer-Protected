@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class BoneController : Enemy
 {
+    [Header("Bone Controller Setting")]
     public EnemyAnimation boneAnimation;
     private ObjectPool bonePool;
     private SpawnEnemy spawnEnemy;
@@ -19,7 +20,6 @@ public class BoneController : Enemy
 
     IEnumerator AnimationDead()
     {
-
         boneAnimation.SwitchBoneAnimation("DEAD");
         yield return new WaitForSeconds(1f);
         spawnEnemy.ReturnEnemy(gameObject, bonePool);
