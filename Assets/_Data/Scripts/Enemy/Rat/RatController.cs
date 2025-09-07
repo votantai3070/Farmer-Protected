@@ -22,6 +22,6 @@ public class RatController : Enemy
     {
         ratAnimation.SwitchRatAnimation("DEAD");
         yield return new WaitForSeconds(1f);
-        spawnEnemy.ReturnEnemy(gameObject, ratPool);
+        spawnEnemy.ReturnEnemy(transform.parent.gameObject, ratPool);
     }
 }

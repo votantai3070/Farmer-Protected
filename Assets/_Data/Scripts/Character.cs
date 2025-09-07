@@ -1,17 +1,22 @@
+using Pathfinding;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static CharacterData;
 
 public class Character : MonoBehaviour, IDamagable
 {
     [Header("Character Setting")]
+    public AIPath path;
     public CharacterData characterData;
     public Slider charhealthSlider;
-    public float CurrentHealth { get; set; }
+    public TextMeshProUGUI playerHpText;
+    public float CurrentHealth { get; private set; }
     float MaxHealth => characterData.maxHealth;
 
     private void OnEnable()
     {
-        ResetHealth();
+        ResetGameObject();
     }
 
     public void TakeDamage(int damage)
@@ -20,7 +25,11 @@ public class Character : MonoBehaviour, IDamagable
         Debug.Log($"{gameObject.name} took {damage} damage. Current health: {CurrentHealth}/{MaxHealth}");
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
 
-        charhealthSlider.value = CurrentHealth;
+        if (charhealthSlider != null)
+            charhealthSlider.value = CurrentHealth;
+
+        if (playerHpText != null)
+            playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
 
         if (CurrentHealth <= 0)
         {
@@ -28,19 +37,23 @@ public class Character : MonoBehaviour, IDamagable
         }
     }
 
-    protected virtual void Die()
-    {
-    }
+    protected virtual void Die() { }
 
-    private void ResetHealth()
+
+    private void ResetGameObject()
     {
-        CurrentHealth = characterData.maxHealth;
+        if (characterData.characterType == CharacterType.Enemy)
+            path.canMove = true;
+
+        CurrentHealth = MaxHealth;
 
         if (charhealthSlider != null)
         {
-            charhealthSlider.maxValue = characterData.maxHealth;
+            charhealthSlider.maxValue = MaxHealth;
             charhealthSlider.value = CurrentHealth;
         }
 
+        if (playerHpText != null)
+            playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
     }
 }

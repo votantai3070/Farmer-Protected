@@ -22,6 +22,6 @@ public class BoneController : Enemy
     {
         boneAnimation.SwitchBoneAnimation("DEAD");
         yield return new WaitForSeconds(1f);
-        spawnEnemy.ReturnEnemy(gameObject, bonePool);
+        spawnEnemy.ReturnEnemy(transform.parent.gameObject, bonePool);
     }
 }

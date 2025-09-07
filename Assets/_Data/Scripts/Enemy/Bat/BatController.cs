@@ -23,6 +23,6 @@ public class BatController : Enemy
     {
         batAnimation.SwitchBatAnimation("DEAD");
         yield return new WaitForSeconds(1f);
-        spawnEnemy.ReturnEnemy(gameObject, batPool);
+        spawnEnemy.ReturnEnemy(transform.parent.gameObject, batPool);
     }
 }

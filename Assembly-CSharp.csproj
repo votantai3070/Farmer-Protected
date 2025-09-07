@@ -69,10 +69,12 @@
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PlayerManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneAttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneAttack.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Slime\SlimeAttackCollider.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\AttackAMS.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\EnemyAI.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Slime\SlimeController.cs" />
-    <Compile Include="Assets\_Data\Scripts\Enemy\Rat\RatAttack.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PotionManager.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Bat\RangeEnemyAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\Pools\ObjectPool.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\RangeWeaponMovement.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\ArrowManager.cs" />
@@ -80,18 +82,19 @@
     <Compile Include="Assets\_Data\Scripts\InputManager.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\StoneManager.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\WeaponData.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\CloseEnemyAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneAttackCollider.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Rat\RatController.cs" />
     <Compile Include="Assets\_Data\Scripts\Character.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\CharacterData.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\ItemData.cs" />
     <Compile Include="Assets\_Data\Scripts\Interface\IDamagable.cs" />
-    <Compile Include="Assets\_Data\Scripts\Enemy\Bat\BatAttack.cs" />
     <Compile Include="Assets\Enemy Galore 1 - Pixel Art\Script\EnemyTest.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\ShotController.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\PlayerAttack.cs" />
     <Compile Include="Assets\TopDown 2D RPG BE3\ReadMe\Scripts\ReadmeBE3.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\EnemyMovementGFX.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\ArrowDestroy.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\PlayerStamina.cs" />
@@ -104,12 +107,36 @@
     <Compile Include="Assets\_Data\Scripts\Enemy\Rat\RatAttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\EnemyRangeMovement.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\PlayerAnimation.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Slime\SlimeAttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\SpawnEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\IsometricElfFreeVer\Readme_en.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Enemy Galore 1 - Pixel Art\Read Me.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\IsometricElfFreeVer\Readme_jp.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -8,7 +8,7 @@ public class PlayerStamina : MonoBehaviour
     public Player player;
     public Slider staminaSlider;
 
-    public float CurrentStamina { get; set; }
+    public float CurrentStamina { get; private set; }
     float MaxStamina { get; set; }
 
     float staminaDelayTimer = 0;
@@ -19,19 +19,16 @@ public class PlayerStamina : MonoBehaviour
         MaxStamina = player.characterData.stamina;
         CurrentStamina = MaxStamina;
 
-        Debug.Log("CurrentStamina: " + CurrentStamina);
-
         if (staminaSlider != null)
         {
             staminaSlider.value = CurrentStamina;
             staminaSlider.maxValue = MaxStamina;
         }
-        Debug.Log("staminaSlider.value: " + staminaSlider.value);
     }
 
     private void Update()
     {
-        RegenStamina(2);
+        RegenStamina(5);
     }
     public void UseStamina(float amount)
     {

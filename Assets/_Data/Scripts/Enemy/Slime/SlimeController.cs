@@ -22,7 +22,7 @@ public class SlimeController : Enemy
     {
         slimeAnimation.SwitchSlimeAnimation("DEAD");
         yield return new WaitForSeconds(1f);
-        spawnEnemy.ReturnEnemy(gameObject, slimePool);
+        spawnEnemy.ReturnEnemy(transform.parent.gameObject, slimePool);
     }
 
 }

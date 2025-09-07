@@ -6,7 +6,7 @@ public class EnemyRangeMovement : MonoBehaviour
     public Enemy enemy;
     private Transform player;
     public Rigidbody2D rb;
-    public BatAttack batAttack;
+    public RangeEnemyAttack batAttack;
     public EnemyAnimation enemyAnimation;
 
     private float currentAngle = 0f;
