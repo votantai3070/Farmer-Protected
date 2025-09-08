@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Settings")]
     public Rigidbody2D rb;
     public PlayerAnimation playerAnimation;
-    public Player player;
+    public PlayerController player;
     public InputManager inputManager;
 
     void FixedUpdate()

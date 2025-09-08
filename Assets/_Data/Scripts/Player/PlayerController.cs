@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : Character
+public class PlayerController : Character
 {
     [Header("Player Setting")]
     [HideInInspector] public bool isAttacked = false;

@@ -1,3 +1,4 @@
+﻿using System.Collections;
 using UnityEngine;
 
 public class CloseEnemyAttack : Weapon
@@ -6,27 +7,30 @@ public class CloseEnemyAttack : Weapon
     public EnemyAnimation enemyAnimation;
     public Enemy enemy;
 
-    private Transform player;
+    private Transform _player;
     public Rigidbody2D rb;
+    public GameObject attackFX;
 
-
+    bool _isAttackedFX = false;
+    [SerializeField] float _activeTime = 1f;
+    [SerializeField] float _delayTime = 1.5f;
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
+        _player = GameObject.FindWithTag("Player").transform;
 
     }
 
     private void Update()
     {
-        if (enemy == null) return;
-
-        InvokeRepeating("HandleAttack", 0f, .6f);
+        HandleAttack();
     }
 
     private void HandleAttack()
     {
-        float distance = Vector2.Distance(player.position, rb.position);
+        if (enemy == null) return;
+
+        float distance = Vector2.Distance(_player.position, rb.position);
         if (distance <= enemy.characterData.range)
             UpdateEnemyAttack();
     }
@@ -34,13 +38,28 @@ public class CloseEnemyAttack : Weapon
     void UpdateEnemyAttack()
     {
         if (enemy.characterData.characterName == "Rat")
-            enemyAnimation.SwitchRatAnimation("ATTACK");
+        {
+            if (!_isAttackedFX)
+                StartCoroutine(AttackFX());
+        }
         else if (enemy.characterData.characterName == "Bone")
             enemyAnimation.SwitchBoneAnimation("ATTACK");
         else if (enemy.characterData.characterName == "Slime")
             enemyAnimation.SwitchSlimeAnimation("ATTACK");
     }
 
+    IEnumerator AttackFX()
+    {
+        _isAttackedFX = true;
+        if (enemy.characterData.characterName == "Rat")
+            enemyAnimation.SwitchRatAnimation("ATTACK");
+
+        yield return new WaitForSeconds(_activeTime);
+
+        if (_delayTime > 0f)
+            yield return new WaitForSeconds(_delayTime);
+        _isAttackedFX = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

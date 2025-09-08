@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerStamina : MonoBehaviour
 {
     [Header("Player Stamina Setting")]
-    public Player player;
+    public PlayerController player;
     public Slider staminaSlider;
 
     public float CurrentStamina { get; private set; }

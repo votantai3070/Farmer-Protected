@@ -3,12 +3,15 @@ using UnityEngine;
 public class EnemyAnimation : MonoBehaviour
 {
     public Animator animator;
+    public Animator attackAnimation;
+
     public void SwitchBatAnimation(string ani)
     {
         switch (ani)
         {
             case "ATTACK":
                 animator.SetTrigger("Attack");
+                attackAnimation.SetTrigger("AttackFX");
                 break;
             case "FLY":
                 animator.SetTrigger("Fly");
@@ -66,12 +69,16 @@ public class EnemyAnimation : MonoBehaviour
         {
             case "ATTACK":
                 animator.SetTrigger("Attack");
+                attackAnimation.SetTrigger("AttackFX");
                 break;
             case "RUN":
                 animator.SetTrigger("Run");
                 break;
             case "DEAD":
                 animator.SetTrigger("Dead");
+                break;
+            case "ABILITY":
+                animator.SetTrigger("Ability");
                 break;
             default:
                 Debug.LogWarning("");

@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [Header("Weapon Setting")]
     public WeaponData weaponData;
 
     public void Attack(IDamagable target)
     {
-        Debug.Log("Target: " + target);
         UseWeapon(target);
     }
 

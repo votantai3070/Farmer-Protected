@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [Header("Player Attack Setting")]
-    public Player player;
+    public PlayerController player;
     public PlayerStamina playerStamina;
     public PlayerAnimation playerAnimation;
     public Rigidbody2D rb;

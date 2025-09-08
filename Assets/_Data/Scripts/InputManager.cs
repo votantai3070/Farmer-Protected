@@ -3,7 +3,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     Vector2 moveInput;
-    public Player player;
+    public PlayerController player;
     float moveX;
     float moveY;
 

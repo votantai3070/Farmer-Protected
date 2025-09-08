@@ -132,8 +132,8 @@ GameObject:
   - component: {fileID: 30718494}
   - component: {fileID: 30718496}
   - component: {fileID: 30718500}
-  - component: {fileID: 30718493}
   - component: {fileID: 30718501}
+  - component: {fileID: 30718502}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -160,23 +160,6 @@ Transform:
   - {fileID: 1423878877}
   m_Father: {fileID: 1110270003}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &30718493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30718491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4dbaec3ea7e0d94fa05063cdaf4ba1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: {fileID: 0}
-  characterData: {fileID: 11400000, guid: c00c13f40961cf847bf6b28c9f086905, type: 2}
-  charhealthSlider: {fileID: 1942803590}
-  playerHpText: {fileID: 1978195044}
-  isAttacked: 0
 --- !u!95 &30718494
 Animator:
   serializedVersion: 7
@@ -340,6 +323,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   capsuleCollider: {fileID: 1418360882}
+--- !u!114 &30718502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30718491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd46549b836c38d43b105259531de12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: {fileID: 0}
+  characterData: {fileID: 11400000, guid: c00c13f40961cf847bf6b28c9f086905, type: 2}
+  charhealthSlider: {fileID: 1942803590}
+  playerHpText: {fileID: 1978195044}
+  isAttacked: 0
 --- !u!1 &88127942
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1986d471ac51414ab095f0f1ab60a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 30718493}
+  player: {fileID: 0}
 --- !u!4 &873255805
 Transform:
   m_ObjectHideFlags: 0
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAA4IexKQlBMWAIAABMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMty2jAU/RVG65KxDUNCd60hpIsEJjSTjTeKdY01yJJHDx7J8O+9km3s0ukKcc65V+c+5C/Cpakht0qvNGfPigH5PiL+TL6NevIJTnSn5JZ/Qqd558yWXkSD5pVarhCPfZhRFVjN8x9yJ7w4QtBJXihdLdkOUmWsQbigwgBSWlkfLRH6GpET/oznPuSMp+Tenz7xNI9GFzzmIC3oXtoJO1mjcjIXtKqBecu9OI46+XQSdBKraSXeea6E4Ka1Quy5DqWmtDYOC0EB4xRLC/fHdxMESuC70nqjw/B1URiwrStNzwuusUdNXvJTNY2rqNk31g5UOLh6b1I+/8OO40AXWlVP3a1NQbbk+f6VnnNq7KCvQ3gxMB76c6RiTz8EvJcgX9RKKycZklY7H+oMJIv+77WwtIR83+ON1RvQ1f+fjq/hEmo/pYJXH566mzbAVqjQ7zB70DiZX2g4bIZpUyDqXbwZ+E13wxVqiUeujUWqrVJ6ex/KaS8ly9AzX42zqdISAtyarkFSYc8bTGNvB3jDDa69YR6pfyzt5S3XvYGbkAD3+ii6oTbqeB2WKdXxGUy5dlZwCb1pT7xgn1IlZbNfw550YVunC5oPwnaOs79Xi0yAzu4hTth8ViR5Eo8f4llSRA/RA4voNInmJOwel1gnFZvGaNsenJrsk0vcs+4bMlppWoddZ5oeV/yzUoOWc1moba4B5LrJcDUOGi/BV8mWjGODtmAtl2He5CsjQuV7YNk1URYqXZ6splmfJSM1PyjrkYyk4aOREQ9fd3mj4cDh6C/vkl3I5Q9QSwMEFAAACAgAADgh7GjT/cBtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJJxaqKZeaqhUYqlWZpRspGhroWhmVGagYWBRYpBoomRgaVSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAADgh7EpCUExYAgAAEwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAADgh7GjT/cBtAAAAeAAAAAkAJAAAAAAAAAAAAAAApQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABdAwAAAAA=
+    dataString: UEsDBBQAAAgIAAA4IezjpoUFWQIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMziVjG4aE3lpDSA8JTGgmF18Ua401yJJHH3wkw3/vSraxS6cnxHtvd9+uVv4iXJoacqv0SnP2rBiQ7yPiz+TbqCef4ER3Sm75J3Sad85s6UU0aF6p5Qrx2IcZVYHVPP8hd8KLIwSd5IXS1ZLtIFXGGoQLKgwgpZX10RKhrxE54c947kPOeEru/ekTT/NodMFjDtKC7qWdsJM1KidzQasamLfci+Ook08nQSexm1binedKCG5aK8Se69BqSmvjsBEUME6xtVA/vpsgUALfldYbHYavi8KAbV1pel5wjTNq8pKfqhlcRc2+sXagwsHVe5Py+R92HAe60Kp66qo2DdmS5/tXes6psYO5DuHFwHiYz5GKPf0Q8F6CfFErrZxkSFrtfKgzkCz6v9fG0hLyfY83Vm9AV///dnwPl9D7KRW8+vDU3bQBtkKFeYe7B4038wsNh80wbQpEvYs3A7/pbrhCLfHItbFItV1Kb+9DOe2lZBlm5rtxNlVaQoBb0zVIKux5g2ns7QXecIOyN8wj9Y+lLd5y3Ru4CQlwr4+iG2qjjtfLMqU6PoMp184KLqE37YkXnFOqpGz2aziTLmzrdEHzQdjOcfb3apEJ0Nk9xAmbz4okT+LxQzxLiughemARnSbRnITd4xL7pGLTGG3Hg7cm++QS96z7hoxWmtZh15mmxxX/rNTQIJeF2uYaQK6bFFfnoLEKPku2ZBwntAVruQwXTr4yIlS+B5Zda2ah1eXJapr1WTJS84OyHslIGr4aGfHwdZk3Gg4cjr54l+xCLn8AUEsDBBQAAAgIAAA4Iexo0/3AbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSScWqimXmqoVGKpVmaUbKRoa6FoZlRmoGFgUWKQaKJkYGlUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAA4IezjpoUFWQIAABQFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAA4Iexo0/3AbQAAAHgAAAAJACQAAAAAAAAAAAAAAKYCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAXgMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b28e791702e174d8f94c2eb3996e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 30718493}
+  player: {fileID: 30718502}
   playerStamina: {fileID: 1423878878}
   playerAnimation: {fileID: 1434233219}
   rb: {fileID: 30718496}
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b786795b5bdf074aac3909849d5e161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 30718493}
+  player: {fileID: 30718502}
   staminaSlider: {fileID: 997324297}
 --- !u!1 &1434233217
 GameObject:
@@ -1532,7 +1532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 30718494}
   inputManager: {fileID: 873255804}
-  player: {fileID: 30718493}
+  player: {fileID: 30718502}
 --- !u!1 &1499626629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,11 +1707,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 30718492}
   enemyPools:
-  - {fileID: 1499626631}
   - {fileID: 1406076000}
-  - {fileID: 1892366344}
-  spawnRadius: 20
-  maxEnemies: 10
+  spawnRadius: 10
+  maxEnemies: 1
 --- !u!1 &1609171497
 GameObject:
   m_ObjectHideFlags: 0
@@ -28333,7 +28331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 30718496}
   playerAnimation: {fileID: 1434233219}
-  player: {fileID: 30718493}
+  player: {fileID: 30718502}
   inputManager: {fileID: 873255804}
 --- !u!95 &2119971505
 Animator:

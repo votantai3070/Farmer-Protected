@@ -4,7 +4,7 @@ public class PlayerAnimation : MonoBehaviour
 {
     public Animator animator;
     public InputManager inputManager;
-    public Player player;
+    public PlayerController player;
 
     Vector2 lastMoveDir;
 

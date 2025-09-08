@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Bone
   m_EditorClassIdentifier: 
   characterName: Bone
-  speed: 5
+  characterType: 3
+  speed: 4
   maxHealth: 10
   stamina: 0
-  range: 2
+  range: 3
