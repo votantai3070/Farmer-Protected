@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36dee87f88984c941963e271d03972eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 1562624490783397779}
   animator: {fileID: 5227830054397509395}
   attackAnimation: {fileID: 4078491922741837648}
 --- !u!1 &1760865238526683641
@@ -305,7 +306,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1727415109
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7013631516640934163, guid: af64a426a8f3c2a40a119356027b6cd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -417,6 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 598731625664483760}
   characterData: {fileID: 11400000, guid: 116f25965d7e5e74cac1f33c274a4e02, type: 2}
+  enemyAnimation: {fileID: 6713180329911842028}
   charhealthSlider: {fileID: 3561585546825885912}
   playerHpText: {fileID: 0}
   batAnimation: {fileID: 6713180329911842028}
@@ -811,7 +813,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1727415109
+  m_SortingLayerID: 11009065
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}

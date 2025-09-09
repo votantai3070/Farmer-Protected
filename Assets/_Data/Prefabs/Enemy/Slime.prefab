@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36dee87f88984c941963e271d03972eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 7484610508762977616}
   animator: {fileID: 3482238704025220482}
+  attackAnimation: {fileID: 0}
 --- !u!1 &713622204737692486
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,11 +204,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7889888301972695061}
-  m_Father: {fileID: 1024180800423421761}
+  m_Father: {fileID: 8011427784060935493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.049999714, y: 0.39}
+  m_AnchoredPosition: {x: 0.020000458, y: 0.90999997}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5689142482515994547
@@ -458,7 +460,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2921307339940087214}
-  - {fileID: 1052351409344181114}
   - {fileID: 190054488744535010}
   - {fileID: 1203648739323340522}
   m_Father: {fileID: 8011427784060935493}
@@ -505,7 +506,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1727415109
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1576031485842391493, guid: 8d077358a6200b84ca33857682dcd0dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -617,7 +618,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 355762013713994183}
   characterData: {fileID: 11400000, guid: b950b2003c749344ba6bd97c3b5ed12e, type: 2}
+  enemyAnimation: {fileID: 3454915752660464545}
   charhealthSlider: {fileID: 977506738749454509}
+  playerHpText: {fileID: 0}
   slimeAnimation: {fileID: 3454915752660464545}
 --- !u!114 &7347015548002285914
 MonoBehaviour:
@@ -665,6 +668,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1024180800423421761}
+  - {fileID: 1052351409344181114}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3341956026007296294
@@ -899,3 +903,6 @@ MonoBehaviour:
   enemyAnimation: {fileID: 3454915752660464545}
   enemy: {fileID: 7484610508762977616}
   rb: {fileID: 1179890036504562709}
+  attackFX: {fileID: 0}
+  _activeTime: 1
+  _delayTime: 1.5

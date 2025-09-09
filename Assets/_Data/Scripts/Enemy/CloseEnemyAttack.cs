@@ -37,15 +37,8 @@ public class CloseEnemyAttack : Weapon
 
     void UpdateEnemyAttack()
     {
-        if (enemy.characterData.characterName == "Rat")
-        {
-            if (!_isAttackedFX)
-                StartCoroutine(AttackFX());
-        }
-        else if (enemy.characterData.characterName == "Bone")
-            enemyAnimation.SwitchBoneAnimation("ATTACK");
-        else if (enemy.characterData.characterName == "Slime")
-            enemyAnimation.SwitchSlimeAnimation("ATTACK");
+        if (!_isAttackedFX)
+            StartCoroutine(AttackFX());
     }
 
     IEnumerator AttackFX()
@@ -53,6 +46,10 @@ public class CloseEnemyAttack : Weapon
         _isAttackedFX = true;
         if (enemy.characterData.characterName == "Rat")
             enemyAnimation.SwitchRatAnimation("ATTACK");
+        else if (enemy.characterData.characterName == "Bone")
+            enemyAnimation.SwitchBoneAnimation("ATTACK");
+        else if (enemy.characterData.characterName == "Slime")
+            enemyAnimation.SwitchSlimeAnimation("ATTACK");
 
         yield return new WaitForSeconds(_activeTime);
 

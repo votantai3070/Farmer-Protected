@@ -9,6 +9,7 @@ public class Character : MonoBehaviour, IDamagable
     [Header("Character Setting")]
     public AIPath path;
     public CharacterData characterData;
+    public EnemyAnimation enemyAnimation;
     public Slider charhealthSlider;
     public TextMeshProUGUI playerHpText;
     public float CurrentHealth { get; private set; }
@@ -21,6 +22,9 @@ public class Character : MonoBehaviour, IDamagable
 
     public void TakeDamage(int damage)
     {
+        if (enemyAnimation != null)
+            enemyAnimation.GetAnimationHitForEnemy();
+
         CurrentHealth -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage. Current health: {CurrentHealth}/{MaxHealth}");
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
@@ -36,6 +40,8 @@ public class Character : MonoBehaviour, IDamagable
             Die();
         }
     }
+
+
 
     protected virtual void Die() { }
 

@@ -198,6 +198,9 @@ MonoBehaviour:
   enemyAnimation: {fileID: 7180914959206845093}
   enemy: {fileID: 6396712293322171566}
   rb: {fileID: 7049656898329379209}
+  attackFX: {fileID: 0}
+  _activeTime: 1
+  _delayTime: 1.5
 --- !u!1 &1805347106945079667
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +234,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8227289107876967201}
+  - {fileID: 2126319553670115819}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4211526867091794275
@@ -349,7 +353,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 845951104050880365}
-  m_Father: {fileID: 8227289107876967201}
+  m_Father: {fileID: 5851610906613817742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -552,7 +556,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36dee87f88984c941963e271d03972eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 6396712293322171566}
   animator: {fileID: 910616909284161679}
+  attackAnimation: {fileID: 0}
 --- !u!1 &6553105581394549123
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +595,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6149648450299219070}
-  - {fileID: 2126319553670115819}
   - {fileID: 5564052632193897478}
   - {fileID: 607132133576692223}
   m_Father: {fileID: 5851610906613817742}
@@ -636,7 +641,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1727415109
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -9010615838638220262, guid: 47e7ba14bf23718479667d758827cf76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -761,6 +766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 4756121092100219888}
   characterData: {fileID: 11400000, guid: 144f6c9fd2663ab4d9b638dcded2ccfa, type: 2}
+  enemyAnimation: {fileID: 7180914959206845093}
   charhealthSlider: {fileID: 5846981590372914321}
   playerHpText: {fileID: 0}
   boneAnimation: {fileID: 7180914959206845093}

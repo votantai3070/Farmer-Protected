@@ -17,4 +17,4 @@ MonoBehaviour:
   speed: 2
   maxHealth: 3
   stamina: 0
-  range: 4
+  range: 1.2
