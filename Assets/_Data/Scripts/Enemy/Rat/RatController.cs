@@ -4,7 +4,6 @@ using UnityEngine;
 public class RatController : Enemy
 {
     [Header("Rat Controller Setting")]
-    public EnemyAnimation ratAnimation;
     private ObjectPool ratPool;
     private SpawnEnemy spawnEnemy;
 
@@ -20,7 +19,7 @@ public class RatController : Enemy
 
     IEnumerator AnimationDead()
     {
-        ratAnimation.SwitchRatAnimation("DEAD");
+        enemyAnimation.SwitchRatAnimation("DEAD");
         yield return new WaitForSeconds(1f);
         spawnEnemy.ReturnEnemy(transform.parent.gameObject, ratPool);
     }

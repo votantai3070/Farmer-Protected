@@ -100,15 +100,44 @@ public class EnemyAnimation : MonoBehaviour
         }
     }
 
+    public void SwitchGolemAnimation(string ani)
+    {
+        switch (ani)
+        {
+            case "ATTACK":
+                animator.SetTrigger("AttackA");
+                if (attackAnimation != null)
+                    attackAnimation.SetTrigger("AttackFX");
+                break;
+            case "RUN":
+                animator.SetTrigger("Run");
+                break;
+            case "DEAD":
+                animator.SetTrigger("Dead");
+                break;
+            case "ABILITY":
+                animator.SetTrigger("Ability");
+                break;
+            case "HIT":
+                animator.SetTrigger("Hit");
+                break;
+            default:
+                Debug.LogWarning("");
+                break;
+        }
+    }
+
     public void GetAnimationHitForEnemy()
     {
         if (enemy.characterData.characterName == "Rat")
             SwitchRatAnimation("HIT");
-        if (enemy.characterData.characterName == "Bat")
+        else if (enemy.characterData.characterName == "Bat")
             SwitchBatAnimation("HIT");
-        if (enemy.characterData.characterName == "Bone")
+        else if (enemy.characterData.characterName == "Bone")
             SwitchBoneAnimation("HIT");
-        if (enemy.characterData.characterName == "Slime")
+        else if (enemy.characterData.characterName == "Slime")
             SwitchSlimeAnimation("HIT");
+        else if (enemy.characterData.characterName == "Golem")
+            SwitchGolemAnimation("HIT");
     }
 }

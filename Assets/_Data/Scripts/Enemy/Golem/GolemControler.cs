@@ -1,18 +1,17 @@
 using System.Collections;
 using UnityEngine;
 
-public class BatController : Enemy
+public class GolemControler : Enemy
 {
-    [Header("Bat Controller Setting")]
-    private ObjectPool batPool;
+    [Header("Golem Controller Setting")]
+    private ObjectPool golemPool;
     private SpawnEnemy spawnEnemy;
 
     private void Awake()
     {
-        batPool = GameObject.Find("BatPool").GetComponent<ObjectPool>();
+        golemPool = GameObject.Find("GolemPool").GetComponent<ObjectPool>();
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
     }
-
     protected override void Die()
     {
         StartCoroutine(AnimationDead());
@@ -20,8 +19,8 @@ public class BatController : Enemy
 
     IEnumerator AnimationDead()
     {
-        enemyAnimation.SwitchBatAnimation("DEAD");
+        enemyAnimation.SwitchGolemAnimation("DEAD");
         yield return new WaitForSeconds(1f);
-        spawnEnemy.ReturnEnemy(transform.parent.gameObject, batPool);
+        spawnEnemy.ReturnEnemy(transform.parent.gameObject, golemPool);
     }
 }

@@ -5,6 +5,7 @@ public class EnemyMovementGFX : MonoBehaviour
 {
     public AIPath aIPath;
     public Enemy enemy;
+    public EnemyAnimation enemyAnimation;
 
     private void Start()
     {
@@ -22,10 +23,49 @@ public class EnemyMovementGFX : MonoBehaviour
             aIPath.canMove = false;
             return;
         }
-        ;
+
+        if (aIPath.canMove)
+        {
+            Move();
+        }
+        //else
+        //{
+        //    Idle();
+        //}
+
 
         Flip();
     }
+
+    void Move()
+    {
+        if (enemy.characterData.characterName == "Rat")
+            enemyAnimation.SwitchRatAnimation("RUN");
+
+        else if (enemy.characterData.characterName == "Bone")
+            enemyAnimation.SwitchBoneAnimation("RUN");
+
+        else if (enemy.characterData.characterName == "Slime")
+            enemyAnimation.SwitchSlimeAnimation("RUN");
+
+        else if (enemy.characterData.characterName == "Golem")
+            enemyAnimation.SwitchGolemAnimation("RUN");
+    }
+
+    //void Idle()
+    //{
+    //    if (enemy.characterData.characterName == "Rat")
+    //        enemyAnimation.SwitchRatAnimation("IDLE");
+
+    //    else if (enemy.characterData.characterName == "Bone")
+    //        enemyAnimation.SwitchBoneAnimation("IDLE");
+
+    //    else if (enemy.characterData.characterName == "Slime")
+    //        enemyAnimation.SwitchSlimeAnimation("IDLE");
+
+    //    else if (enemy.characterData.characterName == "Golem")
+    //        enemyAnimation.SwitchGolemAnimation("IDLE");
+    //}
 
     void Flip()
     {

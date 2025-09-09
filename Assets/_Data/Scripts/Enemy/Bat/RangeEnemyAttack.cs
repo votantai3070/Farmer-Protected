@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RangeEnemyAttack : MonoBehaviour
 {
-    [Header("Bat Enemy Setting")]
+    [Header("Range Enemy Setting")]
     public Weapon weapon;
     public GameObject stonePrefab;
     public Transform stoneSpawnPoint;

@@ -67,6 +67,7 @@
     <Compile Include="Assets\_Data\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PlayerManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneAttackAMS.cs" />
+    <Compile Include="Assets\_Data\Scripts\Enemy\Golem\GolemControler.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Slime\SlimeAttackCollider.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\AttackAMS.cs" />

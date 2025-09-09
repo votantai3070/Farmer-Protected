@@ -294,6 +294,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7321906540121330654}
+  - {fileID: 2987598731222691063}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1198923980421885817
@@ -609,11 +610,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6618573988242786568}
-  m_Father: {fileID: 7321906540121330654}
+  m_Father: {fileID: 2648489584679030584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.08, y: -0.16}
+  m_AnchoredPosition: {x: 0.08, y: 1.09}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &941165191423590970
@@ -804,7 +805,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7784115348985306536}
-  - {fileID: 2987598731222691063}
   - {fileID: 8254323061597006264}
   - {fileID: 6998698104499073829}
   - {fileID: 4061827902748455218}
@@ -968,7 +968,6 @@ MonoBehaviour:
   enemyAnimation: {fileID: 8906909996308768028}
   charhealthSlider: {fileID: 8592882193140204316}
   playerHpText: {fileID: 0}
-  ratAnimation: {fileID: 8906909996308768028}
 --- !u!114 &3208724752510166038
 MonoBehaviour:
   m_ObjectHideFlags: 0

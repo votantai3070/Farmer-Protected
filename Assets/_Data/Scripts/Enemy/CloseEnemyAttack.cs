@@ -18,7 +18,6 @@ public class CloseEnemyAttack : Weapon
     private void Start()
     {
         _player = GameObject.FindWithTag("Player").transform;
-
     }
 
     private void Update()
@@ -44,12 +43,18 @@ public class CloseEnemyAttack : Weapon
     IEnumerator AttackFX()
     {
         _isAttackedFX = true;
+
         if (enemy.characterData.characterName == "Rat")
             enemyAnimation.SwitchRatAnimation("ATTACK");
+
         else if (enemy.characterData.characterName == "Bone")
             enemyAnimation.SwitchBoneAnimation("ATTACK");
+
         else if (enemy.characterData.characterName == "Slime")
             enemyAnimation.SwitchSlimeAnimation("ATTACK");
+
+        else if (enemy.characterData.characterName == "Golem")
+            enemyAnimation.SwitchGolemAnimation("ATTACK");
 
         yield return new WaitForSeconds(_activeTime);
 

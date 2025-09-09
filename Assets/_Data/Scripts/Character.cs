@@ -2,6 +2,7 @@ using Pathfinding;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngineInternal;
 using static CharacterData;
 
 public class Character : MonoBehaviour, IDamagable
@@ -19,6 +20,16 @@ public class Character : MonoBehaviour, IDamagable
     {
         ResetGameObject();
     }
+
+    void Update()
+    {
+        if (enemyAnimation != null)
+        {
+            bool isHit = enemyAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
+            path.canMove = !isHit;
+        }
+    }
+
 
     public void TakeDamage(int damage)
     {

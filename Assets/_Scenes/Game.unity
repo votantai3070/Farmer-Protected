@@ -337,6 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   characterData: {fileID: 11400000, guid: c00c13f40961cf847bf6b28c9f086905, type: 2}
+  enemyAnimation: {fileID: 0}
   charhealthSlider: {fileID: 1942803590}
   playerHpText: {fileID: 1978195044}
   isAttacked: 0
@@ -444,6 +445,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &200898663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 200898664}
+  - component: {fileID: 200898665}
+  m_Layer: 0
+  m_Name: GolemPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &200898664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200898663}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2117800961}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &200898665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200898663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 794311964374166010, guid: 42a4e64f86c566740a33feae1b7b39e8, type: 3}
+  objectPool: []
+  instanceCount: 5
 --- !u!1 &406421745
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 4519717574271983928, guid: 62b8eb074c4a7834393fe734d65eaa32, type: 3}
   objectPool: []
+  instanceCount: 5
 --- !u!1 &873255803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,6 +1383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 4753377814908305406, guid: 8f3101ccc671911498d578638197770e, type: 3}
   objectPool: []
+  instanceCount: 5
 --- !u!1 &1418360878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,6 +1629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 4624306862074329853, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
   objectPool: []
+  instanceCount: 5
 --- !u!1 &1530141258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,6 +1676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 2501430361691126427, guid: 25cd358c26875f14abaa71a2b0924d16, type: 3}
   objectPool: []
+  instanceCount: 5
 --- !u!1 &1588462278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,9 +1759,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 30718492}
   enemyPools:
+  - {fileID: 200898665}
   - {fileID: 1406076000}
   spawnRadius: 10
-  maxEnemies: 1
+  maxEnemies: 5
 --- !u!1 &1609171497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,6 +2114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 5200893909166241099, guid: 37de0dd31f01b8941a46e1ecf7937c9c, type: 3}
   objectPool: []
+  instanceCount: 5
 --- !u!1 &1901808154
 GameObject:
   m_ObjectHideFlags: 0
@@ -28247,6 +28301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 3936631988775415959, guid: 4cb3f2691d3b1cb47ba5556916595c1f, type: 3}
   objectPool: []
+  instanceCount: 5
 --- !u!1 &2117800959
 GameObject:
   m_ObjectHideFlags: 0
@@ -28282,6 +28337,7 @@ Transform:
   - {fileID: 821446770}
   - {fileID: 1530141259}
   - {fileID: 1499626630}
+  - {fileID: 200898664}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2119971502
