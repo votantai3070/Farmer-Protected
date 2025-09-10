@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 public class WeaponData : ScriptableObject
 {
     public string weaponName;
-    public Sprite icon;
+    public Sprite sprite;
     public int damage;
     public float range;
     public float speed;

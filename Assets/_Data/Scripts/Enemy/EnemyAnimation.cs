@@ -13,7 +13,8 @@ public class EnemyAnimation : MonoBehaviour
         {
             case "ATTACK":
                 animator.SetTrigger("Attack");
-                attackAnimation.SetTrigger("AttackFX");
+                if (attackAnimation != null)
+                    attackAnimation.SetTrigger("AttackFX");
                 break;
             case "FLY":
                 animator.SetTrigger("Fly");
@@ -36,6 +37,8 @@ public class EnemyAnimation : MonoBehaviour
         {
             case "ATTACK":
                 animator.SetTrigger("Attack");
+                if (attackAnimation != null)
+                    attackAnimation.SetTrigger("AttackFX");
                 break;
             case "RUN":
                 animator.SetTrigger("Run");
@@ -58,6 +61,8 @@ public class EnemyAnimation : MonoBehaviour
         {
             case "ATTACK":
                 animator.SetTrigger("Attack");
+                if (attackAnimation != null)
+                    attackAnimation.SetTrigger("AttackFX");
                 break;
             case "RUN":
                 animator.SetTrigger("Run");
@@ -80,7 +85,8 @@ public class EnemyAnimation : MonoBehaviour
         {
             case "ATTACK":
                 animator.SetTrigger("Attack");
-                attackAnimation.SetTrigger("AttackFX");
+                if (attackAnimation != null)
+                    attackAnimation.SetTrigger("AttackFX");
                 break;
             case "RUN":
                 animator.SetTrigger("Run");
@@ -104,10 +110,20 @@ public class EnemyAnimation : MonoBehaviour
     {
         switch (ani)
         {
-            case "ATTACK":
+            case "ATTACK_A":
                 animator.SetTrigger("AttackA");
                 if (attackAnimation != null)
-                    attackAnimation.SetTrigger("AttackFX");
+                    attackAnimation.SetTrigger("AttackAFX");
+                break;
+            case "ATTACK_B":
+                animator.SetTrigger("AttackB");
+                if (attackAnimation != null)
+                    attackAnimation.SetTrigger("AttackBFX");
+                break;
+            case "ATTACK_C":
+                animator.SetTrigger("AttackC");
+                if (attackAnimation != null)
+                    attackAnimation.SetTrigger("AttackCFX");
                 break;
             case "RUN":
                 animator.SetTrigger("Run");

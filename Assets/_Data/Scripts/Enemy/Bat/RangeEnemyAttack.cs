@@ -4,22 +4,25 @@ using UnityEngine;
 public class RangeEnemyAttack : MonoBehaviour
 {
     [Header("Range Enemy Setting")]
-    public Weapon weapon;
     public GameObject stonePrefab;
     public Transform stoneSpawnPoint;
     private ObjectPool stonePool;
     private Transform player;
     public EnemyAnimation enemyAnimation;
     public Enemy enemy;
-
     public Rigidbody2D rb;
 
-    [HideInInspector] public bool isAttacking = false;
+    [SerializeField] float delayTime = 3f;
+
+    [HideInInspector] bool isAttacking = false;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        stonePool = GameObject.Find("StonePool").GetComponent<ObjectPool>();
+        if (enemy.characterData.characterName == "Bat")
+            stonePool = GameObject.Find("StonePool").GetComponent<ObjectPool>();
+        else if (enemy.characterData.characterName == "Golem")
+            stonePool = GameObject.Find("StoneBossPool").GetComponent<ObjectPool>();
     }
 
     //private void Start()
@@ -47,10 +50,17 @@ public class RangeEnemyAttack : MonoBehaviour
         if (enemyAnimation != null && isAttacking)
             if (enemy.characterData.characterName == "Bat")
                 enemyAnimation.SwitchBatAnimation("ATTACK");
-        yield return new WaitForSeconds(1f);
+
+            else if (enemy.characterData.characterName == "Golem")
+                enemyAnimation.SwitchGolemAnimation("ATTACK_A");
+
+        yield return new WaitForSeconds(delayTime);
         if (enemyAnimation != null && !isAttacking)
             if (enemy.characterData.characterName == "Bat")
                 enemyAnimation.SwitchBatAnimation("FLY");
+
+            else if (enemy.characterData.characterName == "Golem")
+                enemyAnimation.SwitchBatAnimation("RUN");
         isAttacking = false;
     }
 

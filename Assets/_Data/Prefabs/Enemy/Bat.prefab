@@ -216,13 +216,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184881f8e11211740a23feb44202b9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 6857027402599389113, guid: 62b8eb074c4a7834393fe734d65eaa32, type: 3}
   stonePrefab: {fileID: 4519717574271983928, guid: 62b8eb074c4a7834393fe734d65eaa32, type: 3}
   stoneSpawnPoint: {fileID: 4471659074996560134}
   enemyAnimation: {fileID: 6713180329911842028}
   enemy: {fileID: 1562624490783397779}
   rb: {fileID: 5500686532746625908}
-  isAttacking: 0
+  delayTime: 2
 --- !u!1 &4398804037218549111
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +420,6 @@ MonoBehaviour:
   enemyAnimation: {fileID: 6713180329911842028}
   charhealthSlider: {fileID: 3561585546825885912}
   playerHpText: {fileID: 0}
-  batAnimation: {fileID: 6713180329911842028}
 --- !u!1 &4400422677532285958
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aIPath: {fileID: 598731625664483760}
   enemy: {fileID: 1562624490783397779}
+  enemyAnimation: {fileID: 0}
 --- !u!1 &5423112134478734611
 GameObject:
   m_ObjectHideFlags: 0

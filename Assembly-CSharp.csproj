@@ -61,6 +61,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.56f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Data\Scripts\InventoryManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Rat\RatAttackCollider.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\Attack.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\EnemyAnimation.cs" />
@@ -69,11 +70,13 @@
     <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneAttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Golem\GolemControler.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneAttack.cs" />
+    <Compile Include="Assets\_Data\Scripts\Weapons\ObjectDestroy.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Slime\SlimeAttackCollider.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\AttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Slime\SlimeController.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PotionManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Bat\RangeEnemyAttack.cs" />
+    <Compile Include="Assets\_Data\Scripts\InventorySlot.cs" />
     <Compile Include="Assets\_Data\Scripts\Pools\ObjectPool.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\RangeWeaponMovement.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\ArrowManager.cs" />
@@ -100,10 +103,13 @@
     <Compile Include="Assets\_Data\Scripts\Player\PlayerStamina.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Slime\SlimeAttack.cs" />
     <Compile Include="Assets\Enemy Galore 1 - Pixel Art\Script\EnemySelector.cs" />
+    <Compile Include="Assets\_Data\Scripts\Player\PlayerWeapon.cs" />
+    <Compile Include="Assets\_Data\Scripts\HotBarManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Bone\BoneController.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\EnemyCloseMovement.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\StoneDestroy.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Bat\BatController.cs" />
+    <Compile Include="Assets\_Data\Scripts\DraggableItem.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\Rat\RatAttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Enemy\EnemyRangeMovement.cs" />
     <Compile Include="Assets\_Data\Scripts\Player\PlayerAnimation.cs" />

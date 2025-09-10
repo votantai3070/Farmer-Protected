@@ -77,15 +77,15 @@ public class EnemyRangeMovement : MonoBehaviour
 
         enemyRange.position = Vector2.Lerp(enemyRange.position, targetPos, smoothSpeed);
 
-        HandleEnemiesAttack();
+        //HandleEnemiesAttack();
     }
 
-    void HandleEnemiesAttack()
-    {
-        if (enemy.characterData.characterName == "Bat")
-            if (!batAttack.isAttacking)
-                batAttack.StartCoroutine(batAttack.HandleBatThrowAttack());
-    }
+    //void HandleEnemiesAttack()
+    //{
+    //    if (enemy.characterData.characterName == "Bat")
+    //        if (!batAttack.isAttacking)
+    //            batAttack.StartCoroutine(batAttack.HandleBatThrowAttack());
+    //}
 
     void Flip(Transform enemyRange)
     {

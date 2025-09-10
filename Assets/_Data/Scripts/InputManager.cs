@@ -20,4 +20,9 @@ public class InputManager : MonoBehaviour
         moveY = Input.GetAxisRaw("Vertical");
         moveInput = new Vector2(moveX, moveY).normalized;
     }
+
+    public Vector2 HandleMovementFollowMouse()
+    {
+        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
 }
