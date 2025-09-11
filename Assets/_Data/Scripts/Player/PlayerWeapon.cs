@@ -27,6 +27,8 @@ public class PlayerWeapon : MonoBehaviour
 
     void UpdateWeapon()
     {
+        if (hotBarManager.currentWeaponData == null) return;
+
         WeaponData weaponData = hotBarManager.currentWeaponData;
 
         spriteRenderer.sprite = weaponData.sprite;

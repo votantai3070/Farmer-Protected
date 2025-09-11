@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
-    private DraggableItem currentItem;
     public void OnDrop(PointerEventData eventData)
     {
         if (transform.childCount == 0)
@@ -11,13 +10,16 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             GameObject dropped = eventData.pointerDrag;
             DraggableItem draggableItem = dropped.GetComponent<DraggableItem>();
             draggableItem.parentAfterDrag = transform;
-
-            currentItem = draggableItem;
         }
     }
 
     public WeaponData GetWeaponData()
     {
-        return currentItem != null ? currentItem.weaponData : null;
+        if (transform.childCount > 0)
+        {
+            DraggableItem draggableItem = transform.GetChild(0).GetComponent<DraggableItem>();
+            return draggableItem.weaponData;
+        }
+        return null;
     }
 }

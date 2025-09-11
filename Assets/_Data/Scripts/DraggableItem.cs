@@ -30,6 +30,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void SetItem(WeaponData weapon)
     {
+        Debug.Log("Weapon Data Drap: " + weapon);
         weaponData = weapon;
         image.sprite = weapon.sprite;
     }

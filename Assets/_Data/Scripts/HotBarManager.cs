@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class HotBarManager : MonoBehaviour
 {
@@ -7,6 +8,11 @@ public class HotBarManager : MonoBehaviour
 
     [HideInInspector] public WeaponData currentWeaponData;
 
+    private void Start()
+    {
+        StartCoroutine(InitHotbar());
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) UseWeaponInSlot(0);
@@ -14,9 +20,15 @@ public class HotBarManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3)) UseWeaponInSlot(2);
     }
 
+    IEnumerator InitHotbar()
+    {
+        yield return null;
+        UseWeaponInSlot(0);
+    }
+
     public void UseWeaponInSlot(int index)
     {
-        if (index >= 0 || index < hotbatSlots.Length)
+        if (index >= 0 && index < hotbatSlots.Length)
         {
             WeaponData weapon = hotbatSlots[index].GetWeaponData();
 

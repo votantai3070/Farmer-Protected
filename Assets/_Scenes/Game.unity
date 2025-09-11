@@ -213,10 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6994848990611147820, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1703178754}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
 --- !u!224 &13694940 stripped
@@ -452,7 +449,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1281601425}
+    m_TransformParent: {fileID: 287379817}
     m_Modifications:
     - target: {fileID: 236277014201933599, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_Sprite
@@ -528,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7005852461714492197, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 120
+      value: -696.0001
       objectReference: {fileID: 0}
     - target: {fileID: 7005852461714492197, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1449,7 +1446,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6994848990611147820, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 34823854}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
 --- !u!224 &287379817 stripped
@@ -1551,7 +1551,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6994848990611147820, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 177700183}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
 --- !u!224 &327132084 stripped
@@ -1574,7 +1577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &406421746
 Transform:
   m_ObjectHideFlags: 0
@@ -2281,7 +2284,7 @@ SpriteRenderer:
   m_SortingLayerID: 768275879
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 143021600, guid: 34aa22406fba8c34b8866e7a131f3063, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2289,7 +2292,7 @@ SpriteRenderer:
   m_Size: {x: 0.3888889, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &678003135
@@ -2400,7 +2403,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6994848990611147820, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1703178754}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
 --- !u!224 &711291782 stripped
@@ -3666,10 +3672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6994848990611147820, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 34823854}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
 --- !u!224 &1281601425 stripped
@@ -4484,7 +4487,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 13694940}
+    m_TransformParent: {fileID: 711291782}
     m_Modifications:
     - target: {fileID: 236277014201933599, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_Sprite
@@ -4560,11 +4563,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7005852461714492197, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 120
+      value: 664
       objectReference: {fileID: 0}
     - target: {fileID: 7005852461714492197, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -110
+      value: 141.99997
       objectReference: {fileID: 0}
     - target: {fileID: 7005852461714492197, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -31130,6 +31133,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 942638617}
+  weaponDatas:
+  - {fileID: 11400000, guid: 5e6e69b9f74d82148a761f23aa805a4f, type: 2}
+  - {fileID: 11400000, guid: ed609f3f8d14ddf4d86c25bf6b6399c1, type: 2}
+  - {fileID: 11400000, guid: af9dfdcd55044144aa589a4ef4311b42, type: 2}
+  slots:
+  - {fileID: 2312973148134393759}
+  - {fileID: 1727661082}
+  - {fileID: 1589120969}
+  draggablePrefab: {fileID: 2433661858431019261, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
 --- !u!4 &2002130237
 Transform:
   m_ObjectHideFlags: 0
@@ -31589,10 +31601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6994848990611147820, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 177700183}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
 --- !u!224 &2312973148134393754 stripped
@@ -31617,7 +31626,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2312973148134393754}
+    m_TransformParent: {fileID: 327132084}
     m_Modifications:
     - target: {fileID: 2433661858431019261, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: weaponData
@@ -31677,19 +31686,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7005852461714492197, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7005852461714492197, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7005852461714492197, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7005852461714492197, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 120
+      value: -696.0001
       objectReference: {fileID: 0}
     - target: {fileID: 7005852461714492197, guid: cd4736db8fe71af48a51fa44351a5dbc, type: 3}
       propertyPath: m_AnchoredPosition.y
