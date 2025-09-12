@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: StoneBoss
   m_EditorClassIdentifier: 
   weaponName: Throw Stone
-  icon: {fileID: 0}
-  damage: 5
+  sprite: {fileID: 0}
+  firstDamage: 5
+  lastDamage: 5
   range: 0
   speed: 8
+  criticalCrit: 0
+  criticalDamage: 0

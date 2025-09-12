@@ -13,7 +13,8 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Start()
     {
-        spriteRenderer.sprite = hotBarManager.currentWeaponData.sprite;
+        if (spriteRenderer != null && hotBarManager != null)
+            spriteRenderer.sprite = hotBarManager.currentWeaponData.sprite;
     }
 
     void Update()

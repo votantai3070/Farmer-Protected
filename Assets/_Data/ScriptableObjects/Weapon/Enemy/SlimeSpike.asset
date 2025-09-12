@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: SlimeSpike
   m_EditorClassIdentifier: 
   weaponName: Slime Spike
-  icon: {fileID: 0}
-  damage: 2
+  sprite: {fileID: 0}
+  firstDamage: 1
+  lastDamage: 1
   range: 0
   speed: 0
+  criticalCrit: 0
+  criticalDamage: 0

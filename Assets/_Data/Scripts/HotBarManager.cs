@@ -4,7 +4,7 @@ using UnityEngine;
 public class HotBarManager : MonoBehaviour
 {
     [Header("Hot Bar Manager")]
-    [SerializeField] private InventorySlot[] hotbatSlots;
+    [SerializeField] private InventorySlot[] hotbarSlots;
 
     [HideInInspector] public WeaponData currentWeaponData;
 
@@ -28,9 +28,9 @@ public class HotBarManager : MonoBehaviour
 
     public void UseWeaponInSlot(int index)
     {
-        if (index >= 0 && index < hotbatSlots.Length)
+        if (index >= 0 && index < hotbarSlots.Length)
         {
-            WeaponData weapon = hotbatSlots[index].GetWeaponData();
+            WeaponData weapon = hotbarSlots[index].GetWeaponData();
 
             if (weapon != null)
             {

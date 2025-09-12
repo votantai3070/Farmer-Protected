@@ -1374,6 +1374,14 @@
       <Project>{43E7AF0E-F07D-3B3E-D573-665E6BDD445D}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="AnimatedBattleText.Example.Damage.csproj">
+      <Project>{5156B24C-B182-7AA2-2C1F-8620E8E33C34}</Project>
+      <Name>AnimatedBattleText.Example.Damage</Name>
+    </ProjectReference>
+    <ProjectReference Include="BattleText.csproj">
+      <Project>{75761254-3504-D87A-B3A4-5040CE4471AA}</Project>
+      <Name>BattleText</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   weaponName: Stone
-  icon: {fileID: 0}
-  damage: 3
+  sprite: {fileID: 0}
+  firstDamage: 2
+  lastDamage: 2
   range: 0
   speed: 8
+  criticalCrit: 0
+  criticalDamage: 0

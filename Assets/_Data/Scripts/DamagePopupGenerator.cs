@@ -1,0 +1,29 @@
+using TMPro;
+using UnityEngine;
+
+public class DamagePopupGenerator : MonoBehaviour
+{
+    public static DamagePopupGenerator Instance;
+    [SerializeField] GameObject damagePrefab;
+    [SerializeField] Color normalColor;
+    [SerializeField] Color criticalColor;
+    private void Awake()
+    {
+        if (Instance != null)
+            Destroy(Instance);
+
+        Instance = this;
+    }
+
+    public void DisplayDamage(Vector3 position, float damageText, bool isCrit)
+    {
+        GameObject popup = Instantiate(damagePrefab, position, Quaternion.identity);
+        var temp = popup.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        temp.text = damageText.ToString();
+        if (isCrit)
+            temp.color = criticalColor;
+
+        else
+            temp.color = normalColor;
+    }
+}

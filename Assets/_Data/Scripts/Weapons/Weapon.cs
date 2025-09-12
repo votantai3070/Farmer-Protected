@@ -12,6 +12,12 @@ public class Weapon : MonoBehaviour
 
     private void UseWeapon(IDamagable target)
     {
-        target.TakeDamage(weaponData.damage);
+        Debug.Log($"firstDamage: {weaponData.firstDamage}, lastDamage: {weaponData.lastDamage}");
+        bool isCrit = Random.value <= weaponData.criticalCrit;
+        int curentDamage = (int)(isCrit
+            ? Random.Range(weaponData.firstDamage, weaponData.lastDamage + 1) * weaponData.criticalDamage
+            : Random.Range(weaponData.firstDamage, weaponData.lastDamage + 1));
+
+        target.TakeDamage(Mathf.FloorToInt(curentDamage), isCrit);
     }
 }

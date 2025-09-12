@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: BoneBite
   m_EditorClassIdentifier: 
   weaponName: Bone Bite
-  icon: {fileID: 0}
-  damage: 5
+  sprite: {fileID: 0}
+  firstDamage: 3
+  lastDamage: 3
   range: 0
   speed: 0
+  criticalCrit: 0
+  criticalDamage: 0

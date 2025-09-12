@@ -17,7 +17,7 @@ TagManager:
   - Enemy
   - Hitbox_Player
   - Hurtbox_Enemy
-  - 
+  - Popup
   - 
   - 
   - 
@@ -63,6 +63,9 @@ TagManager:
     locked: 0
   - name: Item
     uniqueID: 4142123159
+    locked: 0
+  - name: UI
+    uniqueID: 126210199
     locked: 0
   m_RenderingLayers:
   - Default

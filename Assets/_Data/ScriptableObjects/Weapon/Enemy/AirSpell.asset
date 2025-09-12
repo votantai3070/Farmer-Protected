@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: AirSpell
   m_EditorClassIdentifier: 
   weaponName: Air
-  icon: {fileID: 0}
-  damage: 3
+  sprite: {fileID: 0}
+  firstDamage: 5
+  lastDamage: 5
   range: 0
   speed: 0
+  criticalCrit: 0
+  criticalDamage: 0
