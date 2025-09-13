@@ -12,9 +12,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Dash Settings")]
     public GameObject playerGhostPrefab;
-    [SerializeField] private float dashDuration = 0.2f;   // Thời gian dash
-    [SerializeField] private float dashCooldown = 1f;    // Thời gian hồi
-    [SerializeField] private float ghostInterval = 0.05f; // Thời gian giữa các bóng mờ
+    [SerializeField] private float dashDuration = 0.2f;
+    [SerializeField] private float dashCooldown = 1f;
+    [SerializeField] private float ghostInterval = 0.05f;
 
     private bool isDashing = false;
     private float dashCooldownTimer = 0f;
@@ -47,10 +47,8 @@ public class PlayerMovement : MonoBehaviour
         Vector2 move = inputManager.MoveInput * player.characterData.speed;
         rb.linearVelocity = move;
 
-        if (move != Vector2.zero)
-            playerAnimation.SwitchAnimationState("RUN");
-        else
-            playerAnimation.SwitchAnimationState("IDLE");
+        playerAnimation.SwitchAnimationState("RUN");
+
 
         Flip();
     }
@@ -67,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = inputManager.MoveInput.normalized *
                                 (player.characterData.speed + player.characterData.dashSpeed);
 
-            Instantiate(playerGhostPrefab, transform.position, transform.rotation);
+            Instantiate(playerGhostPrefab, transform.parent.position, transform.rotation);
 
             yield return new WaitForSeconds(ghostInterval);
             elapsed += ghostInterval;
