@@ -1,10 +1,10 @@
-- Player
- + Attack
- + Hp
- + Mana
- + Stamina (có hoặc kh)
+- Player (Farmer)
+ + HP
+ + Stamina
+ + Attack Throw (Xẻng. Liềm, Súng,...)
+ + Dash
 
-- Enemy (Slime, enemy bay,...)
+- Enemy (Slime, Dơi,...)
  + Attack (đánh thường, bắn,...)
  + Hp
 
@@ -16,7 +16,18 @@
 - Map
  + Dùng tilemap
  + Có 2-3 map
+ + Minimap
 
 - Có sử dụng A* path cho enemy tìm player
+
+- Gameplayer
+ + Giết enemy lấy kinh nghiệm lên cấp nâng vũ khí, nhặt vú khí trên map
+ + Enemy spawn theo wave(time)
+
+- Menu
+- Game Over
+- Game Win
+- Level (1,2,3,4,...)
+
 
 

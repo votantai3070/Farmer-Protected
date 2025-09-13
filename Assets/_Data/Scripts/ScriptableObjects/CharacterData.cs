@@ -19,4 +19,5 @@ public class CharacterData : ScriptableObject
     public float maxHealth;
     public float stamina;
     public float range;
+    public float dashSpeed;
 }

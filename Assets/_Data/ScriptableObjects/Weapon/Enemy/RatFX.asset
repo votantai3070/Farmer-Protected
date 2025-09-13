@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: RatFX
   m_EditorClassIdentifier: 
   weaponName: Rat FX
-  icon: {fileID: 0}
-  damage: 1
+  sprite: {fileID: 0}
+  firstDamage: 1
+  lastDamage: 1
   range: 0
   speed: 0
+  criticalCrit: 0
+  criticalDamage: 0

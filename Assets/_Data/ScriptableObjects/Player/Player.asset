@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   characterName: Player
+  characterType: 0
   speed: 10
-  maxHealth: 30
+  maxHealth: 5
   stamina: 50
   range: 0
+  dashSpeed: 10

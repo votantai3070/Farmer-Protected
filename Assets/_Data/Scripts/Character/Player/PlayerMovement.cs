@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,13 +10,33 @@ public class PlayerMovement : MonoBehaviour
     public InputManager inputManager;
     public SpriteRenderer sprite;
 
-    void FixedUpdate()
+    [Header("Dash Settings")]
+    public GameObject playerGhostPrefab;
+    [SerializeField] private float dashDuration = 0.2f;   // Thời gian dash
+    [SerializeField] private float dashCooldown = 1f;    // Thời gian hồi
+    [SerializeField] private float ghostInterval = 0.05f; // Thời gian giữa các bóng mờ
+
+    private bool isDashing = false;
+    private float dashCooldownTimer = 0f;
+
+    private void Update()
     {
-        if (!player.isAttacked)
+        if (dashCooldownTimer > 0)
+            dashCooldownTimer -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Space) && !isDashing && dashCooldownTimer <= 0 && !player.isAttacked)
+        {
+            StartCoroutine(HandleDashing());
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!player.isAttacked && !isDashing)
         {
             HandleMovement();
         }
-        else
+        else if (player.isAttacked)
         {
             rb.linearVelocity = Vector2.zero;
         }
@@ -23,13 +44,39 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement()
     {
-        playerAnimation.SwitchAnimationState("RUN");
-        rb.linearVelocity = inputManager.MoveInput * player.characterData.speed;
+        Vector2 move = inputManager.MoveInput * player.characterData.speed;
+        rb.linearVelocity = move;
+
+        if (move != Vector2.zero)
+            playerAnimation.SwitchAnimationState("RUN");
+        else
+            playerAnimation.SwitchAnimationState("IDLE");
 
         Flip();
     }
 
-    void Flip()
+    private IEnumerator HandleDashing()
+    {
+        isDashing = true;
+        dashCooldownTimer = dashCooldown;
+
+        float elapsed = 0f;
+
+        while (elapsed < dashDuration)
+        {
+            rb.linearVelocity = inputManager.MoveInput.normalized *
+                                (player.characterData.speed + player.characterData.dashSpeed);
+
+            Instantiate(playerGhostPrefab, transform.position, transform.rotation);
+
+            yield return new WaitForSeconds(ghostInterval);
+            elapsed += ghostInterval;
+        }
+
+        isDashing = false;
+    }
+
+    private void Flip()
     {
         if (inputManager.MoveInput.x > 0)
             sprite.flipX = false;

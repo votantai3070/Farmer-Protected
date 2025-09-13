@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : Character
 {
-    [Header("Player Setting")]
+    [Header("Player Controller Setting")]
     [HideInInspector] public bool isAttacked = false;
+    public PlayerAnimation playerAnimation;
 
     public void HandleAttack()
     {
@@ -13,5 +15,11 @@ public class PlayerController : Character
     public void StopAttack()
     {
         isAttacked = false;
+    }
+
+    protected override void Die()
+    {
+        playerAnimation.SwitchAnimationState("DEAD");
+        GameManager.Instance.GameOver();
     }
 }

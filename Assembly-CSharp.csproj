@@ -88,7 +88,9 @@
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Bone\BoneAttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\EnemyRangeMovement.cs" />
+    <Compile Include="Assets\_Data\Scripts\Interface\IGameManager.cs" />
     <Compile Include="Assets\_Data\Scripts\GameManager.cs" />
+    <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerGhostDestroy.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\CharacterData.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\ItemData.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Rat\RatAttackAMS.cs" />

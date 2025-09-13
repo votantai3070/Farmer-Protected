@@ -1,12 +1,15 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IGameManager
 {
     public static GameManager Instance;
     [SerializeField] private TextMeshProUGUI timeText;
-    public float startTime = 180f;
+    [SerializeField] private GameObject gameOverPanel;
 
+    public float startTime = 180f;
     [HideInInspector] public float currentTime;
 
     private void Awake()
@@ -20,6 +23,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentTime = startTime;
+        gameOverPanel.SetActive(false);
     }
 
     void Update()
@@ -38,5 +42,43 @@ public class GameManager : MonoBehaviour
         timeText.text = string.Format("{0:00}:{1:00}",
             Mathf.FloorToInt(timeToShow / 60),
             Mathf.FloorToInt(timeToShow % 60));
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+        gameOverPanel.SetActive(true);
+    }
+
+    public void GameResume()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void GamePause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void GameWin()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void GameQuit()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void GameRestart()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene != null) SceneManager.LoadScene(currentScene.name);
+        Time.timeScale = 1f;
     }
 }

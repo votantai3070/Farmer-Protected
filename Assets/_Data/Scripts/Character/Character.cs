@@ -54,8 +54,6 @@ public class Character : MonoBehaviour, IDamagable
         }
     }
 
-
-
     protected virtual void Die() { }
 
 
