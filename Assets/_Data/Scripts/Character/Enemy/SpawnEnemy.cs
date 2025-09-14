@@ -24,15 +24,14 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField]
     private float phase4Time = 10;
 
-
-    bool spawn100, spawn50, spawn30, spawn15;
+    [SerializeField] private float spawnTime;
     ObjectPool pool;
     int maxEnemies;
 
     private List<GameObject> activeEnemies = new();
     private void Start()
     {
-        InvokeRepeating(nameof(HandleSpawnEnemy), 2f, 3f);
+        InvokeRepeating(nameof(HandleSpawnEnemy), 2f, spawnTime);
         maxEnemies = maxEnemiesPhase1;
     }
 
@@ -43,41 +42,35 @@ public class SpawnEnemy : MonoBehaviour
 
     void CheckConditionSpawnEnemy()
     {
-        if (!spawn100 && GameManager.Instance.currentTime < GameManager.Instance.startTime)
+        if (GameManager.Instance.currentTime < GameManager.Instance.startTime)
         {
-            spawn100 = true;
             ObjectPool selectedPool = enemyPhase1Pools[Random.Range(0, enemyPhase1Pools.Count)];
             pool = selectedPool;
             maxEnemies = maxEnemiesPhase1;
             Debug.Log("Phase 1");
 
         }
-        else if (!spawn50 && GameManager.Instance.currentTime < GameManager.Instance.startTime * phase2Time / 100)
+        else if (GameManager.Instance.currentTime < GameManager.Instance.startTime * phase2Time / 100)
         {
-            spawn50 = true;
             ObjectPool selectedPool = enemyPhase2Pools[Random.Range(0, enemyPhase2Pools.Count)];
             pool = selectedPool;
             maxEnemies = maxEnemiesPhase2;
             Debug.Log("Phase 2");
-            Debug.Log("Enemy Count: " + enemyPhase2Pools.Count);
         }
-        else if (!spawn30 && GameManager.Instance.currentTime < GameManager.Instance.startTime * phase3Time / 100)
+        else if (GameManager.Instance.currentTime < GameManager.Instance.startTime * phase3Time / 100)
         {
-            spawn30 = true;
             ObjectPool selectedPool = enemyPhase3Pools[Random.Range(0, enemyPhase3Pools.Count)];
             pool = selectedPool;
             maxEnemies = maxEnemiesPhase3;
             Debug.Log("Phase 3");
 
         }
-        else if (!spawn15 && GameManager.Instance.currentTime < GameManager.Instance.startTime * phase4Time / 100)
+        else if (GameManager.Instance.currentTime < GameManager.Instance.startTime * phase4Time / 100)
         {
-            spawn15 = true;
             ObjectPool selectedPool = enemyPhase4Pools[Random.Range(0, enemyPhase4Pools.Count)];
             pool = selectedPool;
             maxEnemies = maxEnemiesPhase4;
             Debug.Log("Phase 4");
-
         }
     }
 

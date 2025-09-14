@@ -8,11 +8,17 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public WeaponData weaponData;
 
     [HideInInspector] public Transform parentAfterDrag;
+    private GameObject parentBeforeDrag;
+
+    private void Start()
+    {
+        parentBeforeDrag = GameObject.Find("Inventory");
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root);
+        transform.SetParent(parentBeforeDrag.transform);
         transform.SetAsLastSibling();
         image.raycastTarget = false;
     }

@@ -25,7 +25,7 @@ public class RangeWeaponMovement : Weapon
         else
         {
             isEnemyWeapon = false;
-            rb.linearVelocity = transform.right * weaponData.speed;
+            rb.linearVelocity = transform.up * weaponData.speed;
         }
 
     }

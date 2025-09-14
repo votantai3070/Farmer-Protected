@@ -11,12 +11,11 @@ public class PlayerAttack : MonoBehaviour
     public InputManager inputManager;
     public Rigidbody2D rb;
     public Transform firePoint;
-    //public ObjectPool arrowPool;
-    //public ObjectPool stonePool;
 
     [SerializeField] private ObjectPool shovelPool;
     [SerializeField] private ObjectPool rakePool;
     [SerializeField] private ObjectPool sicklePool;
+    [SerializeField] private ObjectPool rifleBulletPool;
 
     [SerializeField] private HotBarManager hotBarManager;
     private Dictionary<string, ObjectPool> weaponPools;
@@ -26,7 +25,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("Stamina Setting")]
     //public float bowStamina = 10;
     //public float stoneStamina = 1;
-    [SerializeField] float shovelStamina = 2;
+    [SerializeField] float bulletStamina = 2;
 
     private void Awake()
     {
@@ -34,120 +33,39 @@ public class PlayerAttack : MonoBehaviour
         {
             { "Shovel", shovelPool },
             { "Rake", rakePool },
-            { "Sickle", sicklePool }
+            { "Sickle", sicklePool },
+            { "Rifle Gun", rifleBulletPool }
         };
     }
 
     private void Update()
     {
+        WeaponData weaponData = hotBarManager.currentWeaponData;
         if (Time.timeScale == 0f) return;
 
         if (Input.GetMouseButtonDown(0)
             && !player.isAttacked
-            && playerStamina.CurrentStamina > shovelStamina)
+            && playerStamina.CurrentStamina > weaponData.stamina)
         {
-            StartCoroutine(HandlePlayerShovelAttack());
+            StartCoroutine(HandlePlayerAttack(weaponData));
         }
-        //else if (Input.GetKeyDown(KeyCode.Q) &&
-        //    !player.isAttacked &&
-        //    playerStamina.CurrentStamina > bowStamina)
-        //{
-        //    StartCoroutine(HandlePlayerBowAttack());
-        //}
-        //else if (Input.GetKeyDown(KeyCode.E) &&
-        //    !player.isAttacked &&
-        //    playerStamina.CurrentStamina > stoneStamina)
-        //{
-        //    StartCoroutine(HandlePlayerThrowAttack());
-        //}
     }
 
-    //IEnumerator HandlePlayerSlashAttack()
-    //{
-    //    player.HandleAttack();
-    //    rb.linearVelocity = Vector2.zero;
-
-    //    playerAnimation.SwitchAnimationState("SLASH");
-    //    playerAnimation.animator.SetBool("Walk", false);
-
-    //    yield return new WaitForSeconds(attackCooldown);
-    //    player.StopAttack();
-    //}
-
-    //IEnumerator HandlePlayerThrowAttack()
-    //{
-    //    player.HandleAttack();
-    //    rb.linearVelocity = Vector2.zero;
-
-    //    GetRockFromPool();
-
-    //    playerAnimation.SwitchAnimationState("THROW");
-    //    playerAnimation.animator.SetBool("Walk", false);
-
-    //    yield return new WaitForSeconds(attackCooldown);
-    //    player.StopAttack();
-    //}
-
-    //IEnumerator HandlePlayerBowAttack()
-    //{
-    //    player.HandleAttack();
-    //    rb.linearVelocity = Vector2.zero;
-
-    //    GetArrowFromPool();
-    //    playerStamina.UseStamina(10);
-    //    playerAnimation.SwitchAnimationState("BOW");
-    //    playerAnimation.animator.SetBool("Walk", false);
-
-    //    yield return new WaitForSeconds(attackCooldown);
-    //    player.StopAttack();
-    //}
-    IEnumerator HandlePlayerShovelAttack()
+    IEnumerator HandlePlayerAttack(WeaponData weaponData)
     {
-        GetWeaponFromPool();
-        playerStamina.UseStamina(shovelStamina);
+        if (weaponData.weaponType == WeaponData.WeaponType.Gun)
+
+            playerStamina.UseStamina(weaponData.bulletAmount);
+
+        else
+            playerStamina.UseStamina(weaponData.stamina);
+
+        GetWeaponFromPool(weaponData);
 
         yield return new WaitForSeconds(attackCooldown);
     }
 
-    //private void GetArrowFromPool()
-    //{
-    //    if (arrowPool == null)
-    //    {
-    //        Debug.LogError("objectPool reference is missing!"); return;
-    //    }
-    //    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-    //    Vector3 lookDir = (mousePos - transform.position).normalized;
-
-    //    float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-
-    //    GameObject obj = arrowPool.Get();
-    //    obj.transform.position = firePoint.position;
-    //    obj.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-    //    obj.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
-    //}
-
-    //private void GetRockFromPool()
-    //{
-    //    if (stonePool == null)
-    //    {
-    //        Debug.LogError("StonePool reference is missing!"); return;
-    //    }
-    //    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-    //    Vector3 lookDir = (mousePos - transform.position).normalized;
-
-    //    float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-
-    //    GameObject stone = stonePool.Get();
-    //    stone.transform.position = firePoint.position;
-    //    stone.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-    //    stone.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
-    //}
-
-    private void GetWeaponFromPool()
+    private void GetWeaponFromPool(WeaponData weaponData)
     {
         if (shovelPool == null)
         {
@@ -159,17 +77,17 @@ public class PlayerAttack : MonoBehaviour
 
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
 
-        UpdateWeapon(angle);
+        UpdateWeapon(angle, weaponData);
     }
 
-    void UpdateWeapon(float angle)
+    void UpdateWeapon(float angle, WeaponData weaponData)
     {
-        string weaponName = hotBarManager.currentWeaponData.weaponName;
+        string weaponName = weaponData.weaponName;
 
         if (weaponPools.TryGetValue(weaponName, out ObjectPool pool))
         {
             GameObject weapon = pool.Get();
-            weapon.transform.SetPositionAndRotation(firePoint.position, Quaternion.Euler(0, 0, angle));
+            weapon.transform.SetPositionAndRotation(firePoint.position, Quaternion.Euler(0, 0, angle - 90f));
             weapon.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
         }
         else

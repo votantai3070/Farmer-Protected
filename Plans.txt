@@ -2,6 +2,7 @@
  + HP
  + Stamina
  + Attack Throw (Xẻng. Liềm, Súng,...)
+  + Quái rơi bullet, giới hạn lượng bullet.
  + Dash
 
 - Enemy (Slime, Dơi,...)
@@ -12,6 +13,11 @@
  + Attack (thay đổi theo phase)
  + Có 2 phase
  + Có spell (ít nhất là 2 spell)
+
+- Item
+ + bình máu
+ + Kinh nghiệm
+ + Rương
 
 - Map
  + Dùng tilemap

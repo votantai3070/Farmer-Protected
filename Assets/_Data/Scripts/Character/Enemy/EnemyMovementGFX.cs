@@ -12,6 +12,7 @@ public class EnemyMovementGFX : MonoBehaviour
         aIPath.maxSpeed = enemy.characterData.speed;
         aIPath.endReachedDistance = enemy.characterData.range;
         aIPath.orientation = OrientationMode.YAxisForward;
+        aIPath.repathRate = Random.Range(1f, 2f);
     }
 
     private void Update()
@@ -28,11 +29,6 @@ public class EnemyMovementGFX : MonoBehaviour
         {
             Move();
         }
-        //else
-        //{
-        //    Idle();
-        //}
-
 
         Flip();
     }

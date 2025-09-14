@@ -10,8 +10,17 @@ public class BoneController : Enemy
     private void Awake()
     {
         bonePool = GameObject.Find("BonePool").GetComponent<ObjectPool>();
+        expPool = GameObject.Find("Exp2Pool").GetComponent<ObjectPool>();
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
+    private void Start()
+    {
+        Sprite sprite = spriteAtlas.GetSprite("Bones_SingleSkull_Idle_0");
+        spriteRenderer.sprite = sprite;
+    }
+
     protected override void Die()
     {
         StartCoroutine(AnimationDead());
@@ -21,6 +30,8 @@ public class BoneController : Enemy
     {
         enemyAnimation.SwitchBoneAnimation("DEAD");
         yield return new WaitForSeconds(1f);
+        GameObject exp = expPool.Get();
+        exp.transform.SetPositionAndRotation(transform.position, transform.rotation);
         spawnEnemy.ReturnEnemy(transform.parent.gameObject, bonePool);
     }
 }

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
+  m_Name: RifleBullet
+  m_EditorClassIdentifier: 
+  weaponName: Rifle Bullet
+  weaponType: 0
+  sprite: {fileID: -1327499133, guid: 34aa22406fba8c34b8866e7a131f3063, type: 3}
+  firstDamage: 6
+  lastDamage: 8
+  range: 0
+  speed: 12
+  criticalChange: 0.3
+  criticalDamage: 1.6
+  stamina: 0
+  bulletAmount: 0
+  rareColor: {r: 0.9607843, g: 0.61960787, b: 0.043137256, a: 0}

@@ -1,15 +1,22 @@
 using UnityEngine;
-using UnityEngine.Rendering;
-
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon/WeaponData")]
 public class WeaponData : ScriptableObject
 {
     public string weaponName;
+    public enum WeaponType
+    {
+        Gun,
+        Throw
+    }
+    public WeaponType weaponType;
     public Sprite sprite;
     public int firstDamage;
     public int lastDamage;
     public float range;
     public float speed;
-    public float criticalCrit;
+    public float criticalChange;
     public float criticalDamage;
+    public float stamina;
+    public int bulletAmount;
+    public Color rareColor;
 }

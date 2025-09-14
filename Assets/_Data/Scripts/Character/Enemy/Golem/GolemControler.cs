@@ -10,7 +10,14 @@ public class GolemControler : Enemy
     private void Awake()
     {
         golemPool = GameObject.Find("GolemPool").GetComponent<ObjectPool>();
+        expPool = GameObject.Find("Exp3Pool").GetComponent<ObjectPool>();
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    private void Start()
+    {
+        Sprite sprite = spriteAtlas.GetSprite("Golem_IdleB_0");
+        spriteRenderer.sprite = sprite;
     }
     protected override void Die()
     {
@@ -21,6 +28,8 @@ public class GolemControler : Enemy
     {
         enemyAnimation.SwitchGolemAnimation("DEAD");
         yield return new WaitForSeconds(1f);
+        GameObject exp = expPool.Get();
+        exp.transform.SetPositionAndRotation(transform.position, transform.rotation);
         spawnEnemy.ReturnEnemy(transform.parent.gameObject, golemPool);
     }
 }

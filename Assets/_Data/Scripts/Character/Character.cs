@@ -1,6 +1,7 @@
 using Pathfinding;
 using TMPro;
 using UnityEngine;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 using UnityEngineInternal;
 using static CharacterData;
@@ -13,6 +14,11 @@ public class Character : MonoBehaviour, IDamagable
     public EnemyAnimation enemyAnimation;
     public Slider charhealthSlider;
     public TextMeshProUGUI playerHpText;
+    [HideInInspector] public ObjectPool expPool;
+    public SpriteAtlas spriteAtlas;
+    protected SpriteRenderer spriteRenderer;
+
+
     public float CurrentHealth { get; private set; }
     float MaxHealth => characterData.maxHealth;
 

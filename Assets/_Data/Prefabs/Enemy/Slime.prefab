@@ -506,7 +506,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1727415109
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1576031485842391493, guid: 8d077358a6200b84ca33857682dcd0dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -621,6 +621,8 @@ MonoBehaviour:
   enemyAnimation: {fileID: 3454915752660464545}
   charhealthSlider: {fileID: 977506738749454509}
   playerHpText: {fileID: 0}
+  expPool: {fileID: 0}
+  spriteAtlas: {fileID: 100100200, guid: c29ab33f227db374ab1924ab2a94a192, type: 3}
   slimeAnimation: {fileID: 3454915752660464545}
 --- !u!114 &7347015548002285914
 MonoBehaviour:
@@ -817,6 +819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aIPath: {fileID: 355762013713994183}
   enemy: {fileID: 7484610508762977616}
+  enemyAnimation: {fileID: 0}
 --- !u!1 &7867269301125222603
 GameObject:
   m_ObjectHideFlags: 0

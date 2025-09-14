@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Shovel
   m_EditorClassIdentifier: 
   weaponName: Shovel
+  weaponType: 1
   sprite: {fileID: 143021600, guid: 34aa22406fba8c34b8866e7a131f3063, type: 3}
   firstDamage: 1
   lastDamage: 3
   range: 0
   speed: 6
-  criticalCrit: 0.4
+  criticalChange: 0
   criticalDamage: 1.2
+  stamina: 1
+  bulletAmount: 0
+  rareColor: {r: 0.41960785, g: 0.44705883, b: 0.5019608, a: 0}

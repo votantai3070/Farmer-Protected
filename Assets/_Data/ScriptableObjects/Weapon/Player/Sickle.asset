@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Sickle
   m_EditorClassIdentifier: 
   weaponName: Sickle
+  weaponType: 1
   sprite: {fileID: 1349035616, guid: 34aa22406fba8c34b8866e7a131f3063, type: 3}
   firstDamage: 3
   lastDamage: 5
   range: 0
   speed: 12
-  criticalCrit: 0.45
+  criticalChange: 0
   criticalDamage: 1.45
+  stamina: 4
+  bulletAmount: 0
+  rareColor: {r: 0.54509807, g: 0.36078432, b: 0.9647059, a: 0}

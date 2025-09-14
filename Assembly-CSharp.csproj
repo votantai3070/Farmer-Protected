@@ -79,11 +79,13 @@
     <Compile Include="Assets\_Data\Scripts\Character\Player\Attack.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerWeapon.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\CloseWeaponMovement.cs" />
+    <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerExp.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Slime\SlimeAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\InputManager.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\StoneManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Bat\RangeEnemyAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\WeaponData.cs" />
+    <Compile Include="Assets\_Data\Scripts\Items\ExpController.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerStamina.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Bone\BoneAttackAMS.cs" />
@@ -119,6 +121,7 @@
     <Compile Include="Assets\_Data\Scripts\DraggableItem.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Slime\SlimeController.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Rat\RatController.cs" />
+    <Compile Include="Assets\_Data\Scripts\NewMonoBehaviourScript.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Bone\BoneAttack.cs" />
   </ItemGroup>
   <ItemGroup>

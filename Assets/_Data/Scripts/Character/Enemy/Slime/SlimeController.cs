@@ -10,7 +10,15 @@ public class SlimeController : Enemy
     private void Awake()
     {
         slimePool = GameObject.Find("SlimePool").GetComponent<ObjectPool>();
+        expPool = GameObject.Find("Exp1Pool").GetComponent<ObjectPool>();
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        Sprite sprite = spriteAtlas.GetSprite("Slime_Spiked_Idle_0");
+        spriteRenderer.sprite = sprite;
     }
 
     protected override void Die()
@@ -22,7 +30,8 @@ public class SlimeController : Enemy
     {
         slimeAnimation.SwitchSlimeAnimation("DEAD");
         yield return new WaitForSeconds(1f);
+        GameObject exp = expPool.Get();
+        exp.transform.SetPositionAndRotation(transform.position, transform.rotation);
         spawnEnemy.ReturnEnemy(transform.parent.gameObject, slimePool);
     }
-
 }
