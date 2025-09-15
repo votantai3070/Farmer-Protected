@@ -738,7 +738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aIPath: {fileID: 598731625664483760}
   enemy: {fileID: 1562624490783397779}
-  enemyAnimation: {fileID: 0}
+  enemyAnimation: {fileID: 6713180329911842028}
 --- !u!1 &5423112134478734611
 GameObject:
   m_ObjectHideFlags: 0

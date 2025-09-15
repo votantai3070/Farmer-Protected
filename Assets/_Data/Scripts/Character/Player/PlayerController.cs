@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.U2D;
 
 public class PlayerController : Character
 {
@@ -15,7 +13,7 @@ public class PlayerController : Character
 
     private void Start()
     {
-        Sprite sprite = spriteAtlas.GetSprite("Stand 0");
+        Sprite sprite = GameManager.Instance.characterAtlas.GetSprite("Stand 0");
         spriteRenderer.sprite = sprite;
     }
 

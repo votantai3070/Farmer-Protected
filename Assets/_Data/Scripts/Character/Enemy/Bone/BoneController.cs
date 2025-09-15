@@ -17,7 +17,7 @@ public class BoneController : Enemy
 
     private void Start()
     {
-        Sprite sprite = spriteAtlas.GetSprite("Bones_SingleSkull_Idle_0");
+        Sprite sprite = GameManager.Instance.characterAtlas.GetSprite("Bones_SingleSkull_Idle_0");
         spriteRenderer.sprite = sprite;
     }
 

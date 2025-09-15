@@ -1,16 +1,22 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using UnityEngine.U2D;
 
 public class GameManager : MonoBehaviour, IGameManager
 {
+    [Header("UI Setting")]
     public static GameManager Instance;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private GameObject gameOverPanel;
 
     public float startTime = 180f;
     [HideInInspector] public float currentTime;
+
+    [Header("Atlas Setting")]
+    public SpriteAtlas itemAtlas;
+    public SpriteAtlas characterAtlas;
+    public SpriteAtlas UIAtlas;
 
     private void Awake()
     {

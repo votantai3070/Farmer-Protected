@@ -49,10 +49,17 @@ public class PlayerAttack : MonoBehaviour
         {
             StartCoroutine(HandlePlayerAttack(weaponData));
         }
+        else if (Input.GetMouseButton(0)
+            && !player.isAttacked
+            && weaponData.weaponType == WeaponData.WeaponType.Gun)
+        {
+            StartCoroutine(HandlePlayerAttack(weaponData));
+        }
     }
 
     IEnumerator HandlePlayerAttack(WeaponData weaponData)
     {
+        player.HandleAttack();
         if (weaponData.weaponType == WeaponData.WeaponType.Gun)
 
             playerStamina.UseStamina(weaponData.bulletAmount);
@@ -63,6 +70,7 @@ public class PlayerAttack : MonoBehaviour
         GetWeaponFromPool(weaponData);
 
         yield return new WaitForSeconds(attackCooldown);
+        player.StopAttack();
     }
 
     private void GetWeaponFromPool(WeaponData weaponData)

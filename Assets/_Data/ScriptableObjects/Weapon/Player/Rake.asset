@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Rake
   weaponType: 1
-  sprite: {fileID: -1972582131, guid: 34aa22406fba8c34b8866e7a131f3063, type: 3}
+  ingameSprite: Weapon 1
+  UISprite: Select 1
   firstDamage: 2
   lastDamage: 4
   range: 0

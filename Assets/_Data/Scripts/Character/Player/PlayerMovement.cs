@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         if (dashCooldownTimer > 0)
             dashCooldownTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isDashing && dashCooldownTimer <= 0 && !player.isAttacked)
+        if (Input.GetKeyDown(KeyCode.Space) && !isDashing && dashCooldownTimer <= 0)
         {
             StartCoroutine(HandleDashing());
         }
@@ -32,14 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!player.isAttacked && !isDashing)
-        {
-            HandleMovement();
-        }
-        else if (player.isAttacked)
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
+        HandleMovement();
     }
 
     private void HandleMovement()

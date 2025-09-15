@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Rifle Gun
   weaponType: 0
-  sprite: {fileID: -144335857, guid: 34aa22406fba8c34b8866e7a131f3063, type: 3}
+  ingameSprite: Weapon 4
+  UISprite: Select 4
   firstDamage: 0
   lastDamage: 0
   range: 0

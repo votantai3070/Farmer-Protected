@@ -17,7 +17,7 @@ public class SlimeController : Enemy
 
     private void Start()
     {
-        Sprite sprite = spriteAtlas.GetSprite("Slime_Spiked_Idle_0");
+        Sprite sprite = GameManager.Instance.characterAtlas.GetSprite("Slime_Spiked_Idle_0");
         spriteRenderer.sprite = sprite;
     }
 

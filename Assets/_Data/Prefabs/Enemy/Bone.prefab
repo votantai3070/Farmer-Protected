@@ -63,6 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aIPath: {fileID: 4756121092100219888}
   enemy: {fileID: 6396712293322171566}
+  enemyAnimation: {fileID: 7180914959206845093}
 --- !u!1 &1049609193236515387
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +642,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1727415109
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -9010615838638220262, guid: 47e7ba14bf23718479667d758827cf76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -769,7 +770,8 @@ MonoBehaviour:
   enemyAnimation: {fileID: 7180914959206845093}
   charhealthSlider: {fileID: 5846981590372914321}
   playerHpText: {fileID: 0}
-  boneAnimation: {fileID: 7180914959206845093}
+  expPool: {fileID: 0}
+  spriteAtlas: {fileID: 0}
 --- !u!1 &8839268392342906809
 GameObject:
   m_ObjectHideFlags: 0

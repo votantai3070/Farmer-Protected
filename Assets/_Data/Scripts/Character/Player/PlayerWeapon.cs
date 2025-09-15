@@ -13,12 +13,13 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Start()
     {
-        if (spriteRenderer != null && hotBarManager != null)
-            spriteRenderer.sprite = hotBarManager.currentWeaponData.sprite;
+        if (spriteRenderer != null && hotBarManager.currentWeaponData != null)
+            spriteRenderer.sprite = GameManager.Instance.itemAtlas.GetSprite(hotBarManager.currentWeaponData.ingameSprite);
     }
 
     void Update()
     {
+
         if (Time.timeScale == 0f) return;
         GetRotateWeaponFollowMouse();
 
@@ -32,7 +33,7 @@ public class PlayerWeapon : MonoBehaviour
 
         WeaponData weaponData = hotBarManager.currentWeaponData;
 
-        spriteRenderer.sprite = weaponData.sprite;
+        spriteRenderer.sprite = GameManager.Instance.itemAtlas.GetSprite(weaponData.ingameSprite);
     }
 
     void GetRotateWeaponFollowMouse()

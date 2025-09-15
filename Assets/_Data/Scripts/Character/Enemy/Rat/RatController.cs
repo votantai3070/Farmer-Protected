@@ -17,7 +17,7 @@ public class RatController : Enemy
 
     private void Start()
     {
-        Sprite sprite = spriteAtlas.GetSprite("Rat_Idle_0");
+        Sprite sprite = GameManager.Instance.characterAtlas.GetSprite("Rat_Idle_0");
         spriteRenderer.sprite = sprite;
     }
 

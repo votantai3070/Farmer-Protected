@@ -9,7 +9,8 @@ public class WeaponData : ScriptableObject
         Throw
     }
     public WeaponType weaponType;
-    public Sprite sprite;
+    public string ingameSprite;
+    public string UISprite;
     public int firstDamage;
     public int lastDamage;
     public float range;

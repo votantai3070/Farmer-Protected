@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.UI;
-using UnityEngineInternal;
 using static CharacterData;
 
 public class Character : MonoBehaviour, IDamagable
@@ -15,7 +14,6 @@ public class Character : MonoBehaviour, IDamagable
     public Slider charhealthSlider;
     public TextMeshProUGUI playerHpText;
     [HideInInspector] public ObjectPool expPool;
-    public SpriteAtlas spriteAtlas;
     protected SpriteRenderer spriteRenderer;
 
 

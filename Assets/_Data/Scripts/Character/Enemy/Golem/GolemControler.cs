@@ -16,7 +16,7 @@ public class GolemControler : Enemy
     }
     private void Start()
     {
-        Sprite sprite = spriteAtlas.GetSprite("Golem_IdleB_0");
+        Sprite sprite = GameManager.Instance.characterAtlas.GetSprite("Golem_IdleB_0");
         spriteRenderer.sprite = sprite;
     }
     protected override void Die()

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Sickle
   weaponType: 1
-  sprite: {fileID: 1349035616, guid: 34aa22406fba8c34b8866e7a131f3063, type: 3}
+  ingameSprite: Weapon 2
+  UISprite: Select 2
   firstDamage: 3
   lastDamage: 5
   range: 0
