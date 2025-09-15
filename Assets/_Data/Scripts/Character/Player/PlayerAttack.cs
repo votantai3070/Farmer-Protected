@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public Rigidbody2D rb;
     public Transform firePoint;
     public Bullet bullet;
+    bool isReloading;
 
     [Header("Pool Setting")]
     [SerializeField] private ObjectPool shovelPool;
@@ -42,16 +43,22 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0)
             && !player.isAttacked
             && playerStamina.CurrentStamina > weaponData.stamina
-            && weaponData.weaponType != WeaponData.WeaponType.Gun)
+            && weaponData.isAutomatic == false)
         {
             StartCoroutine(HandlePlayerAttack(weaponData));
         }
         else if (Input.GetMouseButton(0)
             && !player.isAttacked
-            && weaponData.weaponType == WeaponData.WeaponType.Gun
+            && weaponData.isAutomatic == true
             && weaponData.currentAmmo > 0)
         {
             StartCoroutine(HandlePlayerAttack(weaponData));
+        }
+        else if (Input.GetKeyDown(KeyCode.R)
+            && !isReloading
+            && weaponData.isAutomatic == true)
+        {
+            StartCoroutine(HandleReloadAmmo(weaponData));
         }
     }
 
@@ -71,6 +78,19 @@ public class PlayerAttack : MonoBehaviour
 
         yield return new WaitForSeconds(weaponData.attackDelayTime);
         player.StopAttack();
+    }
+
+    IEnumerator HandleReloadAmmo(WeaponData weapon)
+    {
+        if (weapon.currentAmmo == weapon.magazineSize) yield break;
+
+        if (weapon.reserveAmmo <= 0) yield break;
+        isReloading = true;
+
+        bullet.Reload(ref weapon.currentAmmo, ref weapon.reserveAmmo, weapon.magazineSize);
+        yield return new WaitForSeconds(weapon.reloadTime);
+
+        isReloading = false;
     }
 
     private void GetWeaponFromPool(WeaponData weaponData)

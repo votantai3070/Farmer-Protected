@@ -23,7 +23,10 @@ MonoBehaviour:
   criticalChange: 0
   criticalDamage: 0
   stamina: 0
+  magazineSize: 15
   currentAmmo: 15
   reserveAmmo: 30
   attackDelayTime: 0.2
+  reloadTime: 2
+  isAutomatic: 1
   rareColor: {r: 0, g: 0, b: 0, a: 0}

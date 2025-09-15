@@ -41,7 +41,6 @@ public class Character : MonoBehaviour, IDamagable
             enemyAnimation.GetAnimationHitForEnemy();
 
         CurrentHealth -= damage;
-        Debug.Log($"{gameObject.name} took {damage} damage. Current health: {CurrentHealth}/{MaxHealth}");
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
 
         DamagePopupGenerator.Instance.DisplayDamage(transform.position, damage, isCrit);
