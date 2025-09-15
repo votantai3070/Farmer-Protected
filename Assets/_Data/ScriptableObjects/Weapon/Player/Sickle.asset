@@ -23,5 +23,7 @@ MonoBehaviour:
   criticalChange: 0
   criticalDamage: 1.45
   stamina: 4
-  bulletAmount: 0
+  currentAmmo: 0
+  reserveAmmo: 0
+  attackDelayTime: 0.4
   rareColor: {r: 0.54509807, g: 0.36078432, b: 0.9647059, a: 0}

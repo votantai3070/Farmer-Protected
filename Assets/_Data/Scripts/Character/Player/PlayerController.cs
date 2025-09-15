@@ -29,6 +29,7 @@ public class PlayerController : Character
 
     protected override void Die()
     {
+        base.Die();
         playerAnimation.SwitchAnimationState("DEAD");
         GameManager.Instance.GameOver();
     }

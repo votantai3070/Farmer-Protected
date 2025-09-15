@@ -11,7 +11,9 @@ public class PlayerAttack : MonoBehaviour
     public InputManager inputManager;
     public Rigidbody2D rb;
     public Transform firePoint;
+    public Bullet bullet;
 
+    [Header("Pool Setting")]
     [SerializeField] private ObjectPool shovelPool;
     [SerializeField] private ObjectPool rakePool;
     [SerializeField] private ObjectPool sicklePool;
@@ -20,12 +22,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private HotBarManager hotBarManager;
     private Dictionary<string, ObjectPool> weaponPools;
 
-    private float attackCooldown = 0.5f;
-
-    [Header("Stamina Setting")]
-    //public float bowStamina = 10;
-    //public float stoneStamina = 1;
-    [SerializeField] float bulletStamina = 2;
 
     private void Awake()
     {
@@ -45,13 +41,15 @@ public class PlayerAttack : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0)
             && !player.isAttacked
-            && playerStamina.CurrentStamina > weaponData.stamina)
+            && playerStamina.CurrentStamina > weaponData.stamina
+            && weaponData.weaponType != WeaponData.WeaponType.Gun)
         {
             StartCoroutine(HandlePlayerAttack(weaponData));
         }
         else if (Input.GetMouseButton(0)
             && !player.isAttacked
-            && weaponData.weaponType == WeaponData.WeaponType.Gun)
+            && weaponData.weaponType == WeaponData.WeaponType.Gun
+            && weaponData.currentAmmo > 0)
         {
             StartCoroutine(HandlePlayerAttack(weaponData));
         }
@@ -60,16 +58,18 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator HandlePlayerAttack(WeaponData weaponData)
     {
         player.HandleAttack();
-        if (weaponData.weaponType == WeaponData.WeaponType.Gun)
 
-            playerStamina.UseStamina(weaponData.bulletAmount);
+        if (weaponData.weaponType == WeaponData.WeaponType.Gun)
+        {
+            bullet.Shot(1, ref weaponData.currentAmmo, weaponData.reserveAmmo);
+        }
 
         else
             playerStamina.UseStamina(weaponData.stamina);
 
         GetWeaponFromPool(weaponData);
 
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(weaponData.attackDelayTime);
         player.StopAttack();
     }
 

@@ -21,6 +21,7 @@ public class GolemControler : Enemy
     }
     protected override void Die()
     {
+        base.Die();
         StartCoroutine(AnimationDead());
     }
 

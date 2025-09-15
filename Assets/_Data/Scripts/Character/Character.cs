@@ -58,7 +58,10 @@ public class Character : MonoBehaviour, IDamagable
         }
     }
 
-    protected virtual void Die() { }
+    protected virtual void Die()
+    {
+        gameObject.GetComponent<Collider2D>().enabled = false;
+    }
 
 
     private void ResetGameObject()

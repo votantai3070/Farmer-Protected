@@ -23,6 +23,7 @@ public class RatController : Enemy
 
     protected override void Die()
     {
+        base.Die();
         StartCoroutine(AnimationDead());
     }
 

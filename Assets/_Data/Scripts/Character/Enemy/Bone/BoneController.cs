@@ -23,6 +23,7 @@ public class BoneController : Enemy
 
     protected override void Die()
     {
+        base.Die();
         StartCoroutine(AnimationDead());
     }
 

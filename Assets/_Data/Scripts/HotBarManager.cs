@@ -34,13 +34,21 @@ public class HotBarManager : MonoBehaviour
 
             if (weapon != null)
             {
-                Debug.Log("Current weapon: " + weapon.weaponName);
                 currentWeaponData = weapon;
+                if (weapon.weaponType == WeaponData.WeaponType.Gun)
+                {
+                    UIManager.Instance.ammoText.enabled = true;
+                    UIManager.Instance.ammoText.text =
+                        $"{weapon.currentAmmo}"
+                        + "/"
+                        + $"{weapon.reserveAmmo}";
+                }
             }
             else
             {
                 Debug.Log("Slot " + index + " is empty!");
             }
+
         }
     }
 }

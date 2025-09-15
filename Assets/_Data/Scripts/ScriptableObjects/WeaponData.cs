@@ -18,6 +18,8 @@ public class WeaponData : ScriptableObject
     public float criticalChange;
     public float criticalDamage;
     public float stamina;
-    public int bulletAmount;
+    public int currentAmmo;
+    public int reserveAmmo;
+    public float attackDelayTime;
     public Color rareColor;
 }

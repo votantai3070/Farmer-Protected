@@ -82,6 +82,7 @@
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerExp.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Slime\SlimeAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\InputManager.cs" />
+    <Compile Include="Assets\_Data\Scripts\UIManager.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\StoneManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Bat\RangeEnemyAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\WeaponData.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Rat\RatController.cs" />
     <Compile Include="Assets\_Data\Scripts\NewMonoBehaviourScript.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Bone\BoneAttack.cs" />
+    <Compile Include="Assets\_Data\Scripts\Weapons\Bullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

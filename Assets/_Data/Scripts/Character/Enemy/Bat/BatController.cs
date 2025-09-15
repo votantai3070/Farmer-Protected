@@ -23,6 +23,7 @@ public class BatController : Enemy
 
     protected override void Die()
     {
+        base.Die();
         StartCoroutine(AnimationDead());
     }
 
