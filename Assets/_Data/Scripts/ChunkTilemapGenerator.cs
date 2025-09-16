@@ -5,32 +5,28 @@ using System.Collections.Generic;
 public class ChunkTilemapGenerator : MonoBehaviour
 {
     [Header("Map Settings")]
-    [SerializeField] int chunkSize = 32;    // số ô mỗi chunk
+    [SerializeField] int chunkSize = 32;
     [SerializeField] float scale = 10f;
 
+    [Header("Tiles")]
     [SerializeField] RuleTile grassTile;
-    [SerializeField] RuleTile sandTile;
     [SerializeField] RuleTile water1Tile;
-    [SerializeField] RuleTile water2Tile;
+
+    [Header("Tilemaps")]
+    [SerializeField] private Tilemap groundTilemap;
+    [SerializeField] private Tilemap waterTilemap;
 
     [Header("Player")]
-    [SerializeField] Transform player;   // tham chiếu tới player
-    [SerializeField] int loadRange = 2;  // số chunk xung quanh player
+    [SerializeField] Transform player;
+    [SerializeField] int loadRange = 2;
 
-    private Tilemap tilemap;
     private Dictionary<Vector2Int, bool> activeChunks = new();
-
-    float offsetX, offsetY;
-
-    void Awake()
-    {
-        tilemap = GetComponent<Tilemap>();
-    }
+    private float offsetX, offsetY;
 
     void Start()
     {
-        offsetX = Random.Range(0, 9999);
-        offsetY = Random.Range(0, 9999);
+        offsetX = Random.Range(0, 999);
+        offsetY = Random.Range(0, 999);
     }
 
     void Update()
@@ -44,7 +40,7 @@ public class ChunkTilemapGenerator : MonoBehaviour
 
         HashSet<Vector2Int> neededChunks = new();
 
-        // Xác định tất cả chunk cần load
+        // Load chunks xung quanh player
         for (int cx = -loadRange; cx <= loadRange; cx++)
         {
             for (int cy = -loadRange; cy <= loadRange; cy++)
@@ -60,7 +56,7 @@ public class ChunkTilemapGenerator : MonoBehaviour
             }
         }
 
-        // Unload những chunk không cần thiết nữa
+        // Unload chunks không cần thiết
         List<Vector2Int> toRemove = new();
         foreach (var chunk in activeChunks.Keys)
         {
@@ -75,9 +71,10 @@ public class ChunkTilemapGenerator : MonoBehaviour
 
     void GenerateChunk(Vector2Int chunkCoord)
     {
-        Vector3Int startPos = new Vector3Int(chunkCoord.x * chunkSize, chunkCoord.y * chunkSize, 0);
+        Vector3Int startPos = new(chunkCoord.x * chunkSize, chunkCoord.y * chunkSize, 0);
 
-        TileBase[] tileArray = new TileBase[chunkSize * chunkSize];
+        TileBase[] groundTiles = new TileBase[chunkSize * chunkSize];
+        TileBase[] waterTiles = new TileBase[chunkSize * chunkSize];
 
         for (int x = 0; x < chunkSize; x++)
         {
@@ -88,26 +85,30 @@ public class ChunkTilemapGenerator : MonoBehaviour
 
                 float noiseValue = Mathf.PerlinNoise(xCoor, yCoor);
 
-                RuleTile tileToPlace;
-                if (noiseValue < 0.25f) tileToPlace = water1Tile;
-                else if (noiseValue < 0.35f) tileToPlace = water2Tile;
-                else if (noiseValue < 0.5f) tileToPlace = sandTile;
-                else tileToPlace = grassTile;
-
-                tileArray[x + y * chunkSize] = tileToPlace;
+                if (noiseValue < 0.25f) // Nước
+                {
+                    waterTiles[x + y * chunkSize] = water1Tile;
+                    groundTiles[x + y * chunkSize] = null;
+                }
+                else // Cỏ
+                {
+                    groundTiles[x + y * chunkSize] = grassTile;
+                    waterTiles[x + y * chunkSize] = null;
+                }
             }
         }
 
-        tilemap.SetTilesBlock(new BoundsInt(startPos, new Vector3Int(chunkSize, chunkSize, 1)), tileArray);
+        groundTilemap.SetTilesBlock(new BoundsInt(startPos, new Vector3Int(chunkSize, chunkSize, 1)), groundTiles);
+        waterTilemap.SetTilesBlock(new BoundsInt(startPos, new Vector3Int(chunkSize, chunkSize, 1)), waterTiles);
     }
 
     void UnloadChunk(Vector2Int chunkCoord)
     {
-        Vector3Int startPos = new Vector3Int(chunkCoord.x * chunkSize, chunkCoord.y * chunkSize, 0);
+        Vector3Int startPos = new(chunkCoord.x * chunkSize, chunkCoord.y * chunkSize, 0);
 
-        // Clear chunk bằng cách set toàn bộ tile = null
         TileBase[] emptyTiles = new TileBase[chunkSize * chunkSize];
-        tilemap.SetTilesBlock(new BoundsInt(startPos, new Vector3Int(chunkSize, chunkSize, 1)), emptyTiles);
+        groundTilemap.SetTilesBlock(new BoundsInt(startPos, new Vector3Int(chunkSize, chunkSize, 1)), emptyTiles);
+        waterTilemap.SetTilesBlock(new BoundsInt(startPos, new Vector3Int(chunkSize, chunkSize, 1)), emptyTiles);
     }
 
     Vector2Int WorldToChunkPos(Vector3 worldPos)

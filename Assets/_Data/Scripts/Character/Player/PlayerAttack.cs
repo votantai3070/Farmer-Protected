@@ -34,10 +34,10 @@ public class PlayerAttack : MonoBehaviour
             { "Rifle Gun", rifleBulletPool }
         };
     }
-
     private void Update()
     {
         WeaponData weaponData = hotBarManager.currentWeaponData;
+
         if (Time.timeScale == 0f) return;
 
         if (Input.GetMouseButtonDown(0)
@@ -50,7 +50,8 @@ public class PlayerAttack : MonoBehaviour
         else if (Input.GetMouseButton(0)
             && !player.isAttacked
             && weaponData.isAutomatic == true
-            && weaponData.currentAmmo > 0)
+            && weaponData.currentAmmo > 0
+            && bullet.currentAmmo > 0)
         {
             StartCoroutine(HandlePlayerAttack(weaponData));
         }
@@ -67,9 +68,7 @@ public class PlayerAttack : MonoBehaviour
         player.HandleAttack();
 
         if (weaponData.weaponType == WeaponData.WeaponType.Gun)
-        {
-            bullet.Shot(1, ref weaponData.currentAmmo, weaponData.reserveAmmo);
-        }
+            bullet.Shot(1);
 
         else
             playerStamina.UseStamina(weaponData.stamina);
@@ -82,12 +81,9 @@ public class PlayerAttack : MonoBehaviour
 
     IEnumerator HandleReloadAmmo(WeaponData weapon)
     {
-        if (weapon.currentAmmo == weapon.magazineSize) yield break;
-
-        if (weapon.reserveAmmo <= 0) yield break;
         isReloading = true;
 
-        bullet.Reload(ref weapon.currentAmmo, ref weapon.reserveAmmo, weapon.magazineSize);
+        bullet.Reload();
         yield return new WaitForSeconds(weapon.reloadTime);
 
         isReloading = false;
