@@ -10,6 +10,7 @@ TagManager:
   - Exp1
   - Exp2
   - Exp3
+  - BulletItem
   layers:
   - Default
   - TransparentFX

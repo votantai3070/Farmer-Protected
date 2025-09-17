@@ -60,4 +60,14 @@ public class Bullet : MonoBehaviour
         reserveAmmo = ammoMap[currentWeaponName].reserve;
         magazineSize = ammoMap[currentWeaponName].magazineSize;
     }
+
+    public void AddAmmo(ItemData bullet)
+    {
+        reserveAmmo = ammoMap[currentWeaponName].reserve;
+
+        reserveAmmo += bullet.value;
+
+        ammoMap[currentWeaponName] = (currentAmmo, reserveAmmo, magazineSize);
+    }
+
 }

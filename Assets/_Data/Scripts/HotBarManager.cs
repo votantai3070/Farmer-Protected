@@ -50,6 +50,10 @@ public class HotBarManager : MonoBehaviour
                     UIManager.Instance.ammoText.text =
                         $"{current}/{reserve}";
                 }
+                else
+                {
+                    UIManager.Instance.ammoText.enabled = false;
+                }
             }
             else
             {

@@ -1,13 +1,14 @@
 - Player (Farmer)
- + HP
- + Stamina
- + Attack Throw (Xẻng. Liềm, Súng,...)
-  + Quái rơi bullet, giới hạn lượng bullet.
+ + HP --------- Xong
+ + Stamina -------- Xong
+ + Attack Throw (Xẻng. Liềm, Súng,...) --------- Xong
+  + Quái rơi bullet.
+  + Giới hạn lượng bullet.  --------Xong
  + Dash
 
-- Enemy (Slime, Dơi,...)
- + Attack (đánh thường, bắn,...)
- + Hp
+- Enemy (Slime, Dơi,...) -------- Xong
+ + Attack (đánh thường, bắn,...) --------- Xong
+ + Hp --------- XOng
 
 - Boss
  + Attack (thay đổi theo phase)
@@ -16,19 +17,18 @@
 
 - Item
  + bình máu
- + Kinh nghiệm
+ + Kinh nghiệm -------- Xong
  + Rương
 
 - Map
- + Dùng tilemap
- + Có 2-3 map
+ + Dùng tilemap --------- Xong
  + Minimap
 
-- Có sử dụng A* path cho enemy tìm player
+- Có sử dụng A* path cho enemy tìm player ---------- Xong
 
-- Gameplayer
+- Gameplay
  + Giết enemy lấy kinh nghiệm lên cấp nâng vũ khí, nhặt vú khí trên map
- + Enemy spawn theo wave(time)
+ + Enemy spawn theo wave(time) ---------- Xong
 
 - Menu
 - Game Over

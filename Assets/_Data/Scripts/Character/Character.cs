@@ -13,9 +13,7 @@ public class Character : MonoBehaviour, IDamagable
     public EnemyAnimation enemyAnimation;
     public Slider charhealthSlider;
     public TextMeshProUGUI playerHpText;
-    [HideInInspector] public ObjectPool expPool;
     protected SpriteRenderer spriteRenderer;
-
 
     public float CurrentHealth { get; private set; }
     float MaxHealth => characterData.maxHealth;
@@ -78,5 +76,7 @@ public class Character : MonoBehaviour, IDamagable
 
         if (playerHpText != null)
             playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
+
+        gameObject.GetComponent<Collider2D>().enabled = true;
     }
 }

@@ -1637,7 +1637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &406421746
 Transform:
   m_ObjectHideFlags: 0
@@ -5236,6 +5236,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c5b267b46e486418361c80bfd119a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1660111509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660111510}
+  - component: {fileID: 1660111511}
+  m_Layer: 0
+  m_Name: BulletItemPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1660111510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660111509}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2117800961}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1660111511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660111509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 2074168441948522104, guid: 9f9766ef934875642a94200f095ed615, type: 3}
+  objectPool: []
+  instanceCount: 5
 --- !u!1 &1660744316
 GameObject:
   m_ObjectHideFlags: 0
@@ -7186,6 +7233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2016126879}
   - component: {fileID: 2016126880}
+  - component: {fileID: 2016126881}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -7228,6 +7276,22 @@ MonoBehaviour:
   itemAtlas: {fileID: 100100200, guid: 310b0dcf05ad50c4ca19f03eac7b2741, type: 3}
   characterAtlas: {fileID: 100100200, guid: c29ab33f227db374ab1924ab2a94a192, type: 3}
   UIAtlas: {fileID: 100100200, guid: 161d7de7345ff4d449ac0dec0489ad59, type: 3}
+--- !u!114 &2016126881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016126878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bd562f311c1d544bd9fa7aa0acf049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletItemPool: {fileID: 1660111511}
+  exp1Pool: {fileID: 1909067811}
+  exp2Pool: {fileID: 921270884}
+  exp3Pool: {fileID: 1401129008}
 --- !u!1001 &2036077991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7506,6 +7570,7 @@ Transform:
   - {fileID: 921270883}
   - {fileID: 1401129007}
   - {fileID: 1134018187}
+  - {fileID: 1660111510}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2144444308
@@ -7561,11 +7626,17 @@ MonoBehaviour:
   - 10
   - 20
   - 30
+  - 40
   - 50
+  - 70
+  - 80
+  - 90
+  - 100
   exp: {fileID: 11400000, guid: ba87c3de6abdc1b41b7f83ee0af9d485, type: 2}
   expSlider: {fileID: 1130416930}
   expText: {fileID: 1883027942}
   levelText: {fileID: 554784189}
+  bullet: {fileID: 1227914579}
 --- !u!61 &2144444311
 BoxCollider2D:
   m_ObjectHideFlags: 0

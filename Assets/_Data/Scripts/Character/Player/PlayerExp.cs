@@ -22,6 +22,9 @@ public class PlayerExp : MonoBehaviour
     private int _currentLevel;
     private float _expToNextLevel;
 
+    [Header("Bullet")]
+    [SerializeField] private Bullet bullet;
+
     private void Start()
     {
         _currentLevel = 1;
@@ -29,7 +32,7 @@ public class PlayerExp : MonoBehaviour
         _expToNextLevel = expTable[0];
         expSlider.value = _currentExp;
         expSlider.maxValue = _expToNextLevel;
-        expText.text = $"{_currentExp}" + "/" + $"{_expToNextLevel}";
+        expText.text = $"{_currentExp}/{_expToNextLevel}";
         levelText.text = $"Level {_currentLevel}";
     }
 
@@ -48,7 +51,7 @@ public class PlayerExp : MonoBehaviour
     {
         _currentExp += amountExp;
         _currentExp = Mathf.Clamp(_currentExp, 0, _expToNextLevel);
-        expText.text = $"{_currentExp}" + "/" + $"{_expToNextLevel}";
+        expText.text = $"{_currentExp}/{_expToNextLevel}";
         expSlider.DOValue(_currentExp, 0.2f).SetEase(Ease.Linear);
     }
 
@@ -57,7 +60,7 @@ public class PlayerExp : MonoBehaviour
         _currentLevel++;
         _expToNextLevel = GetExpToNextLevel();
         expSlider.maxValue = _expToNextLevel;
-        expText.text = $"{_currentExp}" + "/" + $"{_expToNextLevel}";
+        expText.text = $"{_currentExp}/{_expToNextLevel}";
         levelText.text = $"Level {_currentLevel}";
     }
 
@@ -84,10 +87,26 @@ public class PlayerExp : MonoBehaviour
         else if (collision.CompareTag("Exp2"))
         {
             exp2Pool.ReturnPool(collision.gameObject);
+            if (collision.TryGetComponent<ExpController>(out var exp))
+            {
+                AddExp(exp.expData.value);
+            }
         }
         else if (collision.CompareTag("Exp3"))
         {
             exp3Pool.ReturnPool(collision.gameObject);
+            if (collision.TryGetComponent<ExpController>(out var exp))
+            {
+                AddExp(exp.expData.value);
+            }
+        }
+        else if (collision.CompareTag("BulletItem"))
+        {
+            exp3Pool.ReturnPool(collision.gameObject);
+            if (collision.TryGetComponent<BulletItemController>(out var bulletItem))
+            {
+                bullet.AddAmmo(bulletItem.bulletItemData);
+            }
         }
     }
 }

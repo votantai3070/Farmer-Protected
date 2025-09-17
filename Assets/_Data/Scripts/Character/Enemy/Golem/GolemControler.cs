@@ -10,7 +10,6 @@ public class GolemControler : Enemy
     private void Awake()
     {
         golemPool = GameObject.Find("GolemPool").GetComponent<ObjectPool>();
-        expPool = GameObject.Find("Exp3Pool").GetComponent<ObjectPool>();
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -29,8 +28,12 @@ public class GolemControler : Enemy
     {
         enemyAnimation.SwitchGolemAnimation("DEAD");
         yield return new WaitForSeconds(1f);
-        GameObject exp = expPool.Get();
-        exp.transform.SetPositionAndRotation(transform.position, transform.rotation);
+
+        bool dropped = Random.value < characterData.dropChange;
+        if (dropped)
+            DropItem.Instance.DropBulletItem(this.transform.parent);
+
+        DropItem.Instance.DropExp3(this.transform.parent);
         spawnEnemy.ReturnEnemy(transform.parent.gameObject, golemPool);
     }
 }

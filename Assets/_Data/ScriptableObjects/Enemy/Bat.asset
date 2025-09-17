@@ -18,3 +18,5 @@ MonoBehaviour:
   maxHealth: 5
   stamina: 0
   range: 5
+  dashSpeed: 0
+  dropChange: 0.2

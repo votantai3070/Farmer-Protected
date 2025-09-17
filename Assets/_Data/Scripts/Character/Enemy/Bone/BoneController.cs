@@ -10,7 +10,6 @@ public class BoneController : Enemy
     private void Awake()
     {
         bonePool = GameObject.Find("BonePool").GetComponent<ObjectPool>();
-        expPool = GameObject.Find("Exp2Pool").GetComponent<ObjectPool>();
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -31,8 +30,13 @@ public class BoneController : Enemy
     {
         enemyAnimation.SwitchBoneAnimation("DEAD");
         yield return new WaitForSeconds(1f);
-        GameObject exp = expPool.Get();
-        exp.transform.SetPositionAndRotation(transform.position, transform.rotation);
+
+        bool dropped = Random.value < characterData.dropChange;
+        if (dropped)
+            DropItem.Instance.DropBulletItem(this.transform.parent);
+
+        DropItem.Instance.DropExp3(this.transform.parent);
+
         spawnEnemy.ReturnEnemy(transform.parent.gameObject, bonePool);
     }
 }

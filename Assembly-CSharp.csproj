@@ -91,6 +91,7 @@
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Bone\BoneAttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\EnemyRangeMovement.cs" />
+    <Compile Include="Assets\_Data\Scripts\Items\BulletItemController.cs" />
     <Compile Include="Assets\_Data\Scripts\Interface\IGameManager.cs" />
     <Compile Include="Assets\_Data\Scripts\GameManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerGhostDestroy.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerAnimation.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\ArrowDestroy.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Rat\RatAttackCollider.cs" />
+    <Compile Include="Assets\_Data\Scripts\Items\DropItem.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Character.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Slime\SlimeAttackCollider.cs" />
     <Compile Include="Assets\Enemy Galore 1 - Pixel Art\Script\EnemySelector.cs" />
