@@ -37,11 +37,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement()
     {
-        Vector2 move = inputManager.MoveInput * player.characterData.speed;
-        rb.linearVelocity = move;
+        rb.linearVelocity = inputManager.MoveInput * player.characterData.speed;
 
         playerAnimation.SwitchAnimationState("RUN");
-
 
         Flip();
     }

@@ -21,12 +21,16 @@ public class InventoryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            OpenInventoryBtn();
+            if (inventory.activeSelf)
+            {
+                CloseInventoryBtn();
+            }
+            else
+            {
+                OpenInventoryBtn();
+            }
         }
-        else
-        {
-            CloseInventoryBtn();
-        }
+
     }
 
     public bool AddNewWeapon(WeaponData weapon)

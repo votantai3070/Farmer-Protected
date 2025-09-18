@@ -38,6 +38,8 @@ public class SpawnEnemy : MonoBehaviour
     private void Update()
     {
         Debug.Log("Max Enemies: " + maxEnemies);
+        //Debug.Log("Current Time: " + GameManager.Instance.currentTime);
+        //Debug.Log("Start Time: " + GameManager.Instance.startTime);
     }
 
     void CheckConditionSpawnEnemy()

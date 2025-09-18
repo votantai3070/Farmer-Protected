@@ -16,7 +16,7 @@
  + Có spell (ít nhất là 2 spell)
 
 - Item
- + bình máu
+ + bình máu -------- Xong
  + Kinh nghiệm -------- Xong
  + Rương
 
@@ -27,8 +27,9 @@
 - Có sử dụng A* path cho enemy tìm player ---------- Xong
 
 - Gameplay
- + Giết enemy lấy kinh nghiệm lên cấp nâng vũ khí, nhặt vú khí trên map
- + Enemy spawn theo wave(time) ---------- Xong
+ + Giết enemy lấy kinh nghiệm lên cấp nâng vũ khí
+ + Mở rương (Vũ khí, máu)
+ + Enemy spawn theo wave(time) ---------- Còn bug
 
 - Menu
 - Game Over
