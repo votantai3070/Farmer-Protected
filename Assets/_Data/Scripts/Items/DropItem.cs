@@ -1,37 +1,38 @@
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 
 public class DropItem : MonoBehaviour
 {
-    public static DropItem Instance;
     [SerializeField] private ObjectPool bulletItemPool;
     [SerializeField] private ObjectPool exp1Pool;
     [SerializeField] private ObjectPool exp2Pool;
     [SerializeField] private ObjectPool exp3Pool;
+    [SerializeField] private ObjectPool potionPool;
 
-    private void Awake()
+    private void Drop(ObjectPool pool, Vector3 pos, Quaternion rot)
     {
-        if (Instance != null) Destroy(Instance);
-        Instance = this;
+        if (pool == null) return;
+
+        GameObject obj = pool.Get();
+        obj.transform.SetPositionAndRotation(pos, rot);
     }
 
-    public void DropBulletItem(Transform transform)
+    public void DropExp1(Transform transform) => Drop(exp1Pool, transform.position, transform.rotation);
+    public void DropExp2(Transform transform) => Drop(exp2Pool, transform.position, transform.rotation);
+    public void DropExp3(Transform transform) => Drop(exp3Pool, transform.position, transform.rotation);
+    void DropPotion(Transform transform) => Drop(potionPool, transform.position, transform.rotation);
+    void DropBulletItem(Transform transform) => Drop(bulletItemPool, transform.position, transform.rotation);
+
+
+    public void SetEnemyDropItem(Transform transform, CharacterData data)
     {
-        GameObject bullet = bulletItemPool.Get();
-        bullet.transform.SetPositionAndRotation(transform.position, transform.rotation);
-    }
-    public void DropExp1(Transform transform)
-    {
-        GameObject exp = exp1Pool.Get();
-        exp.transform.SetPositionAndRotation(transform.position, transform.rotation);
-    }
-    public void DropExp2(Transform transform)
-    {
-        GameObject exp = exp2Pool.Get();
-        exp.transform.SetPositionAndRotation(transform.position, transform.rotation);
-    }
-    public void DropExp3(Transform transform)
-    {
-        GameObject exp = exp3Pool.Get();
-        exp.transform.SetPositionAndRotation(transform.position, transform.rotation);
+        bool droppedBullet = Random.value < data.dropBulletChange;
+        bool droppedPotion = Random.value < data.dropPotionChange;
+
+        if (droppedBullet)
+            DropBulletItem(transform);
+
+        else if (droppedPotion)
+            DropPotion(transform);
     }
 }

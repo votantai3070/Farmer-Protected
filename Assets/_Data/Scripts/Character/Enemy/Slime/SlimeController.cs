@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using UnityEngine;
 
@@ -7,8 +8,9 @@ public class SlimeController : Enemy
     private ObjectPool slimePool;
     private SpawnEnemy spawnEnemy;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         slimePool = GameObject.Find("SlimePool").GetComponent<ObjectPool>();
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -31,12 +33,12 @@ public class SlimeController : Enemy
         slimeAnimation.SwitchSlimeAnimation("DEAD");
         yield return new WaitForSeconds(1f);
 
-        bool dropped = Random.value < characterData.dropChange;
-        if (dropped)
-            DropItem.Instance.DropBulletItem(this.transform.parent);
+        Transform enemyRoot = transform.parent;
 
-        DropItem.Instance.DropExp1(this.transform.parent);
+        drop.SetEnemyDropItem(enemyRoot, characterData);
 
-        spawnEnemy.ReturnEnemy(transform.parent.gameObject, slimePool);
+        drop.DropExp1(enemyRoot);
+
+        spawnEnemy.ReturnEnemy(enemyRoot.gameObject, slimePool);
     }
 }

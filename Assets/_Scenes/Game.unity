@@ -5859,6 +5859,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810271775}
   m_CullTransparentMesh: 1
+--- !u!1 &1830658921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1830658922}
+  - component: {fileID: 1830658923}
+  m_Layer: 0
+  m_Name: PotionPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1830658922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830658921}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2117800961}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1830658923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830658921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 5533547265174939777, guid: 4edfe09ded4588649b14ec6e1f35a8e8, type: 3}
+  objectPool: []
+  instanceCount: 5
 --- !u!114 &1844598143 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6790970311646568083, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
@@ -7235,7 +7282,7 @@ GameObject:
   - component: {fileID: 2016126880}
   - component: {fileID: 2016126881}
   m_Layer: 0
-  m_Name: GameManger
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7292,6 +7339,7 @@ MonoBehaviour:
   exp1Pool: {fileID: 1909067811}
   exp2Pool: {fileID: 921270884}
   exp3Pool: {fileID: 1401129008}
+  potionPool: {fileID: 1830658923}
 --- !u!1001 &2036077991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7571,6 +7619,7 @@ Transform:
   - {fileID: 1401129007}
   - {fileID: 1134018187}
   - {fileID: 1660111510}
+  - {fileID: 1830658922}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2144444308
@@ -7585,7 +7634,7 @@ GameObject:
   - component: {fileID: 2144444311}
   - component: {fileID: 2144444310}
   m_Layer: 0
-  m_Name: PlayerExp
+  m_Name: PlayerCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7621,6 +7670,8 @@ MonoBehaviour:
   exp1Pool: {fileID: 1909067811}
   exp2Pool: {fileID: 921270884}
   exp3Pool: {fileID: 1401129008}
+  bulletItemPool: {fileID: 1660111511}
+  potionPool: {fileID: 1830658923}
   expTable:
   - 5
   - 10
@@ -7637,6 +7688,7 @@ MonoBehaviour:
   expText: {fileID: 1883027942}
   levelText: {fileID: 554784189}
   bullet: {fileID: 1227914579}
+  player: {fileID: 580544281}
 --- !u!61 &2144444311
 BoxCollider2D:
   m_ObjectHideFlags: 0

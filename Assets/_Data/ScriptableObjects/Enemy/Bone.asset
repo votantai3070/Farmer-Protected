@@ -19,4 +19,5 @@ MonoBehaviour:
   stamina: 0
   range: 3
   dashSpeed: 0
-  dropChange: 0.5
+  dropBulletChange: 0.5
+  dropPotionChange: 0.3

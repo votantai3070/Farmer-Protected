@@ -2,7 +2,7 @@
  + HP --------- Xong
  + Stamina -------- Xong
  + Attack Throw (Xẻng. Liềm, Súng,...) --------- Xong
-  + Quái rơi bullet.
+  + Quái rơi bullet. ------- Xong
   + Giới hạn lượng bullet.  --------Xong
  + Dash
 

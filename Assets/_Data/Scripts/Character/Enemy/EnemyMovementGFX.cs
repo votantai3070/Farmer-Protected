@@ -48,21 +48,6 @@ public class EnemyMovementGFX : MonoBehaviour
             enemyAnimation.SwitchGolemAnimation("RUN");
     }
 
-    //void Idle()
-    //{
-    //    if (enemy.characterData.characterName == "Rat")
-    //        enemyAnimation.SwitchRatAnimation("IDLE");
-
-    //    else if (enemy.characterData.characterName == "Bone")
-    //        enemyAnimation.SwitchBoneAnimation("IDLE");
-
-    //    else if (enemy.characterData.characterName == "Slime")
-    //        enemyAnimation.SwitchSlimeAnimation("IDLE");
-
-    //    else if (enemy.characterData.characterName == "Golem")
-    //        enemyAnimation.SwitchGolemAnimation("IDLE");
-    //}
-
     void Flip()
     {
         if (aIPath.desiredVelocity.x >= 0.01f)

@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using UnityEngine;
 
@@ -7,8 +8,9 @@ public class BatController : Enemy
     private ObjectPool batPool;
     private SpawnEnemy spawnEnemy;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         batPool = GameObject.Find("BatPool").GetComponent<ObjectPool>();
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -30,10 +32,13 @@ public class BatController : Enemy
     {
         enemyAnimation.SwitchBatAnimation("DEAD");
         yield return new WaitForSeconds(1f);
-        bool dropped = Random.value < characterData.dropChange;
-        if (dropped)
-            DropItem.Instance.DropBulletItem(this.transform.parent);
-        DropItem.Instance.DropExp2(this.transform.parent);
-        spawnEnemy.ReturnEnemy(transform.parent.gameObject, batPool);
+
+        Transform enemyRoot = transform.parent;
+
+        drop.SetEnemyDropItem(enemyRoot, characterData);
+
+        drop.DropExp2(enemyRoot);
+
+        spawnEnemy.ReturnEnemy(enemyRoot.gameObject, batPool);
     }
 }

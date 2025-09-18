@@ -12,7 +12,6 @@ public class Weapon : MonoBehaviour
 
     private void UseWeapon(IDamagable target)
     {
-        Debug.Log($"firstDamage: {weaponData.firstDamage}, lastDamage: {weaponData.lastDamage}");
         bool isCrit = Random.value <= weaponData.criticalChange;
         int curentDamage = (int)(isCrit
             ? Random.Range(weaponData.firstDamage, weaponData.lastDamage + 1) * weaponData.criticalDamage

@@ -23,6 +23,10 @@ public class InventoryManager : MonoBehaviour
         {
             OpenInventoryBtn();
         }
+        else
+        {
+            CloseInventoryBtn();
+        }
     }
 
     public bool AddNewWeapon(WeaponData weapon)

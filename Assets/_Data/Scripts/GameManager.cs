@@ -20,9 +20,6 @@ public class GameManager : MonoBehaviour, IGameManager
 
     private void Awake()
     {
-        if (Instance != null)
-            Destroy(Instance);
-
         Instance = this;
     }
 

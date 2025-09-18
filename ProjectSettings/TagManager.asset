@@ -11,6 +11,7 @@ TagManager:
   - Exp2
   - Exp3
   - BulletItem
+  - Potion
   layers:
   - Default
   - TransparentFX

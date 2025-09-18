@@ -28,8 +28,9 @@ public class ObjectPool : MonoBehaviour
                 return obj;
             }
         }
-        // If no inactive objects are available, instantiate a new one
+
         GameObject newObj = Instantiate(objectPrefab);
+        newObj.SetActive(true);
         objectPool.Add(newObj);
         return newObj;
     }

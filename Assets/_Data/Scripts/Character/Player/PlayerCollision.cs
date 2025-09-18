@@ -5,12 +5,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerExp : MonoBehaviour
+public class PlayerCollision : MonoBehaviour
 {
     [Header("Exp Pool Setting")]
     [SerializeField] private ObjectPool exp1Pool;
     [SerializeField] private ObjectPool exp2Pool;
     [SerializeField] private ObjectPool exp3Pool;
+    [SerializeField] private ObjectPool bulletItemPool;
+    [SerializeField] private ObjectPool potionPool;
 
     [Header("Exp Slider Setting")]
     [SerializeField] private List<float> expTable;
@@ -24,6 +26,9 @@ public class PlayerExp : MonoBehaviour
 
     [Header("Bullet")]
     [SerializeField] private Bullet bullet;
+
+    [Header("Potion")]
+    [SerializeField] private PlayerController player;
 
     private void Start()
     {
@@ -78,35 +83,48 @@ public class PlayerExp : MonoBehaviour
 
         if (collision.CompareTag("Exp1"))
         {
-            exp1Pool.ReturnPool(collision.gameObject);
             if (collision.TryGetComponent<ExpController>(out var exp))
             {
                 AddExp(exp.expData.value);
             }
+            exp1Pool.ReturnPool(collision.gameObject);
         }
+
         else if (collision.CompareTag("Exp2"))
         {
-            exp2Pool.ReturnPool(collision.gameObject);
             if (collision.TryGetComponent<ExpController>(out var exp))
             {
                 AddExp(exp.expData.value);
             }
+            exp2Pool.ReturnPool(collision.gameObject);
         }
+
         else if (collision.CompareTag("Exp3"))
         {
-            exp3Pool.ReturnPool(collision.gameObject);
             if (collision.TryGetComponent<ExpController>(out var exp))
             {
                 AddExp(exp.expData.value);
             }
+            exp3Pool.ReturnPool(collision.gameObject);
         }
+
         else if (collision.CompareTag("BulletItem"))
         {
-            exp3Pool.ReturnPool(collision.gameObject);
             if (collision.TryGetComponent<BulletItemController>(out var bulletItem))
             {
                 bullet.AddAmmo(bulletItem.bulletItemData);
             }
+            bulletItemPool.ReturnPool(collision.gameObject);
+        }
+
+        else if (collision.CompareTag("Potion"))
+        {
+            Debug.Log("collision: " + collision);
+            if (collision.TryGetComponent<PotionController>(out var potion))
+            {
+                player.Heal(potion.potionData.value);
+            }
+            potionPool.ReturnPool(collision.gameObject);
         }
     }
 }

@@ -784,7 +784,6 @@ GameObject:
   - component: {fileID: 7797162071649260163}
   - component: {fileID: 4656779833919593515}
   - component: {fileID: 5883929473061102483}
-  - component: {fileID: 3208724752510166038}
   m_Layer: 0
   m_Name: RatGFX
   m_TagString: Enemy
@@ -969,20 +968,6 @@ MonoBehaviour:
   enemyAnimation: {fileID: 8906909996308768028}
   charhealthSlider: {fileID: 8592882193140204316}
   playerHpText: {fileID: 0}
---- !u!114 &3208724752510166038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7752950442114447397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f7464b986d3a864db8c08f31af8193f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 0}
-  capsuleCollider: {fileID: 1905634536129146931}
 --- !u!1 &8336966136910736736
 GameObject:
   m_ObjectHideFlags: 0

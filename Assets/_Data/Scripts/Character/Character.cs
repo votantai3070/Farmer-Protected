@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Pathfinding;
 using TMPro;
 using UnityEngine;
@@ -32,6 +33,18 @@ public class Character : MonoBehaviour, IDamagable
         }
     }
 
+    public void Heal(int amount)
+    {
+        CurrentHealth += amount;
+
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
+
+        if (charhealthSlider != null)
+            charhealthSlider.DOValue(CurrentHealth, 0.3f).SetEase(Ease.Linear);
+
+        if (playerHpText != null)
+            playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
+    }
 
     public void TakeDamage(int damage, bool isCrit)
     {

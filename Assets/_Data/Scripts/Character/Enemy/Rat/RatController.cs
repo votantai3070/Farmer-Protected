@@ -7,8 +7,9 @@ public class RatController : Enemy
     private ObjectPool ratPool;
     private SpawnEnemy spawnEnemy;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         ratPool = GameObject.Find("RatPool").GetComponent<ObjectPool>();
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -31,12 +32,12 @@ public class RatController : Enemy
         enemyAnimation.SwitchRatAnimation("DEAD");
         yield return new WaitForSeconds(1f);
 
-        bool dropped = Random.value < characterData.dropChange;
-        if (dropped)
-            DropItem.Instance.DropBulletItem(this.transform.parent);
+        Transform enemyRoot = transform.parent;
 
-        DropItem.Instance.DropExp1(this.transform.parent);
+        drop.SetEnemyDropItem(enemyRoot, characterData);
 
-        spawnEnemy.ReturnEnemy(transform.parent.gameObject, ratPool);
+        drop.DropExp1(enemyRoot);
+
+        spawnEnemy.ReturnEnemy(enemyRoot.gameObject, ratPool);
     }
 }

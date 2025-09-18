@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using UnityEngine;
 
@@ -7,8 +8,9 @@ public class GolemControler : Enemy
     private ObjectPool golemPool;
     private SpawnEnemy spawnEnemy;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         golemPool = GameObject.Find("GolemPool").GetComponent<ObjectPool>();
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -29,11 +31,12 @@ public class GolemControler : Enemy
         enemyAnimation.SwitchGolemAnimation("DEAD");
         yield return new WaitForSeconds(1f);
 
-        bool dropped = Random.value < characterData.dropChange;
-        if (dropped)
-            DropItem.Instance.DropBulletItem(this.transform.parent);
+        Transform enemyRoot = transform.parent;
 
-        DropItem.Instance.DropExp3(this.transform.parent);
-        spawnEnemy.ReturnEnemy(transform.parent.gameObject, golemPool);
+        drop.SetEnemyDropItem(enemyRoot, characterData);
+
+        drop.DropExp3(enemyRoot);
+
+        spawnEnemy.ReturnEnemy(enemyRoot.gameObject, golemPool);
     }
 }

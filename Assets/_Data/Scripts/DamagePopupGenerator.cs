@@ -9,9 +9,6 @@ public class DamagePopupGenerator : MonoBehaviour
     [SerializeField] Color criticalColor;
     private void Awake()
     {
-        if (Instance != null)
-            Destroy(Instance);
-
         Instance = this;
     }
 
