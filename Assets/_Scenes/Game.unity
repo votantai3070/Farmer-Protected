@@ -4262,52 +4262,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208590855}
   m_CullTransparentMesh: 1
---- !u!1 &1227914577
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1227914578}
-  - component: {fileID: 1227914579}
-  m_Layer: 0
-  m_Name: GunBullet
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1227914578
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227914577}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 580544280}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1227914579
+--- !u!114 &1227914579 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2754221842982992887, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
+  m_PrefabInstance: {fileID: 8749703166326178416}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227914577}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2122c6284fa080b42aa067e777e0f316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAmmo: 0
-  reserveAmmo: 0
 --- !u!1001 &1233014841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4991,24 +4956,20 @@ MonoBehaviour:
   player: {fileID: 580544280}
   enemyPhase1Pools:
   - {fileID: 1499626631}
-  - {fileID: 1892366344}
   enemyPhase2Pools:
-  - {fileID: 1499626631}
-  - {fileID: 1892366344}
   - {fileID: 1406076000}
   enemyPhase3Pools:
-  - {fileID: 1406076000}
   - {fileID: 1530141260}
   enemyPhase4Pools:
   - {fileID: 200898665}
   spawnRadius: 15
-  maxEnemiesPhase1: 20
+  maxEnemiesPhase1: 5
   maxEnemiesPhase2: 3
   maxEnemiesPhase3: 2
   maxEnemiesPhase4: 1
-  phase2Time: 75
-  phase3Time: 40
-  phase4Time: 10
+  phase1Time: 0.75
+  phase2Time: 0.5
+  phase3Time: 0.3
   spawnTime: 1.5
 --- !u!1001 &1643529114
 PrefabInstance:
@@ -7203,7 +7164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 717783298}
   gameOverPanel: {fileID: 809574221}
-  startTime: 180
+  startTime: 60
   currentTime: 0
   itemAtlas: {fileID: 100100200, guid: 310b0dcf05ad50c4ca19f03eac7b2741, type: 3}
   characterAtlas: {fileID: 100100200, guid: c29ab33f227db374ab1924ab2a94a192, type: 3}
@@ -7507,119 +7468,6 @@ Transform:
   - {fileID: 1830658922}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2144444308
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2144444309}
-  - component: {fileID: 2144444311}
-  - component: {fileID: 2144444310}
-  m_Layer: 0
-  m_Name: PlayerCollision
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2144444309
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144444308}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 580544280}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2144444310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144444308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa3a58848528ea7458aa00bd270d6331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exp1Pool: {fileID: 1909067811}
-  exp2Pool: {fileID: 921270884}
-  exp3Pool: {fileID: 1401129008}
-  bulletItemPool: {fileID: 1660111511}
-  potionPool: {fileID: 1830658923}
-  expTable:
-  - 5
-  - 10
-  - 20
-  - 30
-  - 40
-  - 50
-  - 70
-  - 80
-  - 90
-  - 100
-  exp: {fileID: 11400000, guid: ba87c3de6abdc1b41b7f83ee0af9d485, type: 2}
-  expSlider: {fileID: 1130416930}
-  expText: {fileID: 1883027942}
-  levelText: {fileID: 554784189}
-  bullet: {fileID: 1227914579}
-  player: {fileID: 580544281}
---- !u!61 &2144444311
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144444308}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.03852409}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.577861}
-  m_EdgeRadius: 0
 --- !u!1001 &2312973148134393753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7887,10 +7735,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1110270003}
     m_Modifications:
     - target: {fileID: 128932419564888938, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
-      propertyPath: spriteAtlas
-      value: 
-      objectReference: {fileID: 100100200, guid: c29ab33f227db374ab1924ab2a94a192, type: 3}
-    - target: {fileID: 128932419564888938, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
       propertyPath: playerHpText
       value: 
       objectReference: {fileID: 1978195044}
@@ -7915,10 +7759,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 873255804}
     - target: {fileID: 3201086976834064775, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 1227914579}
-    - target: {fileID: 3201086976834064775, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
       propertyPath: rakePool
       value: 
       objectReference: {fileID: 124575952}
@@ -7942,10 +7782,38 @@ PrefabInstance:
       propertyPath: rifleBulletPool
       value: 
       objectReference: {fileID: 1134018188}
-    - target: {fileID: 4919167678657004175, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
-      propertyPath: m_Name
-      value: PlayerWeapon
-      objectReference: {fileID: 0}
+    - target: {fileID: 4631555887535708113, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
+      propertyPath: expText
+      value: 
+      objectReference: {fileID: 1883027942}
+    - target: {fileID: 4631555887535708113, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
+      propertyPath: exp1Pool
+      value: 
+      objectReference: {fileID: 1909067811}
+    - target: {fileID: 4631555887535708113, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
+      propertyPath: exp2Pool
+      value: 
+      objectReference: {fileID: 921270884}
+    - target: {fileID: 4631555887535708113, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
+      propertyPath: exp3Pool
+      value: 
+      objectReference: {fileID: 1401129008}
+    - target: {fileID: 4631555887535708113, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
+      propertyPath: expSlider
+      value: 
+      objectReference: {fileID: 1130416930}
+    - target: {fileID: 4631555887535708113, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
+      propertyPath: levelText
+      value: 
+      objectReference: {fileID: 554784189}
+    - target: {fileID: 4631555887535708113, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
+      propertyPath: potionPool
+      value: 
+      objectReference: {fileID: 1830658923}
+    - target: {fileID: 4631555887535708113, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
+      propertyPath: bulletItemPool
+      value: 
+      objectReference: {fileID: 1660111511}
     - target: {fileID: 5878897150177110415, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7991,26 +7859,12 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6733186051627031885, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
-      propertyPath: dashTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733186051627031885, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 873255804}
-    - target: {fileID: 6733186051627031885, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
-      propertyPath: playerGhostPrefab
-      value: 
-      objectReference: {fileID: 5087973414621930900, guid: 40f19f05d5ce8d94f941f2b64f255910, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5878897150177110415, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2144444309}
-    - targetCorrespondingSourceObject: {fileID: 5878897150177110415, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1227914578}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
 --- !u!1660057539 &9223372036854775807

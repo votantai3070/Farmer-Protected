@@ -27,10 +27,10 @@ public class PlayerController : Character
         isAttacked = false;
     }
 
-    protected override void Die()
-    {
-        base.Die();
-        playerAnimation.SwitchAnimationState("DEAD");
-        GameManager.Instance.GameOver();
-    }
+    //protected override void Die()
+    //{
+    //    base.Die();
+    //    playerAnimation.SwitchAnimationState("DEAD");
+    //    GameManager.Instance.GameOver();
+    //}
 }
