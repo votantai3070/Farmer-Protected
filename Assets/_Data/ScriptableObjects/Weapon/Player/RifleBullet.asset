@@ -14,13 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Rifle Bullet
   weaponType: 0
-  sprite: {fileID: -1327499133, guid: 34aa22406fba8c34b8866e7a131f3063, type: 3}
+  ingameSprite: Bullet 4
+  bulletSprite: Bullet 4
+  UISprite: 
   firstDamage: 6
   lastDamage: 8
   range: 0
-  speed: 12
+  speed: 15
   criticalChange: 0.3
-  criticalDamage: 1.6
+  criticalDamage: 2
   stamina: 0
-  bulletAmount: 0
+  magazineSize: 0
+  currentAmmo: 0
+  reserveAmmo: 0
+  attackDelayTime: 0
+  reloadTime: 0
+  isAutomatic: 0
   rareColor: {r: 0.9607843, g: 0.61960787, b: 0.043137256, a: 0}

@@ -33,16 +33,6 @@ public class SpawnEnemy : MonoBehaviour
     {
         InvokeRepeating(nameof(HandleSpawnEnemy), 2f, spawnTime);
         maxEnemies = maxEnemiesPhase1;
-        Debug.Log("Phase 1: " + GameManager.Instance.startTime * phase1Time);
-        Debug.Log("Phase 2: " + GameManager.Instance.startTime * phase2Time);
-        Debug.Log("Phase 3: " + GameManager.Instance.startTime * phase3Time);
-    }
-
-    private void Update()
-    {
-        Debug.Log("Max Enemies: " + maxEnemies);
-        Debug.Log("Current Time: " + GameManager.Instance.currentTime);
-
     }
 
     void CheckConditionSpawnEnemy()

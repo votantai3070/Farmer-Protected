@@ -1,11 +1,10 @@
 using DG.Tweening;
-using NUnit.Framework;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerCollision : MonoBehaviour
+public class PlayerInteraction : MonoBehaviour
 {
     [Header("Exp Pool Setting")]
     [SerializeField] private ObjectPool exp1Pool;
@@ -30,6 +29,9 @@ public class PlayerCollision : MonoBehaviour
     [Header("Potion")]
     [SerializeField] private PlayerController player;
 
+    [Header("Chest")]
+    [SerializeField] private ChestController nearbyChest;
+
     private void Start()
     {
         _currentLevel = 1;
@@ -49,6 +51,11 @@ public class PlayerCollision : MonoBehaviour
             expSlider.DOValue(_currentExp, 0.2f).SetEase(Ease.Linear);
 
             LevelUp();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            UseChest();
         }
     }
 
@@ -119,12 +126,38 @@ public class PlayerCollision : MonoBehaviour
 
         else if (collision.CompareTag("Potion"))
         {
-            Debug.Log("collision: " + collision);
             if (collision.TryGetComponent<PotionController>(out var potion))
             {
                 player.Heal(potion.potionData.value);
             }
             potionPool.ReturnPool(collision.gameObject);
+        }
+
+        else if (collision.CompareTag("Chest"))
+        {
+            if (collision.TryGetComponent<ChestController>(out var chest))
+            {
+                if (nearbyChest == null)
+                    nearbyChest = chest;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Chest"))
+        {
+            if (nearbyChest != null && collision.GetComponent<ChestController>() == nearbyChest)
+                nearbyChest = null;
+        }
+    }
+
+    void UseChest()
+    {
+        if (nearbyChest != null && !nearbyChest.isOpened)
+        {
+            nearbyChest.OpenChest();
+            nearbyChest = null;
         }
     }
 }

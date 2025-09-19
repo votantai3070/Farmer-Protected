@@ -5,11 +5,14 @@ public class WeaponData : ScriptableObject
     public string weaponName;
     public enum WeaponType
     {
-        Gun,
+        Rifle,
+        Pistol,
+        Shotgun,
         Throw
     }
     public WeaponType weaponType;
     public string ingameSprite;
+    public string bulletSprite;
     public string UISprite;
     public int firstDamage;
     public int lastDamage;

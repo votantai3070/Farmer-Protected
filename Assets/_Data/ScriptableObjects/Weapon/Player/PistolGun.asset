@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
-  m_Name: Rake
+  m_Name: PistolGun
   m_EditorClassIdentifier: 
-  weaponName: Rake
+  weaponName: Pistol Gun
   weaponType: 1
-  ingameSprite: Weapon 1
-  bulletSprite: Bullet 1
-  UISprite: Select 1
-  firstDamage: 2
-  lastDamage: 4
+  ingameSprite: Weapon 3
+  bulletSprite: 
+  UISprite: Select 3
+  firstDamage: 0
+  lastDamage: 0
   range: 0
-  speed: 9
+  speed: 0
   criticalChange: 0
-  criticalDamage: 1.1
-  stamina: 2
-  magazineSize: 0
-  currentAmmo: 0
-  reserveAmmo: 0
-  attackDelayTime: 0.5
-  reloadTime: 0
-  isAutomatic: 0
-  rareColor: {r: 0.14509805, g: 0.3882353, b: 0.92156863, a: 0}
+  criticalDamage: 0
+  stamina: 0
+  magazineSize: 7
+  currentAmmo: 7
+  reserveAmmo: 70
+  attackDelayTime: 0.4
+  reloadTime: 1
+  isAutomatic: 1
+  rareColor: {r: 0.9607843, g: 0.61960787, b: 0.043137256, a: 0}

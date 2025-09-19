@@ -19,10 +19,14 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private ObjectPool rakePool;
     [SerializeField] private ObjectPool sicklePool;
     [SerializeField] private ObjectPool rifleBulletPool;
+    [SerializeField] private ObjectPool pistolBulletPool;
+    [SerializeField] private ObjectPool shotgunBulletPool;
 
     [SerializeField] private HotBarManager hotBarManager;
     private Dictionary<string, ObjectPool> weaponPools;
 
+    [Header("Shotgun Setting")]
+    [SerializeField] int pelletCount = 6;
 
     private void Awake()
     {
@@ -31,7 +35,9 @@ public class PlayerAttack : MonoBehaviour
             { "Shovel", shovelPool },
             { "Rake", rakePool },
             { "Sickle", sicklePool },
-            { "Rifle Gun", rifleBulletPool }
+            { "Rifle Gun", rifleBulletPool },
+            { "Pistol Gun", pistolBulletPool },
+            { "Shotgun", shotgunBulletPool }
         };
     }
     private void Update()
@@ -67,7 +73,9 @@ public class PlayerAttack : MonoBehaviour
     {
         player.HandleAttack();
 
-        if (weaponData.weaponType == WeaponData.WeaponType.Gun)
+        if (weaponData.weaponType == WeaponData.WeaponType.Rifle
+            || weaponData.weaponType == WeaponData.WeaponType.Pistol
+            || weaponData.weaponType == WeaponData.WeaponType.Shotgun)
             bullet.Shot(1);
 
         else
@@ -101,6 +109,7 @@ public class PlayerAttack : MonoBehaviour
 
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
 
+
         UpdateWeapon(angle, weaponData);
     }
 
@@ -110,9 +119,21 @@ public class PlayerAttack : MonoBehaviour
 
         if (weaponPools.TryGetValue(weaponName, out ObjectPool pool))
         {
-            GameObject weapon = pool.Get();
-            weapon.transform.SetPositionAndRotation(firePoint.position, Quaternion.Euler(0, 0, angle - 90f));
-            weapon.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
+            if (weaponData.weaponType == WeaponData.WeaponType.Shotgun)
+                for (int i = 0; i < pelletCount; i++)
+                {
+                    float shotgunBulletAngle = Random.Range(-angle, angle);
+                    GameObject weapon = pool.Get();
+                    weapon.transform.SetPositionAndRotation(firePoint.position, Quaternion.Euler(0, 0, shotgunBulletAngle - 90f));
+                    weapon.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
+                }
+            else
+            {
+                GameObject weapon = pool.Get();
+                weapon.transform.SetPositionAndRotation(firePoint.position, Quaternion.Euler(0, 0, angle - 90f));
+                weapon.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
+            }
+
         }
         else
         {

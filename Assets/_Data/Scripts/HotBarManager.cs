@@ -20,6 +20,9 @@ public class HotBarManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) UseWeaponInSlot(0);
         if (Input.GetKeyDown(KeyCode.Alpha2)) UseWeaponInSlot(1);
         if (Input.GetKeyDown(KeyCode.Alpha3)) UseWeaponInSlot(2);
+        if (Input.GetKeyDown(KeyCode.Alpha4)) UseWeaponInSlot(3);
+        if (Input.GetKeyDown(KeyCode.Alpha5)) UseWeaponInSlot(4);
+        if (Input.GetKeyDown(KeyCode.Alpha6)) UseWeaponInSlot(5);
     }
 
     IEnumerator InitHotbar()
@@ -43,7 +46,9 @@ public class HotBarManager : MonoBehaviour
 
                 currentWeaponData = weapon;
 
-                if (weapon.weaponType == WeaponData.WeaponType.Gun)
+                if (weapon.weaponType == WeaponData.WeaponType.Rifle
+                    || weapon.weaponType == WeaponData.WeaponType.Pistol
+                    || weapon.weaponType == WeaponData.WeaponType.Shotgun)
                 {
                     var (current, reserve, magazineSize) = bullet.ammoMap[weapon.weaponName];
                     UIManager.Instance.ammoText.enabled = true;

@@ -12,6 +12,7 @@ TagManager:
   - Exp3
   - BulletItem
   - Potion
+  - Chest
   layers:
   - Default
   - TransparentFX
@@ -55,20 +56,20 @@ TagManager:
   - name: ForceGround
     uniqueID: 3917749097
     locked: 0
-  - name: Player
-    uniqueID: 2525711559
+  - name: Item
+    uniqueID: 4142123159
     locked: 0
   - name: Weapon
     uniqueID: 768275879
     locked: 0
-  - name: FX
-    uniqueID: 11009065
+  - name: Player
+    uniqueID: 2525711559
     locked: 0
   - name: Enemy
     uniqueID: 1727415109
     locked: 0
-  - name: Item
-    uniqueID: 4142123159
+  - name: FX
+    uniqueID: 11009065
     locked: 0
   - name: UI
     uniqueID: 126210199
