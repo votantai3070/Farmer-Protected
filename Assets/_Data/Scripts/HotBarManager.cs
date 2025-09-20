@@ -40,9 +40,8 @@ public class HotBarManager : MonoBehaviour
 
             if (weapon != null)
             {
-                if (!bullet.weaponDatas.Any(w => w.weaponName == weapon.weaponName)
-                     || (bullet.weaponDatas.Any(w => w.weaponName == weapon.weaponName)
-                    && bullet.weaponDatas.Any(w => w.level == weapon.level - 1)))
+                if (!bullet.ammoMap.ContainsKey((weapon.weaponName, weapon.level))
+                     || bullet.ammoMap.ContainsKey((weapon.weaponName, weapon.level - 1)))
                     bullet.SetWeaponData(weapon);
                 else
                     bullet.SetWeaponFromList(weapon);
@@ -53,8 +52,10 @@ public class HotBarManager : MonoBehaviour
                     || weapon.weaponType == WeaponData.WeaponType.Pistol
                     || weapon.weaponType == WeaponData.WeaponType.Shotgun)
                 {
-                    var current = bullet.weaponDatas.Find(w => w.weaponName == weapon.weaponName).currentAmmo;
-                    var reserve = bullet.weaponDatas.Find(w => w.weaponName == weapon.weaponName).reserveAmmo;
+                    //var current = bullet.weaponDatas.Find(w => w.weaponName == weapon.weaponName).currentAmmo;
+                    //var reserve = bullet.weaponDatas.Find(w => w.weaponName == weapon.weaponName).reserveAmmo;
+
+                    var (current, reserve, _) = bullet.ammoMap[(weapon.weaponName, weapon.level)];
 
                     UIManager.Instance.ammoText.enabled = true;
                     UIManager.Instance.ammoText.text =

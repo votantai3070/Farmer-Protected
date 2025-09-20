@@ -8,9 +8,10 @@ public class Bullet : MonoBehaviour
     [HideInInspector] public int reserveAmmo;
     [HideInInspector] int magazineSize;
 
-    //[HideInInspector] public Dictionary<string, (int current, int reserve, int magazineSize)> ammoMap = new();
-    public List<WeaponData> weaponDatas = new();
+    [HideInInspector] public Dictionary<(string, int), (int current, int reserve, int magazineSize)> ammoMap = new();
+    //public List<WeaponData> weaponDatas = new();
     string currentWeaponName;
+    int level;
 
     public void Shot(int bulletToUse)
     {
@@ -18,9 +19,9 @@ public class Bullet : MonoBehaviour
 
         currentAmmo = Mathf.Max(0, currentAmmo);
 
-        //ammoMap[currentWeaponName] = (currentAmmo, reserveAmmo, magazineSize);
+        ammoMap[(currentWeaponName, level)] = (currentAmmo, reserveAmmo, magazineSize);
 
-        weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo = currentAmmo;
+        //weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo = currentAmmo;
 
         UIManager.Instance.ammoText.text = $"{currentAmmo}/{reserveAmmo}";
     }
@@ -39,10 +40,10 @@ public class Bullet : MonoBehaviour
 
         reserveAmmo -= bulletToLoad;
 
-        //ammoMap[currentWeaponName] = (currentAmmo, reserveAmmo, magazineSize);
+        ammoMap[(currentWeaponName, level)] = (currentAmmo, reserveAmmo, magazineSize);
 
-        weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo = currentAmmo;
-        weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo = reserveAmmo;
+        //weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo = currentAmmo;
+        //weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo = reserveAmmo;
 
         UIManager.Instance.ammoText.text = $"{currentAmmo}/{reserveAmmo}";
     }
@@ -51,48 +52,54 @@ public class Bullet : MonoBehaviour
     {
         currentWeaponName = weapon.weaponName;
 
-        if (!weaponDatas.Exists(w => w.weaponName == currentWeaponName))
-            weaponDatas.Add(weapon);
-        else
-        {
-            int index = weaponDatas.FindIndex(w => w.weaponName == currentWeaponName);
-            if (weapon.level > weaponDatas[index].level)
-                weaponDatas[index] = weapon;
-        }
+        level = weapon.level;
 
-        currentAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo;
-        reserveAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo;
-        magazineSize = weaponDatas.Find(w => w.weaponName == currentWeaponName).magazineSize;
+        //if (!weaponDatas.Exists(w => w.weaponName == currentWeaponName))
+        //    weaponDatas.Add(weapon);
+        //else
+        //{
+        //    int index = weaponDatas.FindIndex(w => w.weaponName == currentWeaponName);
+        //    if (weapon.level > weaponDatas[index].level)
+        //        weaponDatas[index] = weapon;
+        //}
 
-        //ammoMap[currentWeaponName] = (weapon.currentAmmo, weapon.reserveAmmo, weapon.magazineSize);
+        //currentAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo;
+        //reserveAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo;
+        //magazineSize = weaponDatas.Find(w => w.weaponName == currentWeaponName).magazineSize;
 
-        //currentAmmo = ammoMap[currentWeaponName].current;
-        //reserveAmmo = ammoMap[currentWeaponName].reserve;
-        //magazineSize = ammoMap[currentWeaponName].magazineSize;
+        ammoMap[(currentWeaponName, level)] = (weapon.currentAmmo, weapon.reserveAmmo, weapon.magazineSize);
+
+        currentAmmo = ammoMap[(currentWeaponName, level)].current;
+        reserveAmmo = ammoMap[(currentWeaponName, level)].reserve;
+        magazineSize = ammoMap[(currentWeaponName, level)].magazineSize;
     }
 
     public void SetWeaponFromList(WeaponData weapon)
     {
         currentWeaponName = weapon.weaponName;
 
-        currentAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo;
-        reserveAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo;
-        magazineSize = weaponDatas.Find(w => w.weaponName == currentWeaponName).magazineSize;
+        level = weapon.level;
 
-        //currentAmmo = ammoMap[currentWeaponName].current;
-        //reserveAmmo = ammoMap[currentWeaponName].reserve;
-        //magazineSize = ammoMap[currentWeaponName].magazineSize;
+        //currentAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo;
+        //reserveAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo;
+        //magazineSize = weaponDatas.Find(w => w.weaponName == currentWeaponName).magazineSize;
+
+        currentAmmo = ammoMap[(currentWeaponName, level)].current;
+        reserveAmmo = ammoMap[(currentWeaponName, level)].reserve;
+        magazineSize = ammoMap[(currentWeaponName, level)].magazineSize;
     }
 
     public void AddAmmo(ItemData bullet)
     {
-        //reserveAmmo = ammoMap[currentWeaponName].reserve;
+        reserveAmmo = ammoMap[(currentWeaponName, level)].reserve;
 
-        reserveAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo;
+        //reserveAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo;
 
         reserveAmmo += bullet.value;
 
-        weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo = reserveAmmo;
+        //weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo = reserveAmmo;
+
+        ammoMap[(currentWeaponName, level)] = (currentAmmo, reserveAmmo, magazineSize);
     }
 
 }
