@@ -3,6 +3,8 @@ using UnityEngine;
 public class WeaponData : ScriptableObject
 {
     public string weaponName;
+    public int level;
+    public string description;
     public enum WeaponType
     {
         Rifle,

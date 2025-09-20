@@ -8,7 +8,8 @@ public class Bullet : MonoBehaviour
     [HideInInspector] public int reserveAmmo;
     [HideInInspector] int magazineSize;
 
-    [HideInInspector] public Dictionary<string, (int current, int reserve, int magazineSize)> ammoMap = new();
+    //[HideInInspector] public Dictionary<string, (int current, int reserve, int magazineSize)> ammoMap = new();
+    public List<WeaponData> weaponDatas = new();
     string currentWeaponName;
 
     public void Shot(int bulletToUse)
@@ -17,7 +18,9 @@ public class Bullet : MonoBehaviour
 
         currentAmmo = Mathf.Max(0, currentAmmo);
 
-        ammoMap[currentWeaponName] = (currentAmmo, reserveAmmo, magazineSize);
+        //ammoMap[currentWeaponName] = (currentAmmo, reserveAmmo, magazineSize);
+
+        weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo = currentAmmo;
 
         UIManager.Instance.ammoText.text = $"{currentAmmo}/{reserveAmmo}";
     }
@@ -36,7 +39,10 @@ public class Bullet : MonoBehaviour
 
         reserveAmmo -= bulletToLoad;
 
-        ammoMap[currentWeaponName] = (currentAmmo, reserveAmmo, magazineSize);
+        //ammoMap[currentWeaponName] = (currentAmmo, reserveAmmo, magazineSize);
+
+        weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo = currentAmmo;
+        weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo = reserveAmmo;
 
         UIManager.Instance.ammoText.text = $"{currentAmmo}/{reserveAmmo}";
     }
@@ -45,29 +51,48 @@ public class Bullet : MonoBehaviour
     {
         currentWeaponName = weapon.weaponName;
 
-        ammoMap[currentWeaponName] = (weapon.currentAmmo, weapon.reserveAmmo, weapon.magazineSize);
+        if (!weaponDatas.Exists(w => w.weaponName == currentWeaponName))
+            weaponDatas.Add(weapon);
+        else
+        {
+            int index = weaponDatas.FindIndex(w => w.weaponName == currentWeaponName);
+            if (weapon.level > weaponDatas[index].level)
+                weaponDatas[index] = weapon;
+        }
 
-        currentAmmo = ammoMap[currentWeaponName].current;
-        reserveAmmo = ammoMap[currentWeaponName].reserve;
-        magazineSize = ammoMap[currentWeaponName].magazineSize;
+        currentAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo;
+        reserveAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo;
+        magazineSize = weaponDatas.Find(w => w.weaponName == currentWeaponName).magazineSize;
+
+        //ammoMap[currentWeaponName] = (weapon.currentAmmo, weapon.reserveAmmo, weapon.magazineSize);
+
+        //currentAmmo = ammoMap[currentWeaponName].current;
+        //reserveAmmo = ammoMap[currentWeaponName].reserve;
+        //magazineSize = ammoMap[currentWeaponName].magazineSize;
     }
 
-    public void SetWeaponFromDictionary(WeaponData weapon)
+    public void SetWeaponFromList(WeaponData weapon)
     {
         currentWeaponName = weapon.weaponName;
 
-        currentAmmo = ammoMap[currentWeaponName].current;
-        reserveAmmo = ammoMap[currentWeaponName].reserve;
-        magazineSize = ammoMap[currentWeaponName].magazineSize;
+        currentAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).currentAmmo;
+        reserveAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo;
+        magazineSize = weaponDatas.Find(w => w.weaponName == currentWeaponName).magazineSize;
+
+        //currentAmmo = ammoMap[currentWeaponName].current;
+        //reserveAmmo = ammoMap[currentWeaponName].reserve;
+        //magazineSize = ammoMap[currentWeaponName].magazineSize;
     }
 
     public void AddAmmo(ItemData bullet)
     {
-        reserveAmmo = ammoMap[currentWeaponName].reserve;
+        //reserveAmmo = ammoMap[currentWeaponName].reserve;
+
+        reserveAmmo = weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo;
 
         reserveAmmo += bullet.value;
 
-        ammoMap[currentWeaponName] = (currentAmmo, reserveAmmo, magazineSize);
+        weaponDatas.Find(w => w.weaponName == currentWeaponName).reserveAmmo = reserveAmmo;
     }
 
 }

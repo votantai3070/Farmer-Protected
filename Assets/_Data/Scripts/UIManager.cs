@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI ammoText;
 
+
     private void Awake()
     {
         Instance = this;

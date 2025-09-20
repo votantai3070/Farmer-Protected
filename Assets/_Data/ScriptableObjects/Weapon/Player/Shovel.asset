@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Shovel
   m_EditorClassIdentifier: 
   weaponName: Shovel
-  weaponType: 1
+  level: 0
+  description: 
+  weaponType: 3
   ingameSprite: Weapon 0
   bulletSprite: Bullet 0
   UISprite: Select 0

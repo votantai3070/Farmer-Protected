@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class HotBarManager : MonoBehaviour
 {
     [Header("Hot Bar Manager")]
-    [SerializeField] private InventorySlot[] hotbarSlots;
+    public InventorySlot[] hotbarSlots;
 
     [HideInInspector] public WeaponData currentWeaponData;
     [SerializeField] Bullet bullet;
@@ -39,10 +40,12 @@ public class HotBarManager : MonoBehaviour
 
             if (weapon != null)
             {
-                if (!bullet.ammoMap.ContainsKey(weapon.weaponName))
+                if (!bullet.weaponDatas.Any(w => w.weaponName == weapon.weaponName)
+                     || (bullet.weaponDatas.Any(w => w.weaponName == weapon.weaponName)
+                    && bullet.weaponDatas.Any(w => w.level == weapon.level - 1)))
                     bullet.SetWeaponData(weapon);
                 else
-                    bullet.SetWeaponFromDictionary(weapon);
+                    bullet.SetWeaponFromList(weapon);
 
                 currentWeaponData = weapon;
 
@@ -50,7 +53,9 @@ public class HotBarManager : MonoBehaviour
                     || weapon.weaponType == WeaponData.WeaponType.Pistol
                     || weapon.weaponType == WeaponData.WeaponType.Shotgun)
                 {
-                    var (current, reserve, magazineSize) = bullet.ammoMap[weapon.weaponName];
+                    var current = bullet.weaponDatas.Find(w => w.weaponName == weapon.weaponName).currentAmmo;
+                    var reserve = bullet.weaponDatas.Find(w => w.weaponName == weapon.weaponName).reserveAmmo;
+
                     UIManager.Instance.ammoText.enabled = true;
                     UIManager.Instance.ammoText.text =
                         $"{current}/{reserve}";

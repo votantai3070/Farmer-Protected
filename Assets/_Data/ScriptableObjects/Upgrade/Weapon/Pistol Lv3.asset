@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
+  m_Name: Pistol Lv3
+  m_EditorClassIdentifier: 
+  weaponName: Pistol Gun
+  level: 3
+  description: Upgrade lv 3
+  weaponType: 1
+  ingameSprite: Weapon 3
+  bulletSprite: Bullet 3
+  UISprite: Select 3
+  firstDamage: 5
+  lastDamage: 6
+  range: 0
+  speed: 18
+  criticalChange: 0.3
+  criticalDamage: 2
+  stamina: 0
+  magazineSize: 15
+  currentAmmo: 15
+  reserveAmmo: 150
+  attackDelayTime: 0.3
+  reloadTime: 0.5
+  isAutomatic: 1
+  rareColor: {r: 0, g: 0, b: 0, a: 0}

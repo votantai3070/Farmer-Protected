@@ -4,7 +4,8 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     public string characterName;
-
+    public int level;
+    public string description;
     public enum CharacterType
     {
         Warrior,

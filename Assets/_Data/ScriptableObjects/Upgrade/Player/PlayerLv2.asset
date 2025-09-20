@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a51ebf723d531bf4d8154426f7afa80a, type: 3}
-  m_Name: Player
+  m_Name: PlayerLv2
   m_EditorClassIdentifier: 
-  characterName: Player
+  characterName: Player Lv2
+  level: 2
+  description: Run Faster and Stronger
   characterType: 0
   speed: 10
-  maxHealth: 5
-  stamina: 50
+  maxHealth: 10
+  stamina: 70
   range: 0
-  dashSpeed: 10
+  dashSpeed: 20
+  dropBulletChange: 0
+  dropPotionChange: 0

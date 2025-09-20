@@ -10,24 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
-  m_Name: Shotgun
+  m_Name: Shotgun Lv2
   m_EditorClassIdentifier: 
   weaponName: Shotgun
+  level: 2
+  description: Upgrade lv 2
   weaponType: 2
   ingameSprite: Weapon 5
-  bulletSprite: 
+  bulletSprite: Bullet 5
   UISprite: Select 5
-  firstDamage: 0
-  lastDamage: 0
+  firstDamage: 4
+  lastDamage: 5
   range: 0
-  speed: 0
-  criticalChange: 0
-  criticalDamage: 0
+  speed: 15
+  criticalChange: 0.3
+  criticalDamage: 1.8
   stamina: 0
-  magazineSize: 5
-  currentAmmo: 5
-  reserveAmmo: 60
-  attackDelayTime: 5
-  reloadTime: 7
+  magazineSize: 7
+  currentAmmo: 7
+  reserveAmmo: 70
+  attackDelayTime: 3
+  reloadTime: 5
   isAutomatic: 1
   rareColor: {r: 0.9607843, g: 0.61960787, b: 0.043137256, a: 0}

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Rake
   m_EditorClassIdentifier: 
   weaponName: Rake
-  weaponType: 1
+  level: 0
+  description: 
+  weaponType: 3
   ingameSprite: Weapon 1
   bulletSprite: Bullet 1
   UISprite: Select 1

@@ -18,7 +18,7 @@ public class RangeWeaponMovement : Weapon
     }
     private void Start()
     {
-        if (weaponData.weaponType == WeaponData.WeaponType.Throw)
+        if (weaponData != null)
             sr.sprite = GameManager.Instance.itemAtlas.GetSprite(weaponData.bulletSprite);
 
     }

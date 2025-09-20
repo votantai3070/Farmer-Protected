@@ -30,7 +30,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private PlayerController player;
 
     [Header("Chest")]
-    [SerializeField] private ChestController nearbyChest;
+    private ChestController nearbyChest;
 
     private void Start()
     {
@@ -57,6 +57,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             UseChest();
         }
+
     }
 
     void AddExp(float amountExp)

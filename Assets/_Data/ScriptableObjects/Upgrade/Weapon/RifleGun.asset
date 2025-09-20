@@ -10,24 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
-  m_Name: ShotgunBullet
+  m_Name: RifleGun
   m_EditorClassIdentifier: 
-  weaponName: Shotgun Bullet
+  weaponName: Rifle Gun
+  level: 1
+  description: Unlock Rifle Gun
   weaponType: 0
-  ingameSprite: Bullet 5
-  bulletSprite: Bullet 5
-  UISprite: 
-  firstDamage: 4
-  lastDamage: 6
+  ingameSprite: Weapon 4
+  bulletSprite: Bullet 4
+  UISprite: Select 4
+  firstDamage: 6
+  lastDamage: 8
   range: 0
   speed: 15
-  criticalChange: 0.2
+  criticalChange: 0.3
   criticalDamage: 2
   stamina: 0
-  magazineSize: 0
-  currentAmmo: 0
-  reserveAmmo: 0
-  attackDelayTime: 0
-  reloadTime: 0
-  isAutomatic: 0
+  magazineSize: 15
+  currentAmmo: 15
+  reserveAmmo: 30
+  attackDelayTime: 0.2
+  reloadTime: 4
+  isAutomatic: 1
   rareColor: {r: 0.9607843, g: 0.61960787, b: 0.043137256, a: 0}

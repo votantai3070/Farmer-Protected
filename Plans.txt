@@ -18,7 +18,7 @@
 - Item
  + bình máu -------- Xong
  + Kinh nghiệm -------- Xong
- + Rương
+ + Rương -------- Xong
 
 - Map
  + Dùng tilemap --------- Xong
@@ -29,6 +29,13 @@
 - Gameplay
  + Giết enemy lấy kinh nghiệm lên cấp nâng vũ khí
  + Mở rương (Vũ khí, máu)
+
+ +++ Nâng cấp có thể là:
+ ++++ Tăng chỉ số (damage, speed, fire rate…)
+ ++++ Tăng cấp vũ khí hiện có (Lv.2, Lv.3…)
+ ++++ Mở vũ khí mới
+ ++++ Passive buff (HP, regen, gold find…)
+
  + Enemy spawn theo wave(time) ---------- Còn bug
 
 - Menu

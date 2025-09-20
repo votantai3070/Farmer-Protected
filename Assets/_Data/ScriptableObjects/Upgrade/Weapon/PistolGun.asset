@@ -13,16 +13,18 @@ MonoBehaviour:
   m_Name: PistolGun
   m_EditorClassIdentifier: 
   weaponName: Pistol Gun
+  level: 1
+  description: Unlock Pistol Gun
   weaponType: 1
   ingameSprite: Weapon 3
-  bulletSprite: 
+  bulletSprite: Bullet 3
   UISprite: Select 3
-  firstDamage: 0
-  lastDamage: 0
+  firstDamage: 3
+  lastDamage: 4
   range: 0
-  speed: 0
-  criticalChange: 0
-  criticalDamage: 0
+  speed: 12
+  criticalChange: 0.1
+  criticalDamage: 1.5
   stamina: 0
   magazineSize: 7
   currentAmmo: 7
