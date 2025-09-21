@@ -1,44 +1,69 @@
+﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
     [Header("Spawn Enemy Setting")]
     public Transform player;
+    [SerializeField] private DifficultData defaultDiffData;
 
     [SerializeField] private List<ObjectPool> enemyPhase1Pools = new();
     [SerializeField] private List<ObjectPool> enemyPhase2Pools = new();
     [SerializeField] private List<ObjectPool> enemyPhase3Pools = new();
     [SerializeField] private List<ObjectPool> enemyPhase4Pools = new();
 
-    [SerializeField] private float spawnRadius = 20f;
-    [SerializeField] private int maxEnemiesPhase1 = 5;
-    [SerializeField] private int maxEnemiesPhase2 = 5;
-    [SerializeField] private int maxEnemiesPhase3 = 5;
-    [SerializeField] private int maxEnemiesPhase4 = 5;
+
+    [SerializeField] private float spawnRadius;
+    [SerializeField] private int maxEnemiesPhase1;
+    [SerializeField] private int maxEnemiesPhase2;
+    [SerializeField] private int maxEnemiesPhase3;
+    [SerializeField] private int maxEnemiesPhase4;
 
     [SerializeField]
-    private float phase1Time = 30;
+    private float phase1Time;
     [SerializeField]
-    private float phase2Time = 20;
+    private float phase2Time;
     [SerializeField]
-    private float phase3Time = 10;
+    private float phase3Time;
 
     [SerializeField] private float spawnTime;
+
     ObjectPool pool;
-    int maxEnemies;
+    [SerializeField] int maxEnemies;
+    [SerializeField] int startTime;
 
     private List<GameObject> activeEnemies = new();
     private void Start()
     {
+        StartCoroutine(Wait());
+
         InvokeRepeating(nameof(HandleSpawnEnemy), 2f, spawnTime);
-        maxEnemies = maxEnemiesPhase1;
+    }
+
+    IEnumerator Wait()
+    {
+        yield return null;
+        if (GameManager.Instance.currentDifficultData != null)
+        {
+            SetDifficulty(GameManager.Instance.currentDifficultData);
+            GameManager.Instance.currentTime = startTime;
+        }
+        else
+        {
+            Debug.LogWarning("No difficulty selected, fallback to Easy");
+        }
+    }
+
+    private void Update()
+    {
+        GameManager.Instance.ShowTime(startTime);
     }
 
     void CheckConditionSpawnEnemy()
     {
         float currentTime = GameManager.Instance.currentTime;
-        float startTime = GameManager.Instance.startTime;
 
         float phase1Start = startTime * phase1Time;
         float phase2Start = startTime * phase2Time;
@@ -87,10 +112,13 @@ public class SpawnEnemy : MonoBehaviour
             return;
 
         if (activeEnemies.Count >= maxEnemies) return;
+        Debug.Log("Chay vo");
 
         CheckConditionSpawnEnemy();
 
         GameObject enemy = pool.Get();
+
+        Debug.Log(enemy);
 
         Vector3 spawnPos = GetRandomPositionNearPlayer();
 
@@ -111,5 +139,25 @@ public class SpawnEnemy : MonoBehaviour
         activeEnemies.Remove(enemy);
     }
 
+    void SetDifficulty(DifficultData difficultData)
+    {
+        Debug.Log("Set Difficulty: " + difficultData.difficult);
+        //enemyPhase1Pools = difficultData.enemyPhase1;
+        //enemyPhase2Pools = difficultData.enemyPhase2;
+        //enemyPhase3Pools = difficultData.enemyPhase3;
+        //enemyPhase4Pools = difficultData.enemyPhase4;
 
+        maxEnemies = difficultData.phase1EnemyCount;
+
+        maxEnemiesPhase1 = difficultData.phase1EnemyCount;
+        maxEnemiesPhase2 = difficultData.phase2EnemyCount;
+        maxEnemiesPhase3 = difficultData.phase3EnemyCount;
+        maxEnemiesPhase4 = difficultData.phase4EnemyCount;
+
+        startTime = difficultData.timeCountdown;
+
+        phase1Time = difficultData.phase1Time;
+        phase2Time = difficultData.phase2Time;
+        phase3Time = difficultData.phase3Time;
+    }
 }

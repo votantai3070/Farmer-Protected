@@ -7,4 +7,6 @@ public interface IGameManager
     void GamePause();
     void GameWin();
     void GameQuit();
+    void PlayGame();
+    void SelectDifficulty();
 }

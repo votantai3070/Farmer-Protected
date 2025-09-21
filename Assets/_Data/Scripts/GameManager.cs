@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D;
@@ -8,26 +8,40 @@ public class GameManager : MonoBehaviour, IGameManager
     [Header("UI Setting")]
     public static GameManager Instance;
     [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject selectDiffPanel;
 
-    public float startTime = 180f;
-    [HideInInspector] public float currentTime;
+    public float currentTime;
 
     [Header("Atlas Setting")]
     public SpriteAtlas itemAtlas;
     public SpriteAtlas characterAtlas;
     public SpriteAtlas UIAtlas;
 
+    [Header("Difficulty Setting")]
+    public DifficultData currentDifficultData;
+
     private void Awake()
     {
-
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
     }
 
     private void Start()
     {
-        currentTime = startTime;
-        gameOverPanel.SetActive(false);
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
+        if (selectDiffPanel != null)
+            selectDiffPanel.SetActive(false);
+        //if (timeText != null)
+        //    timeText.enabled = false;
+        string diff = PlayerPrefs.GetString("Difficulty", "Easy");
+
+        currentDifficultData = Resources.Load<DifficultData>($"Difficulties/{diff}");
+
     }
 
     void Update()
@@ -37,11 +51,9 @@ public class GameManager : MonoBehaviour, IGameManager
             currentTime -= Time.deltaTime;
             ShowTime(currentTime);
         }
-
-
     }
 
-    void ShowTime(float timeToShow)
+    public void ShowTime(float timeToShow)
     {
         if (timeToShow < 0) timeToShow = 0;
 
@@ -49,6 +61,7 @@ public class GameManager : MonoBehaviour, IGameManager
             Mathf.FloorToInt(timeToShow / 60),
             Mathf.FloorToInt(timeToShow % 60));
     }
+
 
     public void MainMenu()
     {
@@ -88,5 +101,25 @@ public class GameManager : MonoBehaviour, IGameManager
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene != null) SceneManager.LoadScene(currentScene.name);
         Time.timeScale = 1f;
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("Game");
+        if (selectDiffPanel != null)
+            selectDiffPanel.SetActive(false);
+        if (timeText != null)
+            timeText.enabled = true;
+        GameResume();
+    }
+
+    public void SelectDifficulty()
+    {
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
+        if (selectDiffPanel != null)
+            selectDiffPanel.SetActive(true);
+        if (mainMenuPanel != null)
+            mainMenuPanel.SetActive(false);
     }
 }
