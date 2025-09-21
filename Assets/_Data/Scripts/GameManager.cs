@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour, IGameManager
             currentTime -= Time.deltaTime;
             ShowTime(currentTime);
         }
+
+
     }
 
     void ShowTime(float timeToShow)
@@ -61,7 +63,9 @@ public class GameManager : MonoBehaviour, IGameManager
 
     public void GameResume()
     {
-        throw new System.NotImplementedException();
+        Time.timeScale = 1f;
+        Input.ResetInputAxes();
+
     }
 
     public void GamePause()
@@ -76,7 +80,7 @@ public class GameManager : MonoBehaviour, IGameManager
 
     public void GameQuit()
     {
-        throw new System.NotImplementedException();
+        Application.Quit();
     }
 
     public void GameRestart()

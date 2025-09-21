@@ -41,8 +41,9 @@
 - Menu
 - Game Over
 - Game Win
-- Level (1,2,3,4,...)
+- Level (1,2,3,4,...) -------- Xong
 
-- Chưa làm add vào list current upgrade (UpgradeManager)
-- Thay chọn vũ khí từ rương thì lên cấp sẽ chọn vũ khí lên cấp
+- Chưa làm add vào list current upgrade (UpgradeManager) --------- Xong
+- Thay chọn vũ khí từ rương thì lên cấp sẽ chọn vũ khí lên cấp --------- Xong
+- Sửa đường dạn của shotgun
 

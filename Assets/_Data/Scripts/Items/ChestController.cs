@@ -9,7 +9,6 @@ public class ChestController : MonoBehaviour
     private Sprite closedChestSprite;
     private ObjectPool potionPool;
     private ObjectPool bulletItemPool;
-    [SerializeField] private AvailableWeapon availableWeapon;
 
     public bool isOpened = false;
 
@@ -32,8 +31,6 @@ public class ChestController : MonoBehaviour
         isOpened = true;
 
         sr.sprite = openedChestSprite;
-
-        availableWeapon.SetAvailable();
 
         int random = Random.Range(0, 2);
 

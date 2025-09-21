@@ -27,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
 
     [Header("Shotgun Setting")]
     [SerializeField] int pelletCount = 6;
+    [SerializeField] float spreadAngle = 15f;
 
     private void Awake()
     {
@@ -117,12 +118,14 @@ public class PlayerAttack : MonoBehaviour
     {
         string weaponName = weaponData.weaponName;
 
+        Debug.Log($"Firing weapon: {weaponName} at angle: {angle}");
+
         if (weaponPools.TryGetValue(weaponName, out ObjectPool pool))
         {
             if (weaponData.weaponType == WeaponData.WeaponType.Shotgun)
                 for (int i = 0; i < pelletCount; i++)
                 {
-                    float shotgunBulletAngle = Random.Range(-angle, angle);
+                    float shotgunBulletAngle = Random.Range(angle - spreadAngle, angle + spreadAngle);
                     GameObject weapon = pool.Get();
                     weapon.transform.SetPositionAndRotation(firePoint.position, Quaternion.Euler(0, 0, shotgunBulletAngle - 90f));
                     weapon.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);

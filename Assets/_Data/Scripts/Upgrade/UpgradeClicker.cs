@@ -1,21 +1,24 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Upgrade : MonoBehaviour, IPointerClickHandler
+public class UpgradeClicker : MonoBehaviour, IPointerClickHandler
 {
     private GameObject upgradePanel;
     public WeaponData weaponData;
     private HotBarManager hotBarManager;
+    private UpgradeManager upgradeManager;
 
-    private void Start()
+    private void Awake()
     {
         upgradePanel = GameObject.Find("ChooseWeaponPanel");
         hotBarManager = GameObject.Find("HotBarManager").GetComponent<HotBarManager>();
+        upgradeManager = GameObject.Find("UpgradeManager").GetComponent<UpgradeManager>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         upgradePanel.SetActive(false);
+        GameManager.Instance.GameResume();
         UpgradeWeapon();
     }
 
@@ -31,6 +34,7 @@ public class Upgrade : MonoBehaviour, IPointerClickHandler
                     {
                         DraggableItem newItem = hotBarManager.hotbarSlots[i].transform.GetChild(0).GetComponent<DraggableItem>();
                         newItem.SetItem(weaponData);
+                        upgradeManager.AddUpgrade(weaponData);
                         return;
                     }
                 }

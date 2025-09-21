@@ -10,6 +10,8 @@ public class AvailableWeapon : MonoBehaviour
     [SerializeField] GameObject chooseWeaponPrefab;
     [SerializeField] Transform parent;
     [SerializeField] GameObject chooseWeaponPanel;
+    [SerializeField] GameObject boxChooseWeapon;
+
 
     public void SetAvailable()
     {
@@ -25,17 +27,13 @@ public class AvailableWeapon : MonoBehaviour
 
         for (int i = 0; i < availableSort.Count; i++)
         {
-            GameObject choose = Instantiate(chooseWeaponPrefab);
+            boxChooseWeapon.transform.GetChild(i).GetComponent<Image>().color = availableSort[i].rareColor;
 
-            choose.transform.SetParent(parent, false);
+            boxChooseWeapon.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = GameManager.Instance.UIAtlas.GetSprite(availableSort[i].UISprite);
 
-            choose.GetComponent<Image>().color = availableSort[i].rareColor;
+            boxChooseWeapon.transform.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{availableSort[i].weaponName} / Level {availableSort[i].level}";
 
-            choose.transform.GetChild(0).GetComponent<Image>().sprite = GameManager.Instance.UIAtlas.GetSprite(availableSort[i].UISprite);
-
-            choose.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{availableSort[i].weaponName} / Level {availableSort[i].level}";
-
-            choose.GetComponent<Upgrade>().SetWeaponData(availableList[i]);
+            boxChooseWeapon.transform.GetChild(i).GetComponent<UpgradeClicker>().SetWeaponData(availableList[i]);
         }
     }
 }

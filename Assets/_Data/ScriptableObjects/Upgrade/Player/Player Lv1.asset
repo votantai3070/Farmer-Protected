@@ -16,7 +16,7 @@ MonoBehaviour:
   level: 1
   description: Default
   characterType: 0
-  speed: 5
+  speed: 8
   maxHealth: 5
   stamina: 50
   range: 0

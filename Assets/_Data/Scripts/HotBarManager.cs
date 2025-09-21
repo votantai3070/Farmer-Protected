@@ -24,14 +24,33 @@ public class HotBarManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4)) UseWeaponInSlot(3);
         if (Input.GetKeyDown(KeyCode.Alpha5)) UseWeaponInSlot(4);
         if (Input.GetKeyDown(KeyCode.Alpha6)) UseWeaponInSlot(5);
+
+        if (currentWeaponData != null)
+            UpdateWeapon();
     }
 
+    // If the current weapon has a higher level version in the hotbar, switch to it
+    void UpdateWeapon()
+    {
+        for (int i = 0; i < hotbarSlots.Length; i++)
+        {
+            WeaponData weapon = hotbarSlots[i].GetWeaponData();
+            if (weapon != null && weapon.weaponName == currentWeaponData.weaponName && weapon.level > currentWeaponData.level)
+            {
+                UseWeaponInSlot(i);
+                break;
+            }
+        }
+    }
+
+    // Initialize hotbar by equipping the first weapon in the first slot
     IEnumerator InitHotbar()
     {
         yield return null;
         UseWeaponInSlot(0);
     }
 
+    // Equip weapon in the specified hotbar slot
     public void UseWeaponInSlot(int index)
     {
         if (index >= 0 && index < hotbarSlots.Length)

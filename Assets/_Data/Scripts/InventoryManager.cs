@@ -51,14 +51,12 @@ public class InventoryManager : MonoBehaviour
     public void CloseInventoryBtn()
     {
         inventory.SetActive(false);
-        Time.timeScale = 1f;
-
-        Input.ResetInputAxes();
+        GameManager.Instance.GameResume();
     }
 
     void OpenInventoryBtn()
     {
         inventory.SetActive(true);
-        Time.timeScale = 0f;
+        GameManager.Instance.GamePause();
     }
 }

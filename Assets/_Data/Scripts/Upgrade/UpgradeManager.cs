@@ -5,7 +5,7 @@ using UnityEngine;
 public class UpgradeManager : MonoBehaviour
 {
     [SerializeField] private List<WeaponData> upgradeList = new();
-    [SerializeField] private List<WeaponData> currentUpgradeList = new();
+    [SerializeField] public List<WeaponData> currentUpgradeList = new();
 
     public List<WeaponData> AvaiableUpgrades()
     {
@@ -24,6 +24,10 @@ public class UpgradeManager : MonoBehaviour
             {
                 availableUpgrades.Add(upgrade);
             }
+            else
+            {
+                availableUpgrades.Remove(upgrade);
+            }
         }
 
         return availableUpgrades;
@@ -37,7 +41,7 @@ public class UpgradeManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Upgrade {newUpgrade.weaponName} level {newUpgrade.level} is already owned.");
+            Debug.LogWarning($"UpgradeClicker {newUpgrade.weaponName} level {newUpgrade.level} is already owned.");
         }
     }
 }

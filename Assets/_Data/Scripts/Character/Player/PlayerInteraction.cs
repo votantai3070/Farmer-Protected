@@ -32,6 +32,9 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Chest")]
     private ChestController nearbyChest;
 
+    [Header("Select Weapon")]
+    [SerializeField] private AvailableWeapon availableWeapon;
+
     private void Start()
     {
         _currentLevel = 1;
@@ -75,6 +78,7 @@ public class PlayerInteraction : MonoBehaviour
         expSlider.maxValue = _expToNextLevel;
         expText.text = $"{_currentExp}/{_expToNextLevel}";
         levelText.text = $"Level {_currentLevel}";
+        ShowSelectWeaponPanel();
     }
 
     private float GetExpToNextLevel()
@@ -83,6 +87,11 @@ public class PlayerInteraction : MonoBehaviour
             return expTable[_currentLevel - 1];
         else
             return expTable[expTable.Count - 1];
+    }
+    private void ShowSelectWeaponPanel()
+    {
+        availableWeapon.SetAvailable();
+        GameManager.Instance.GamePause();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
