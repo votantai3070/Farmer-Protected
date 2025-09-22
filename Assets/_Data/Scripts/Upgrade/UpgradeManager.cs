@@ -38,6 +38,7 @@ public class UpgradeManager : MonoBehaviour
         if (!currentUpgradeList.Exists(u => u.weaponName == newUpgrade.weaponName && u.level == newUpgrade.level))
         {
             currentUpgradeList.Add(newUpgrade);
+            upgradeList.Remove(newUpgrade);
         }
         else
         {

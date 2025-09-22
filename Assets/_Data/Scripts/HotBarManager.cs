@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HotBarManager : MonoBehaviour
 {
     [Header("Hot Bar Manager")]
     public InventorySlot[] hotbarSlots;
+    public List<GameObject> hotbarSlotItems = new();
 
     [HideInInspector] public WeaponData currentWeaponData;
     [SerializeField] Bullet bullet;
@@ -18,12 +21,14 @@ public class HotBarManager : MonoBehaviour
 
     private void Update()
     {
+        ShowHotbarList();
+
         if (Input.GetKeyDown(KeyCode.Alpha1)) UseWeaponInSlot(0);
         if (Input.GetKeyDown(KeyCode.Alpha2)) UseWeaponInSlot(1);
         if (Input.GetKeyDown(KeyCode.Alpha3)) UseWeaponInSlot(2);
-        if (Input.GetKeyDown(KeyCode.Alpha4)) UseWeaponInSlot(3);
-        if (Input.GetKeyDown(KeyCode.Alpha5)) UseWeaponInSlot(4);
-        if (Input.GetKeyDown(KeyCode.Alpha6)) UseWeaponInSlot(5);
+        //if (Input.GetKeyDown(KeyCode.Alpha4)) UseWeaponInSlot(3);
+        //if (Input.GetKeyDown(KeyCode.Alpha5)) UseWeaponInSlot(4);
+        //if (Input.GetKeyDown(KeyCode.Alpha6)) UseWeaponInSlot(5);
 
         if (currentWeaponData != null)
             UpdateWeapon();
@@ -88,6 +93,24 @@ public class HotBarManager : MonoBehaviour
             else
             {
                 Debug.Log("Slot " + index + " is empty!");
+            }
+        }
+    }
+
+    private void ShowHotbarList()
+    {
+        for (int i = 0; i < hotbarSlotItems.Count; i++)
+        {
+            WeaponData weapon = hotbarSlots[i].GetComponent<InventorySlot>().GetWeaponData();
+
+            if (weapon != null)
+            {
+                hotbarSlotItems[i].transform.GetChild(0).GetComponent<Image>().sprite = GameManager.Instance.UIAtlas.GetSprite(weapon.UISprite);
+                hotbarSlotItems[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{weapon.level}";
+            }
+            else
+            {
+                Debug.Log($"Hotbar Slot {i + 1}: Empty");
             }
         }
     }

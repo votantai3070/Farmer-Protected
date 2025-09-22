@@ -1,8 +1,21 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
+    private Image image;
+
+    private void Awake()
+    {
+        image = GetComponent<Image>();
+    }
+    private void Start()
+    {
+        if (image != null)
+            image.sprite = GameManager.Instance.UIAtlas.GetSprite("Panel");
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
         if (transform.childCount == 0)

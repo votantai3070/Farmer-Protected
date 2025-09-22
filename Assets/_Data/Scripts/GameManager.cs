@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour, IGameManager
         string diff = PlayerPrefs.GetString("Difficulty", "Easy");
 
         currentDifficultData = Resources.Load<DifficultData>($"Difficulties/{diff}");
-
     }
 
     void Update()

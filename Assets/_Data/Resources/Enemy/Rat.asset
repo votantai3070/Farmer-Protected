@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Rat
   m_EditorClassIdentifier: 
   characterName: Rat
+  level: 0
+  description: 
   characterType: 3
   speed: 2
   maxHealth: 3
   stamina: 0
-  range: 1.2
+  range: 0
   dashSpeed: 0
   dropBulletChange: 0.1
-  dropPotionChange: 1
+  dropPotionChange: 0.05

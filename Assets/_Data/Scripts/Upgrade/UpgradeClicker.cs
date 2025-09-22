@@ -33,6 +33,7 @@ public class UpgradeClicker : MonoBehaviour, IPointerClickHandler
                     if (hotBarManager.hotbarSlots[i].transform.GetChild(0).GetComponent<DraggableItem>().weaponData.weaponName == weaponData.weaponName)
                     {
                         DraggableItem newItem = hotBarManager.hotbarSlots[i].transform.GetChild(0).GetComponent<DraggableItem>();
+                        Debug.Log("Weapon Clicker: " + weaponData);
                         newItem.SetItem(weaponData);
                         upgradeManager.AddUpgrade(weaponData);
                         return;

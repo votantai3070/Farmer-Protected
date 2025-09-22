@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Slime
   m_EditorClassIdentifier: 
   characterName: Slime
+  level: 0
+  description: 
   characterType: 3
   speed: 3
   maxHealth: 3
@@ -20,4 +22,4 @@ MonoBehaviour:
   range: 0
   dashSpeed: 0
   dropBulletChange: 0.1
-  dropPotionChange: 1
+  dropPotionChange: 0.05

@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 788, y: -103}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 541.6, y: 70.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6491572866022931366
 CanvasRenderer:
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -303,6 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5514fa5dc0d7741a9d0eda5c23d896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
 --- !u!114 &2724689643746018074
 MonoBehaviour:
   m_ObjectHideFlags: 0

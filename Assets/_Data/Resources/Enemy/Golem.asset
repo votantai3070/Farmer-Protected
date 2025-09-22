@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Golem
   m_EditorClassIdentifier: 
   characterName: Golem
+  level: 0
+  description: 
   characterType: 3
   speed: 3
   maxHealth: 20
   stamina: 0
-  range: 10
+  range: 5
   dashSpeed: 0
   dropBulletChange: 1
   dropPotionChange: 1
