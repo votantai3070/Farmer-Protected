@@ -8616,12 +8616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 942638617}
   weaponDatas:
-  - {fileID: 11400000, guid: 97ed1867a16b7c94cbeeb91306c5bb32, type: 2}
-  - {fileID: 11400000, guid: ed609f3f8d14ddf4d86c25bf6b6399c1, type: 2}
-  - {fileID: 11400000, guid: af9dfdcd55044144aa589a4ef4311b42, type: 2}
-  - {fileID: 11400000, guid: ddb06f77eb45bfd4785f555b792453a0, type: 2}
-  - {fileID: 11400000, guid: b57bad62f2f16bd4684d1a74b65871ba, type: 2}
-  - {fileID: 11400000, guid: 51d29ba567cdd834a9f8a6639ad24ce5, type: 2}
+  - {fileID: 11400000, guid: 5e6e69b9f74d82148a761f23aa805a4f, type: 2}
   slots:
   - {fileID: 2312973148134393759}
   - {fileID: 1727661082}
@@ -9041,16 +9036,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeList:
+  - {fileID: 11400000, guid: b57bad62f2f16bd4684d1a74b65871ba, type: 2}
   - {fileID: 11400000, guid: 5cdc31d962182ec4496f7809eabd743c, type: 2}
   - {fileID: 11400000, guid: f5ed817715f92ce49a2fd50a86a0e73e, type: 2}
+  - {fileID: 11400000, guid: ddb06f77eb45bfd4785f555b792453a0, type: 2}
   - {fileID: 11400000, guid: a26d5a254eb994b458787107e317c2d2, type: 2}
   - {fileID: 11400000, guid: e9b7125ccfef61f4b923fc02b1fd5d4c, type: 2}
+  - {fileID: 11400000, guid: 51d29ba567cdd834a9f8a6639ad24ce5, type: 2}
   - {fileID: 11400000, guid: 74b10593b53412444989ef131ab3d3e6, type: 2}
   - {fileID: 11400000, guid: 5711b93221dec6a41959afa13eff2f69, type: 2}
+  - {fileID: 11400000, guid: dfad88d370986b64c9a38f338bb592b5, type: 2}
+  - {fileID: 11400000, guid: 97ed1867a16b7c94cbeeb91306c5bb32, type: 2}
+  - {fileID: 11400000, guid: ed609f3f8d14ddf4d86c25bf6b6399c1, type: 2}
+  - {fileID: 11400000, guid: c3ca3dbbb0cb41c4d84302408f51126f, type: 2}
+  - {fileID: 11400000, guid: 392c382ade4b5a745abf16b43dee184e, type: 2}
+  - {fileID: 11400000, guid: af9dfdcd55044144aa589a4ef4311b42, type: 2}
+  - {fileID: 11400000, guid: f8d800194572f224a8c9548c09392d15, type: 2}
+  - {fileID: 11400000, guid: f7ef7a7fc1528f547a66a3a37370e0ca, type: 2}
   currentUpgradeList:
-  - {fileID: 11400000, guid: b57bad62f2f16bd4684d1a74b65871ba, type: 2}
-  - {fileID: 11400000, guid: ddb06f77eb45bfd4785f555b792453a0, type: 2}
-  - {fileID: 11400000, guid: 51d29ba567cdd834a9f8a6639ad24ce5, type: 2}
+  - {fileID: 11400000, guid: 5e6e69b9f74d82148a761f23aa805a4f, type: 2}
 --- !u!1 &2083854500
 GameObject:
   m_ObjectHideFlags: 0
@@ -9083,7 +9087,7 @@ MonoBehaviour:
   chunkSize: 12
   scale: 1
   grassTile: {fileID: 11400000, guid: 94d70c959b588694f88699f7fb24b727, type: 2}
-  water1Tile: {fileID: 11400000, guid: bb386258e4fc8d940ac3e68f3a763630, type: 2}
+  water1Tile: {fileID: 11400000, guid: 9540004b01c0e24488051fec37106e5f, type: 2}
   groundTilemap: {fileID: 1960611488}
   waterTilemap: {fileID: 1920370240}
   player: {fileID: 580544280}

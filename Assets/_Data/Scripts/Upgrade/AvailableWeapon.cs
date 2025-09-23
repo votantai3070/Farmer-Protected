@@ -21,10 +21,10 @@ public class AvailableWeapon : MonoBehaviour
         List<WeaponData> availableList = available.AvaiableUpgrades();
 
         var availableSort = availableList
-     .OrderBy(x => Random.value)                    // random
-     .DistinctBy(w => new { w.weaponName, w.level }) // loại trùng
-     .Take(Mathf.Min(3, availableList.Count))                                     // lấy 3
-     .ToList();
+             .OrderBy(x => Random.value)                    // random
+             .DistinctBy(w => new { w.weaponName, w.level }) // loại trùng
+             .Take(Mathf.Min(3, availableList.Count))
+             .ToList();
 
         Debug.Log($"Available Weapons: {string.Join(", ", availableList.Select(w => w.weaponName + " Lv" + w.level))}");
 

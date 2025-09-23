@@ -32,4 +32,4 @@ MonoBehaviour:
   attackDelayTime: 0.5
   reloadTime: 0
   isAutomatic: 0
-  rareColor: {r: 0.41960785, g: 0.44705883, b: 0.5019608, a: 0}
+  rareColor: {r: 0.54509807, g: 0.36078432, b: 0.9647059, a: 0}

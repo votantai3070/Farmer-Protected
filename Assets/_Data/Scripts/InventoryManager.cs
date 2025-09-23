@@ -4,7 +4,7 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField] GameObject inventory;
     [SerializeField] WeaponData[] weaponDatas;
-    [SerializeField] InventorySlot[] slots;
+    public InventorySlot[] slots;
     [SerializeField] private DraggableItem draggablePrefab;
 
     private void Start()
@@ -33,7 +33,7 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    public bool AddNewWeapon(WeaponData weapon)
+    public void AddNewWeapon(WeaponData weapon)
     {
         for (int i = 0; i < slots.Length; i++)
         {
@@ -41,11 +41,9 @@ public class InventoryManager : MonoBehaviour
             {
                 DraggableItem newItem = Instantiate(draggablePrefab, slots[i].transform);
                 newItem.SetItem(weapon);
-                return true;
+                break;
             }
         }
-
-        return false;
     }
 
     public void CloseInventoryBtn()

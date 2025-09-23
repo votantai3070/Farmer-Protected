@@ -111,7 +111,9 @@ public class HotBarManager : MonoBehaviour
             }
             else
             {
-                Debug.Log($"Hotbar Slot {i + 1}: Empty");
+                hotbarSlotItems[i].transform.GetChild(0).GetComponent<Image>().sprite = GameManager.Instance.UIAtlas.GetSprite("Panel");
+                hotbarSlotItems[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+                hotbarSlotItems[i].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = $"{i + 1}";
             }
         }
     }
