@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3334855912550520663}
   - component: {fileID: 6713180329911842028}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BatAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 15220301221067271}
   - component: {fileID: 7089815133649466312}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BatAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 5500686532746625908}
   - component: {fileID: 6547415237093325528}
   - component: {fileID: 1562624490783397779}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: BatGFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -420,8 +420,6 @@ MonoBehaviour:
   enemyAnimation: {fileID: 6713180329911842028}
   charhealthSlider: {fileID: 3561585546825885912}
   playerHpText: {fileID: 0}
-  expPool: {fileID: 0}
-  spriteAtlas: {fileID: 100100200, guid: c29ab33f227db374ab1924ab2a94a192, type: 3}
 --- !u!1 &4400422677532285958
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,9 +534,9 @@ GameObject:
   - component: {fileID: 5052050936440832445}
   - component: {fileID: 598731625664483760}
   - component: {fileID: 7085284584594471060}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -653,7 +651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4471659074996560134}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StoneSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +684,7 @@ GameObject:
   - component: {fileID: 2424287652780495790}
   - component: {fileID: 3877816023717256824}
   - component: {fileID: 4807936736961451687}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BatMovement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +749,7 @@ GameObject:
   - component: {fileID: 2779138114908354087}
   - component: {fileID: 4078491922741837648}
   - component: {fileID: 1274446437130745329}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: BatAttackFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,7 +813,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 11009065
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

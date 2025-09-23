@@ -19,7 +19,7 @@ MonoBehaviour:
   speed: 3
   maxHealth: 3
   stamina: 0
-  range: 0
+  range: 1.2
   dashSpeed: 0
   dropBulletChange: 0.1
   dropPotionChange: 0.05

@@ -176,7 +176,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 11009065
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -274,9 +274,9 @@ GameObject:
   - component: {fileID: 1198923980421885817}
   - component: {fileID: 2578474972430645853}
   - component: {fileID: 8261309387216088468}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 7797162071649260163}
   - component: {fileID: 4656779833919593515}
   - component: {fileID: 5883929473061102483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RatGFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}

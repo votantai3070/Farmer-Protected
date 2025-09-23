@@ -107,6 +107,7 @@ public class HotBarManager : MonoBehaviour
             {
                 hotbarSlotItems[i].transform.GetChild(0).GetComponent<Image>().sprite = GameManager.Instance.UIAtlas.GetSprite(weapon.UISprite);
                 hotbarSlotItems[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{weapon.level}";
+                hotbarSlotItems[i].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = $"{i + 1}";
             }
             else
             {

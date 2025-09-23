@@ -118,8 +118,6 @@ public class PlayerAttack : MonoBehaviour
     {
         string weaponName = weaponData.weaponName;
 
-        Debug.Log($"Firing weapon: {weaponName} at angle: {angle}");
-
         if (weaponPools.TryGetValue(weaponName, out ObjectPool pool))
         {
             if (weaponData.weaponType == WeaponData.WeaponType.Shotgun)
@@ -134,6 +132,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 GameObject weapon = pool.Get();
                 weapon.transform.SetPositionAndRotation(firePoint.position, Quaternion.Euler(0, 0, angle - 90f));
+
                 weapon.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
             }
 

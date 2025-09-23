@@ -177,6 +177,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 5e6e69b9f74d82148a761f23aa805a4f, type: 2}
+  radius: 5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &892133151788578584
 MonoBehaviour:
   m_ObjectHideFlags: 0

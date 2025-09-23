@@ -24,6 +24,7 @@ public class GolemControler : Enemy
     {
         base.Die();
         StartCoroutine(AnimationDead());
+        GameManager.Instance.GameWin();
     }
 
     IEnumerator AnimationDead()
@@ -38,5 +39,6 @@ public class GolemControler : Enemy
         drop.DropExp3(enemyRoot);
 
         spawnEnemy.ReturnEnemy(enemyRoot.gameObject, golemPool);
+
     }
 }

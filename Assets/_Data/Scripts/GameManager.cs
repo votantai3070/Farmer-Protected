@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour, IGameManager
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject gameWinPanel;
     [SerializeField] private GameObject selectDiffPanel;
 
     public float currentTime;
@@ -36,6 +37,8 @@ public class GameManager : MonoBehaviour, IGameManager
             gameOverPanel.SetActive(false);
         if (selectDiffPanel != null)
             selectDiffPanel.SetActive(false);
+        if (gameWinPanel != null)
+            gameWinPanel.SetActive(false);
         //if (timeText != null)
         //    timeText.enabled = false;
         string diff = PlayerPrefs.GetString("Difficulty", "Easy");
@@ -77,7 +80,6 @@ public class GameManager : MonoBehaviour, IGameManager
     {
         Time.timeScale = 1f;
         Input.ResetInputAxes();
-
     }
 
     public void GamePause()
@@ -87,7 +89,9 @@ public class GameManager : MonoBehaviour, IGameManager
 
     public void GameWin()
     {
-        throw new System.NotImplementedException();
+        GamePause();
+        if (gameWinPanel != null)
+            gameWinPanel.SetActive(true);
     }
 
     public void GameQuit()

@@ -123,6 +123,7 @@
     <Compile Include="Assets\_Data\Scripts\Character\Character.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Slime\SlimeAttackCollider.cs" />
     <Compile Include="Assets\Enemy Galore 1 - Pixel Art\Script\EnemySelector.cs" />
+    <Compile Include="Assets\_Data\Scripts\UI\Title.cs" />
     <Compile Include="Assets\_Data\Scripts\HotBarManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\EnemyAnimation.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\StoneDestroy.cs" />

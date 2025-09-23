@@ -621,8 +621,6 @@ MonoBehaviour:
   enemyAnimation: {fileID: 3454915752660464545}
   charhealthSlider: {fileID: 977506738749454509}
   playerHpText: {fileID: 0}
-  expPool: {fileID: 0}
-  spriteAtlas: {fileID: 100100200, guid: c29ab33f227db374ab1924ab2a94a192, type: 3}
   slimeAnimation: {fileID: 3454915752660464545}
 --- !u!114 &7347015548002285914
 MonoBehaviour:
@@ -649,9 +647,9 @@ GameObject:
   - component: {fileID: 3341956026007296294}
   - component: {fileID: 355762013713994183}
   - component: {fileID: 170324694414248236}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
