@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -152844137
-  m_SortingLayer: 7
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -311297077, guid: 3f7136c83a4a8eb45a61652884907ba8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -198,4 +198,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 945d714527734a54ea3585cb63539531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potionData: {fileID: 11400000, guid: 5692b7e9ae717804386406442b28d5e2, type: 2}
+  itemData: {fileID: 11400000, guid: 5692b7e9ae717804386406442b28d5e2, type: 2}
+  spriteRenderer: {fileID: 5533547265174939779}

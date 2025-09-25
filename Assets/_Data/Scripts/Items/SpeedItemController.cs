@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletItemController : Item
+public class SpeedItemController : Item
 {
     protected override void Awake()
     {

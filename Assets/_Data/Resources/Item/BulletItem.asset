@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f5596c4af278f4aa73f9f9be0f4be7, type: 3}
   m_Name: BulletItem
   m_EditorClassIdentifier: 
+  itemName: Select 9
   value: 5

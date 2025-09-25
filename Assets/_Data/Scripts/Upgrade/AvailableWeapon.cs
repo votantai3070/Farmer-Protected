@@ -8,12 +8,15 @@ using UnityEngine.UI;
 public class AvailableWeapon : MonoBehaviour
 {
     [SerializeField] private UpgradeManager available;
+
+    [Header("Available Weapon")]
     [SerializeField] GameObject chooseWeaponPrefab;
     [SerializeField] Transform parent;
     [SerializeField] GameObject chooseWeaponPanel;
     [SerializeField] GameObject chooseWeapon;
 
 
+    // Setup available weapons
     public void SetAvailable()
     {
         chooseWeaponPanel.SetActive(true);
@@ -21,7 +24,7 @@ public class AvailableWeapon : MonoBehaviour
         List<WeaponData> availableList = available.AvaiableUpgrades();
 
         var availableSort = availableList
-             .OrderBy(x => Random.value)                    // random
+             .OrderBy(x => Random.value)                     // random
              .DistinctBy(w => new { w.weaponName, w.level }) // loại trùng
              .Take(Mathf.Min(3, availableList.Count))
              .ToList();
@@ -47,5 +50,11 @@ public class AvailableWeapon : MonoBehaviour
             else
                 chooseWeapon.transform.GetChild(i).gameObject.SetActive(false);
         }
+    }
+
+    // Setup available players
+    public void SetPlayerAvailable()
+    {
+        List<CharacterData> characterDatas = available.playerUpgrade();
     }
 }

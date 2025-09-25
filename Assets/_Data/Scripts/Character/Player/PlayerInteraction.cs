@@ -6,12 +6,13 @@ using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [Header("Exp Pool Setting")]
+    [Header("Pool Setting")]
     [SerializeField] private ObjectPool exp1Pool;
     [SerializeField] private ObjectPool exp2Pool;
     [SerializeField] private ObjectPool exp3Pool;
     [SerializeField] private ObjectPool bulletItemPool;
     [SerializeField] private ObjectPool potionPool;
+    [SerializeField] private ObjectPool speedPool;
 
     [Header("Exp Slider Setting")]
     [SerializeField] private List<float> expTable;
@@ -34,6 +35,9 @@ public class PlayerInteraction : MonoBehaviour
 
     [Header("Select Weapon")]
     [SerializeField] private AvailableWeapon availableWeapon;
+
+    [Header("Speed Item")]
+    [SerializeField] private PlayerMovement playerMovement;
 
     private void Start()
     {
@@ -102,7 +106,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (collision.TryGetComponent<ExpController>(out var exp))
             {
-                AddExp(exp.expData.value);
+                AddExp(exp.itemData.value);
             }
             exp1Pool.ReturnPool(collision.gameObject);
         }
@@ -111,7 +115,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (collision.TryGetComponent<ExpController>(out var exp))
             {
-                AddExp(exp.expData.value);
+                AddExp(exp.itemData.value);
             }
             exp2Pool.ReturnPool(collision.gameObject);
         }
@@ -120,7 +124,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (collision.TryGetComponent<ExpController>(out var exp))
             {
-                AddExp(exp.expData.value);
+                AddExp(exp.itemData.value);
             }
             exp3Pool.ReturnPool(collision.gameObject);
         }
@@ -129,7 +133,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (collision.TryGetComponent<BulletItemController>(out var bulletItem))
             {
-                bullet.AddAmmo(bulletItem.bulletItemData);
+                bullet.AddAmmo(bulletItem.itemData);
             }
             bulletItemPool.ReturnPool(collision.gameObject);
         }
@@ -138,7 +142,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (collision.TryGetComponent<PotionController>(out var potion))
             {
-                player.Heal(potion.potionData.value);
+                player.Heal(potion.itemData.value);
             }
             potionPool.ReturnPool(collision.gameObject);
         }
@@ -150,6 +154,16 @@ public class PlayerInteraction : MonoBehaviour
                 if (nearbyChest == null)
                     nearbyChest = chest;
             }
+        }
+
+        else if (collision.CompareTag("Speed"))
+        {
+            if (collision.TryGetComponent<SpeedItemController>(out var speed))
+            {
+
+                StartCoroutine(playerMovement.BoostSpeed(speed.itemData.value, speed.itemData.timeLimit));
+            }
+            speedPool.ReturnPool(collision.gameObject);
         }
     }
 

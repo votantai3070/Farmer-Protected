@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class PotionController : MonoBehaviour
+public class PotionController : Item
 {
-    public ItemData potionData;
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 }

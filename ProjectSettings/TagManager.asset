@@ -13,6 +13,7 @@ TagManager:
   - BulletItem
   - Potion
   - Chest
+  - Speed
   layers:
   - Default
   - TransparentFX

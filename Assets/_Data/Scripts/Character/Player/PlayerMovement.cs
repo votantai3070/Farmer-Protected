@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerController player;
     public InputManager inputManager;
     public SpriteRenderer sprite;
+    float speed;
 
     [Header("Dash Settings")]
     public GameObject playerGhostPrefab;
@@ -18,6 +19,17 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isDashing = false;
     private float dashCooldownTimer = 0f;
+
+    private void Start()
+    {
+        speed = player.characterData.speed;
+    }
+
+    public float Speed
+    {
+        get => speed;
+        set => speed = value;
+    }
 
     private void Update()
     {
@@ -37,11 +49,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement()
     {
-        rb.linearVelocity = inputManager.MoveInput * player.characterData.speed;
+        rb.linearVelocity = inputManager.MoveInput * Speed;
 
         playerAnimation.SwitchAnimationState("RUN");
 
         Flip();
+    }
+
+    public IEnumerator BoostSpeed(float boostAmount, float duration)
+    {
+        Speed += boostAmount;
+        yield return new WaitForSeconds(duration);
+        Speed -= boostAmount;
     }
 
     private IEnumerator HandleDashing()

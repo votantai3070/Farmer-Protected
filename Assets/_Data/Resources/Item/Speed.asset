@@ -9,16 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdf96d3d4fbe20243974cd3cc36f3e34, type: 3}
-  m_Name: Easy
+  m_Script: {fileID: 11500000, guid: 70f5596c4af278f4aa73f9f9be0f4be7, type: 3}
+  m_Name: Speed
   m_EditorClassIdentifier: 
-  difficult: Easy
-  phase1Time: 0.75
-  phase2Time: 0.5
-  phase3Time: 0.2
-  phase4Time: 0
-  phase1EnemyCount: 1
-  phase2EnemyCount: 10
-  phase3EnemyCount: 5
-  phase4EnemyCount: 1
-  timeCountdown: 300
+  itemName: Select 7
+  value: 5
+  timeLimit: 3
