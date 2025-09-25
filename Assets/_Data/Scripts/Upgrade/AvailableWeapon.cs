@@ -56,5 +56,18 @@ public class AvailableWeapon : MonoBehaviour
     public void SetPlayerAvailable()
     {
         List<CharacterData> characterDatas = available.playerUpgrade();
+
+        for (int i = 0; i < chooseWeapon.transform.childCount; i++)
+        {
+            if (characterDatas.Count > i)
+            {
+                chooseWeapon.transform.GetChild(i).gameObject.SetActive(true);
+                //chooseWeapon.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = GameManager.Instance.UIAtlas.GetSprite(characterDatas[i].UISprite);
+                chooseWeapon.transform.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{characterDatas[i].characterName} / Level {characterDatas[i].level}";
+                //chooseWeapon.transform.GetChild(i).GetComponent<UpgradeClicker>().SetCharacterData(characterDatas[i]);
+            }
+            else
+                chooseWeapon.transform.GetChild(i).gameObject.SetActive(false);
+        }
     }
 }

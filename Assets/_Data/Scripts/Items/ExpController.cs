@@ -18,6 +18,8 @@ public class ExpController : Item
     void AttactedByPlayer()
     {
         float distance = Vector2.Distance(transform.position, player.position);
+        if (MagnetController.Instance.isMagnetActive)
+            transform.position = Vector2.Lerp(transform.position, player.position, 30f * Time.deltaTime);
         if (distance < 2.5f)
             transform.position = Vector2.Lerp(transform.position, player.position, 20f * Time.deltaTime);
     }

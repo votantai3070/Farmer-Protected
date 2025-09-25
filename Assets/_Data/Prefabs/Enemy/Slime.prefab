@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 190054488744535010}
   - component: {fileID: 3454915752660464545}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SlimeAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 591576402383515963}
   - component: {fileID: 7484610508762977616}
   - component: {fileID: 7347015548002285914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SlimeGFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 2921307339940087214}
   - component: {fileID: 4375426013883953070}
   - component: {fileID: 7995185125328802119}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SlimeMovement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 1203648739323340522}
   - component: {fileID: 3006500457742434312}
   - component: {fileID: 652435077536341058}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SlimeAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -135,6 +135,7 @@
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerMovement.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerController.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Slime\SlimeController.cs" />
+    <Compile Include="Assets\_Data\Scripts\Items\MagnetController.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Rat\RatController.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Bone\BoneAttack.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\Bullet.cs" />

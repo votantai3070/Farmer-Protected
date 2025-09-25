@@ -165,6 +165,16 @@ public class PlayerInteraction : MonoBehaviour
             }
             speedPool.ReturnPool(collision.gameObject);
         }
+
+        else if (collision.CompareTag("Magnet"))
+        {
+            if (collision.TryGetComponent<MagnetController>(out var mag))
+            {
+
+                StartCoroutine(mag.MagnetEffect());
+            }
+            speedPool.ReturnPool(collision.gameObject);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

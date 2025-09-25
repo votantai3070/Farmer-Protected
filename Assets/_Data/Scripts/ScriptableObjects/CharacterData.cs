@@ -24,4 +24,5 @@ public class CharacterData : ScriptableObject
     public float dropBulletChange;
     public float dropPotionChange;
     public float dropSpeedChange;
+    public float dropMagChange;
 }
