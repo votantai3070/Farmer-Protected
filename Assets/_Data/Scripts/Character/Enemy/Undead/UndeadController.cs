@@ -34,6 +34,11 @@ public class UndeadController : Enemy
         spriteRenderer.sprite = run0;
     }
 
+    protected override void Update()
+    {
+        base.Update();
+    }
+
     protected override void Die()
     {
         base.Die();

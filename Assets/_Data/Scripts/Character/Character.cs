@@ -31,6 +31,7 @@ public class Character : MonoBehaviour, IDamagable
             bool isHit = enemyAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
             path.canMove = !isHit;
         }
+
     }
 
     public void Heal(int amount)

@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 7762535183678661547}
   m_Layer: 7
   m_Name: Undead
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -886,7 +886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 6539573911879492794}
   characterData: {fileID: 11400000, guid: a79157e74e9f3e14cb06b7538b535073, type: 2}
-  enemyAnimation: {fileID: 0}
+  enemyAnimation: {fileID: 409276374470289140}
   charhealthSlider: {fileID: 9187053939375239300}
   playerHpText: {fileID: 0}
   enemyName: Enemy 0

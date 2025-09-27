@@ -114,9 +114,9 @@ public class EnemyAnimation : MonoBehaviour
             //    if (attackAnimation != null)
             //        attackAnimation.SetTrigger("AttackFX");
             //    break;
-            case "RUN":
-                animator.SetTrigger("Run");
-                break;
+            //case "RUN":
+            //    animator.SetTrigger("Run");
+            //    break;
             case "DEAD":
                 animator.SetTrigger("Dead");
                 break;
