@@ -46,6 +46,9 @@ public class EnemyMovementGFX : MonoBehaviour
 
         else if (enemy.characterData.characterName == "Golem")
             enemyAnimation.SwitchGolemAnimation("RUN");
+
+        else if (enemy.characterData.characterName == "Undead")
+            enemyAnimation.SwitchUndeadAnimation("RUN");
     }
 
     void Flip()

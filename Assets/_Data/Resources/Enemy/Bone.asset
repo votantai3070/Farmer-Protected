@@ -13,11 +13,16 @@ MonoBehaviour:
   m_Name: Bone
   m_EditorClassIdentifier: 
   characterName: Bone
+  level: 0
+  description: 
   characterType: 3
   speed: 4
   maxHealth: 10
   stamina: 0
   range: 3
   dashSpeed: 0
+  reward: 1
   dropBulletChange: 0.5
   dropPotionChange: 0.3
+  dropSpeedChange: 0.2
+  dropMagChange: 0.3

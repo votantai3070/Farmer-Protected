@@ -87,8 +87,8 @@ public class PlayerMovement : MonoBehaviour
     private void Flip()
     {
         if (inputManager.MoveInput.x > 0)
-            sprite.flipX = false;
+            transform.parent.localScale = new Vector3(1, 1, 1);
         else if (inputManager.MoveInput.x < 0)
-            sprite.flipX = true;
+            transform.parent.localScale = new Vector3(-1, 1, 1);
     }
 }

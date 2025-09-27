@@ -44,6 +44,11 @@ public class PlayerWeapon : MonoBehaviour
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
+        if (transform.parent.localScale.x < 0)
+        {
+            angle += 180f;
+        }
+
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }

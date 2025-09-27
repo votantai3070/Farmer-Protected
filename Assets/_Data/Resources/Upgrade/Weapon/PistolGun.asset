@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: Pistol Gun
   level: 1
   description: Unlock Pistol Gun
-  weaponType: 1
+  weaponType: 2
   ingameSprite: Weapon 3
   bulletSprite: Bullet 3
   UISprite: Select 3

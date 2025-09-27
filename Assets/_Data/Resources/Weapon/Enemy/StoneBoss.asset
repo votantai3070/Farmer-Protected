@@ -13,10 +13,23 @@ MonoBehaviour:
   m_Name: StoneBoss
   m_EditorClassIdentifier: 
   weaponName: Throw Stone
-  sprite: {fileID: 0}
+  level: 0
+  description: 
+  weaponType: 0
+  ingameSprite: 
+  bulletSprite: item_0
+  UISprite: 
   firstDamage: 5
   lastDamage: 5
   range: 0
   speed: 8
-  criticalCrit: 0
+  criticalChange: 0
   criticalDamage: 0
+  stamina: 0
+  magazineSize: 0
+  currentAmmo: 0
+  reserveAmmo: 0
+  attackDelayTime: 0
+  reloadTime: 0
+  isAutomatic: 0
+  rareColor: {r: 0, g: 0, b: 0, a: 0}

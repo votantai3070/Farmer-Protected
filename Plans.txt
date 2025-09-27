@@ -27,23 +27,31 @@
 - Có sử dụng A* path cho enemy tìm player ---------- Xong
 
 - Gameplay
- + Giết enemy lấy kinh nghiệm lên cấp nâng vũ khí
- + Mở rương (Vũ khí, máu)
+ + Giết enemy lấy kinh nghiệm lên cấp nâng vũ khí --------- Xong
+ + Mở rương (Vũ khí, máu) --------- Xong
 
  +++ Nâng cấp có thể là:
- ++++ Tăng chỉ số (damage, speed, fire rate…)
- ++++ Tăng cấp vũ khí hiện có (Lv.2, Lv.3…)
+ ++++ Tăng chỉ số (damage, speed, fire rate…) ------ Xong
+ ++++ Tăng cấp vũ khí hiện có (Lv.2, Lv.3…) ------ Xong
  ++++ Mở vũ khí mới
  ++++ Passive buff (HP, regen, gold find…)
 
- + Enemy spawn theo wave(time) ---------- Còn bug
+ + Enemy spawn theo wave(time) ---------- Xong
 
-- Menu
-- Game Over
-- Game Win
+- Menu --------- Xong
+- Game Over --------- Xong
+- Game Win --------- Xong
 - Level (1,2,3,4,...) -------- Xong
 
 - Chưa làm add vào list current upgrade (UpgradeManager) --------- Xong
 - Thay chọn vũ khí từ rương thì lên cấp sẽ chọn vũ khí lên cấp --------- Xong
-- Sửa đường dạn của shotgun
+- Sửa đường dạn của shotgun --------- Xong
 
+Bonus
+- Hiện thêm hotbar lên UI --------- Xong
+
+- Fix tại sao slime không tấn công
+- Thêm knock back --- Dùng A* kh thêm được
+- Khi đến gần exp sẽ tự động thu hút -------- Xong
+- Thêm Item tăng tốcộ di chuyển ---------- Xong
+- Thêm Item hút exp ----------- Xong

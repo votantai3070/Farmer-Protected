@@ -7,6 +7,7 @@ public class WeaponData : ScriptableObject
     public string description;
     public enum WeaponType
     {
+        Enemy_Attack,
         Rifle,
         Pistol,
         Shotgun,

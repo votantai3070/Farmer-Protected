@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: Pistol Gun
   level: 2
   description: Upgrade lv 2
-  weaponType: 1
+  weaponType: 2
   ingameSprite: Weapon 3
   bulletSprite: Bullet 3
   UISprite: Select 3

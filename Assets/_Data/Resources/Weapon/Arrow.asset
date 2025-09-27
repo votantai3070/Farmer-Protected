@@ -13,7 +13,23 @@ MonoBehaviour:
   m_Name: Arrow
   m_EditorClassIdentifier: 
   weaponName: Bow
-  icon: {fileID: 0}
-  damage: 8
+  level: 0
+  description: 
+  weaponType: 4
+  ingameSprite: 
+  bulletSprite: 
+  UISprite: 
+  firstDamage: 0
+  lastDamage: 0
   range: 0
   speed: 10
+  criticalChange: 0
+  criticalDamage: 0
+  stamina: 0
+  magazineSize: 0
+  currentAmmo: 0
+  reserveAmmo: 0
+  attackDelayTime: 0
+  reloadTime: 0
+  isAutomatic: 0
+  rareColor: {r: 0, g: 0, b: 0, a: 0}

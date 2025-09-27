@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: Rake
   level: 0
   description: 
-  weaponType: 3
+  weaponType: 4
   ingameSprite: Weapon 1
   bulletSprite: Bullet 1
   UISprite: Select 1

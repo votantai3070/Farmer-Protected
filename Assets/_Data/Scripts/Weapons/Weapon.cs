@@ -16,7 +16,7 @@ public class Weapon : MonoBehaviour
         int curentDamage = (int)(isCrit
             ? Random.Range(weaponData.firstDamage, weaponData.lastDamage + 1) * weaponData.criticalDamage
             : Random.Range(weaponData.firstDamage, weaponData.lastDamage + 1));
-
+        Debug.Log($"Damage: {curentDamage} - Crit: {isCrit}");
         target.TakeDamage(Mathf.FloorToInt(curentDamage), isCrit);
     }
 }

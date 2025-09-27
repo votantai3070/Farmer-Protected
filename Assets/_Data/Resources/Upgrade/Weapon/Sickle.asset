@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: Sickle
   level: 1
   description: 
-  weaponType: 3
+  weaponType: 4
   ingameSprite: Weapon 2
   bulletSprite: Bullet 2
   UISprite: Select 2

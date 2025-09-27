@@ -7,8 +7,7 @@ public class RatAttackAMS : StateMachineBehaviour
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        var attack = animator.GetComponent<RatAttackCollider>();
-
+        if (!animator.TryGetComponent<RatAttackCollider>(out var attack)) return;
         attack.Close();
     }
 
@@ -17,6 +16,8 @@ public class RatAttackAMS : StateMachineBehaviour
         var attack = animator.GetComponent<RatAttackCollider>();
 
         float t = stateInfo.normalizedTime % 1f;
+
+        if (attack == null) return;
 
         if (t >= openAt && t < closeAt) attack.Open();
         else attack.Close();

@@ -24,7 +24,7 @@ public class Character : MonoBehaviour, IDamagable
         ResetGameObject();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (enemyAnimation != null)
         {
@@ -71,6 +71,10 @@ public class Character : MonoBehaviour, IDamagable
     protected virtual void Die()
     {
         gameObject.GetComponent<Collider2D>().enabled = false;
+        if (characterData.characterType == CharacterType.Enemy)
+        {
+            UIManager.Instance.UpdateDefeatEnemy(characterData.reward);
+        }
     }
 
 

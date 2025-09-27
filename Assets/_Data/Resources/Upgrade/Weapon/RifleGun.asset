@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: Rifle Gun
   level: 1
   description: Unlock Rifle Gun
-  weaponType: 0
+  weaponType: 1
   ingameSprite: Weapon 4
   bulletSprite: Bullet 4
   UISprite: Select 4

@@ -105,6 +105,32 @@ public class EnemyAnimation : MonoBehaviour
                 break;
         }
     }
+    public void SwitchUndeadAnimation(string ani)
+    {
+        switch (ani)
+        {
+            //case "ATTACK":
+            //    animator.SetTrigger("Attack");
+            //    if (attackAnimation != null)
+            //        attackAnimation.SetTrigger("AttackFX");
+            //    break;
+            case "RUN":
+                animator.SetTrigger("Run");
+                break;
+            case "DEAD":
+                animator.SetTrigger("Dead");
+                break;
+            //case "ABILITY":
+            //    animator.SetTrigger("Ability");
+            //    break;
+            case "HIT":
+                animator.SetTrigger("Hit");
+                break;
+            default:
+                Debug.LogWarning("");
+                break;
+        }
+    }
 
     public void SwitchGolemAnimation(string ani)
     {
@@ -155,5 +181,7 @@ public class EnemyAnimation : MonoBehaviour
             SwitchSlimeAnimation("HIT");
         else if (enemy.characterData.characterName == "Golem")
             SwitchGolemAnimation("HIT");
+        else if (enemy.characterData.characterName == "Undead")
+            SwitchUndeadAnimation("HIT");
     }
 }

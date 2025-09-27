@@ -21,6 +21,7 @@ public class CharacterData : ScriptableObject
     public float stamina;
     public float range;
     public float dashSpeed;
+    public int reward;
     public float dropBulletChange;
     public float dropPotionChange;
     public float dropSpeedChange;

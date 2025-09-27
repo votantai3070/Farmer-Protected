@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: Shotgun
   level: 2
   description: Upgrade lv 2
-  weaponType: 2
+  weaponType: 3
   ingameSprite: Weapon 5
   bulletSprite: Bullet 5
   UISprite: Select 5

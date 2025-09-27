@@ -9,7 +9,6 @@ public class CloseEnemyAttack : Weapon
 
     private Transform _player;
     public Rigidbody2D rb;
-    public GameObject attackFX;
 
     bool _isAttackedFX = false;
     [SerializeField] float _activeTime = 1f;

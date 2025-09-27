@@ -13,11 +13,16 @@ MonoBehaviour:
   m_Name: Bat
   m_EditorClassIdentifier: 
   characterName: Bat
+  level: 0
+  description: 
   characterType: 3
   speed: 2
   maxHealth: 5
   stamina: 0
   range: 5
   dashSpeed: 0
+  reward: 1
   dropBulletChange: 0.2
   dropPotionChange: 0.1
+  dropSpeedChange: 0.1
+  dropMagChange: 0.1

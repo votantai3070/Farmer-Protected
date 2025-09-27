@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: Shovel
   level: 3
   description: Follow Target
-  weaponType: 3
+  weaponType: 4
   ingameSprite: Weapon 0
   bulletSprite: Bullet 0
   UISprite: Select 0

@@ -112,7 +112,6 @@ public class SpawnEnemy : MonoBehaviour
             return;
 
         if (activeEnemies.Count >= maxEnemies) return;
-        Debug.Log("Chay vo");
 
         CheckConditionSpawnEnemy();
 
@@ -141,12 +140,6 @@ public class SpawnEnemy : MonoBehaviour
 
     void SetDifficulty(DifficultData difficultData)
     {
-        Debug.Log("Set Difficulty: " + difficultData.difficult);
-        //enemyPhase1Pools = difficultData.enemyPhase1;
-        //enemyPhase2Pools = difficultData.enemyPhase2;
-        //enemyPhase3Pools = difficultData.enemyPhase3;
-        //enemyPhase4Pools = difficultData.enemyPhase4;
-
         maxEnemies = difficultData.phase1EnemyCount;
 
         maxEnemiesPhase1 = difficultData.phase1EnemyCount;
