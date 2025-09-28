@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
@@ -44,11 +45,21 @@ public class PlayerWeapon : MonoBehaviour
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
+        FlipPlayerFollowMouse(angle);
+
         if (transform.parent.localScale.x < 0)
         {
             angle += 180f;
         }
 
         transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    void FlipPlayerFollowMouse(float angle)
+    {
+        if (angle > 90 || angle < -90)
+            transform.parent.localScale = new Vector3(-1, 1, 1);
+        else
+            transform.parent.localScale = new Vector3(1, 1, 1);
     }
 }

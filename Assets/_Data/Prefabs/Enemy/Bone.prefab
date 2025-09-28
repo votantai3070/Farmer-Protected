@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6149648450299219070}
-  - component: {fileID: 5244421213231974101}
   - component: {fileID: 4724066679962901486}
   m_Layer: 0
   m_Name: BoneMovement
@@ -33,22 +32,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8227289107876967201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5244421213231974101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857305984267739506}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 707c642969b67814f928eaaffb7cd633, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 6396712293322171566}
-  rb: {fileID: 7049656898329379209}
-  batAttack: {fileID: 0}
-  enemyAnimation: {fileID: 7180914959206845093}
 --- !u!114 &4724066679962901486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +182,6 @@ MonoBehaviour:
   enemyAnimation: {fileID: 7180914959206845093}
   enemy: {fileID: 6396712293322171566}
   rb: {fileID: 7049656898329379209}
-  attackFX: {fileID: 0}
   _activeTime: 1
   _delayTime: 1.5
 --- !u!1 &1805347106945079667

@@ -33,7 +33,7 @@
  +++ Nâng cấp có thể là:
  ++++ Tăng chỉ số (damage, speed, fire rate…) ------ Xong
  ++++ Tăng cấp vũ khí hiện có (Lv.2, Lv.3…) ------ Xong
- ++++ Mở vũ khí mới
+ ++++ Mở vũ khí mới ---------- Xong
  ++++ Passive buff (HP, regen, gold find…)
 
  + Enemy spawn theo wave(time) ---------- Xong
@@ -50,8 +50,11 @@
 Bonus
 - Hiện thêm hotbar lên UI --------- Xong
 
-- Fix tại sao slime không tấn công
+- Fix tại sao slime không tấn công 
 - Thêm knock back --- Dùng A* kh thêm được
 - Khi đến gần exp sẽ tự động thu hút -------- Xong
 - Thêm Item tăng tốcộ di chuyển ---------- Xong
 - Thêm Item hút exp ----------- Xong
+- Thêm Update Character
+- Thêm 1 Undead Enemy -------- Xong
+- Sửa lại player xoay theo hướng chuột
