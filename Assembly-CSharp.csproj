@@ -85,6 +85,7 @@
     <Compile Include="Assets\IsometricElfFreeVer\scripts\ArrowManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Enemy.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Bone\BoneAttackCollider.cs" />
+    <Compile Include="Assets\_Data\Scripts\ScriptableObjects\UpgradeData.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Player\Attack.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerWeapon.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\CloseWeaponMovement.cs" />

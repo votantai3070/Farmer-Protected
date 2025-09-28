@@ -35,6 +35,11 @@ public class CloseEnemyAttack : Weapon
 
     void UpdateEnemyAttack()
     {
+        if (enemyAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("Dead"))
+        {
+            return;
+        }
+
         if (!_isAttackedFX)
             StartCoroutine(AttackFX());
     }

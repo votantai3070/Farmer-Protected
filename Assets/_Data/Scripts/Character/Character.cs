@@ -2,7 +2,6 @@ using DG.Tweening;
 using Pathfinding;
 using TMPro;
 using UnityEngine;
-using UnityEngine.U2D;
 using UnityEngine.UI;
 using static CharacterData;
 
@@ -15,6 +14,8 @@ public class Character : MonoBehaviour, IDamagable
     public Slider charhealthSlider;
     public TextMeshProUGUI playerHpText;
     protected SpriteRenderer spriteRenderer;
+
+    private Tweener hpTween;
 
     public float CurrentHealth { get; private set; }
     float MaxHealth => characterData.maxHealth;
@@ -37,11 +38,12 @@ public class Character : MonoBehaviour, IDamagable
     public void Heal(int amount)
     {
         CurrentHealth += amount;
-
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
 
+        if (hpTween != null && hpTween.IsActive()) hpTween.Kill();
+
         if (charhealthSlider != null)
-            charhealthSlider.DOValue(CurrentHealth, 0.3f).SetEase(Ease.Linear);
+            hpTween = charhealthSlider.DOValue(CurrentHealth, 0.3f).SetEase(Ease.Linear);
 
         if (playerHpText != null)
             playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
@@ -58,7 +60,10 @@ public class Character : MonoBehaviour, IDamagable
         DamagePopupGenerator.Instance.DisplayDamage(transform.position, damage, isCrit);
 
         if (charhealthSlider != null)
-            charhealthSlider.value = CurrentHealth;
+        {
+            if (hpTween != null && hpTween.IsActive()) hpTween.Kill();
+            hpTween = charhealthSlider.DOValue(CurrentHealth, 0.2f).SetEase(Ease.Linear);
+        }
 
         if (playerHpText != null)
             playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
@@ -72,6 +77,7 @@ public class Character : MonoBehaviour, IDamagable
     protected virtual void Die()
     {
         gameObject.GetComponent<Collider2D>().enabled = false;
+
         if (characterData.characterType == CharacterType.Enemy)
         {
             UIManager.Instance.UpdateDefeatEnemy(characterData.reward);

@@ -1,10 +1,10 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CharacterData", menuName = "Character/CharacterData")]
-public class CharacterData : ScriptableObject
+public class CharacterData : UpgradeData
 {
     public string characterName;
-    public int level;
+    //public int level;
     public string description;
     public enum CharacterType
     {

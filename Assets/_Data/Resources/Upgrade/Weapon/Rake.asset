@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
   m_Name: Rake
   m_EditorClassIdentifier: 
+  upgradeName: 
+  level: 1
   weaponName: Rake
-  level: 0
   description: 
   weaponType: 4
   ingameSprite: Weapon 1

@@ -1,9 +1,9 @@
 using UnityEngine;
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon/WeaponData")]
-public class WeaponData : ScriptableObject
+public class WeaponData : UpgradeData
 {
     public string weaponName;
-    public int level;
+    //public int level;
     public string description;
     public enum WeaponType
     {

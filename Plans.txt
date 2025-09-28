@@ -49,12 +49,10 @@
 
 Bonus
 - Hiện thêm hotbar lên UI --------- Xong
-
-- Fix tại sao slime không tấn công 
 - Thêm knock back --- Dùng A* kh thêm được
 - Khi đến gần exp sẽ tự động thu hút -------- Xong
-- Thêm Item tăng tốcộ di chuyển ---------- Xong
+- Thêm Item tăng tốc dộ di chuyển ---------- Xong
 - Thêm Item hút exp ----------- Xong
-- Thêm Update Character
 - Thêm 1 Undead Enemy -------- Xong
-- Sửa lại player xoay theo hướng chuột
+- Sửa lại player xoay theo hướng chuột ---------- Xong
+- Thêm Update Character

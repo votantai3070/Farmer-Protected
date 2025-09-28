@@ -594,6 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: b2f7e09612658874284636a54cb853c8, type: 2}
+  enemyAnimation: {fileID: 3746709219502668570}
 --- !u!1 &8337967764078599989
 GameObject:
   m_ObjectHideFlags: 0
