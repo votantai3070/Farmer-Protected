@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using TMPro;
+﻿using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D;
 
@@ -28,6 +29,15 @@ public class GameManager : MonoBehaviour, IGameManager
         if (Instance == null)
         {
             Instance = this;
+        }
+
+        var systems = FindObjectsByType<EventSystem>(FindObjectsSortMode.None);
+        if (systems.Length > 1)
+        {
+            for (int i = 1; i < systems.Length; i++)
+            {
+                Destroy(systems[i].gameObject);
+            }
         }
     }
 

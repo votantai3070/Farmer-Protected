@@ -10,16 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a51ebf723d531bf4d8154426f7afa80a, type: 3}
-  m_Name: PlayerLv2
+  m_Name: Player Lv2
   m_EditorClassIdentifier: 
   characterName: Player Lv2
   level: 2
   description: Run Faster and Stronger
+  rareColor: {r: 0.54509807, g: 0.36078432, b: 0.9647059, a: 0}
   characterType: 0
+  characterSprite: 
   speed: 10
   maxHealth: 10
   stamina: 70
   range: 0
   dashSpeed: 20
+  reward: 0
   dropBulletChange: 0
   dropPotionChange: 0
+  dropSpeedChange: 0
+  dropMagChange: 0

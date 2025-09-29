@@ -6142,7 +6142,7 @@ PrefabInstance:
     - target: {fileID: 3918516390809112133, guid: b991881ee98558c4fad94d0919a17a5d, type: 3}
       propertyPath: availableWeapon
       value: 
-      objectReference: {fileID: 2074171157}
+      objectReference: {fileID: 0}
     - target: {fileID: 4912023208800285607, guid: b991881ee98558c4fad94d0919a17a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.06
@@ -8239,7 +8239,7 @@ GameObject:
   - component: {fileID: 1900222600}
   - component: {fileID: 1900222599}
   m_Layer: 5
-  m_Name: ChooseWeaponPanel
+  m_Name: ChooseUpgradePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9507,7 +9507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2074171156}
   - component: {fileID: 2074171158}
-  - component: {fileID: 2074171157}
+  - component: {fileID: 2074171159}
   m_Layer: 0
   m_Name: UpgradeManager
   m_TagString: Untagged
@@ -9530,23 +9530,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2074171157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074171155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 164048556575ba242969b75fd2bbcb20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  available: {fileID: 2074171158}
-  chooseWeaponPrefab: {fileID: 2329963297188926061, guid: aae9517ab64674b49b33a337fa4d8ec8, type: 3}
-  parent: {fileID: 1694045338}
-  chooseWeaponPanel: {fileID: 1900222597}
-  chooseWeapon: {fileID: 646795148}
 --- !u!114 &2074171158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9581,6 +9564,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5e6e69b9f74d82148a761f23aa805a4f, type: 2}
   upgradePlayerList: []
   currentUpgradePlayerList: []
+--- !u!114 &2074171159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074171155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4da70f4214c244eaaef227883fa8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  available: {fileID: 2074171158}
+  upgradePlayerList: []
+  chooseUpgradePanel: {fileID: 1900222597}
+  chooseUpgrade: {fileID: 646795148}
 --- !u!1 &2083854500
 GameObject:
   m_ObjectHideFlags: 0
@@ -11680,6 +11679,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
+  characterData: {fileID: 0}
+  upgradePlayer: 0
 --- !u!114 &7719044289879531509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11693,6 +11694,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
+  characterData: {fileID: 0}
+  upgradePlayer: 0
 --- !u!114 &7719044290034086818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11706,6 +11709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
+  characterData: {fileID: 0}
+  upgradePlayer: 0
 --- !u!1 &7967193229612897153
 GameObject:
   m_ObjectHideFlags: 0
@@ -12269,7 +12274,7 @@ PrefabInstance:
     - target: {fileID: 4631555887535708113, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
       propertyPath: availableWeapon
       value: 
-      objectReference: {fileID: 2074171157}
+      objectReference: {fileID: 2074171159}
     - target: {fileID: 5878897150177110415, guid: 71b8736b4da7c0d488db070b0ddac4be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

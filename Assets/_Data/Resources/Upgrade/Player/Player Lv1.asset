@@ -15,11 +15,16 @@ MonoBehaviour:
   characterName: Player Lv1
   level: 1
   description: Default
+  rareColor: {r: 0.14509805, g: 0.3882353, b: 0.92156863, a: 0}
   characterType: 0
+  characterSprite: 
   speed: 8
   maxHealth: 5
   stamina: 50
   range: 0
   dashSpeed: 10
+  reward: 0
   dropBulletChange: 0
   dropPotionChange: 0
+  dropSpeedChange: 0
+  dropMagChange: 0

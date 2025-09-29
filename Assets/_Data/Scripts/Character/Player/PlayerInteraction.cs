@@ -34,7 +34,7 @@ public class PlayerInteraction : MonoBehaviour
     private ChestController nearbyChest;
 
     [Header("Select Weapon")]
-    [SerializeField] private AvailableWeapon availableWeapon;
+    [SerializeField] private AvailableUpgrade availableWeapon;
 
     [Header("Speed Item")]
     [SerializeField] private PlayerMovement playerMovement;
@@ -94,7 +94,7 @@ public class PlayerInteraction : MonoBehaviour
     }
     private void ShowSelectWeaponPanel()
     {
-        availableWeapon.SetAvailable();
+        availableWeapon.SetWeaponAvailable();
         GameManager.Instance.GamePause();
     }
 

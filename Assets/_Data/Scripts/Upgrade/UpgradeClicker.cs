@@ -5,21 +5,36 @@ public class UpgradeClicker : MonoBehaviour, IPointerClickHandler
 {
     private GameObject upgradePanel;
     public WeaponData weaponData;
+    public CharacterData characterData;
     private UpgradeManager upgradeManager;
     private InventoryManager inventoryManager;
+    [SerializeField] bool upgradePlayer;
 
     private void Awake()
     {
-        upgradePanel = GameObject.Find("ChooseWeaponPanel");
+        if (!upgradePlayer)
+        {
+            inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
+        }
+        upgradePanel = GameObject.Find("ChooseUpgradePanel");
         upgradeManager = GameObject.Find("UpgradeManager").GetComponent<UpgradeManager>();
-        inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         upgradePanel.SetActive(false);
-        GameManager.Instance.GameResume();
-        UpgradeWeapon();
+
+        if (upgradePlayer)
+        {
+            UpgradePlayer();
+            ChooseUpgradeCharacter.Instance.CloseChooseCharacterPanel();
+        }
+
+        else
+        {
+            UpgradeWeapon();
+            GameManager.Instance.GameResume();
+        }
     }
 
     private void UpgradeWeapon()
@@ -49,9 +64,19 @@ public class UpgradeClicker : MonoBehaviour, IPointerClickHandler
             upgradeManager.AddUpgrade(weaponData);
         }
     }
+    private void UpgradePlayer()
+    {
+        PlayerPrefs.SetString("Character", characterData.characterName);
+        PlayerPrefs.Save();
+    }
 
     public void SetWeaponData(WeaponData weapon)
     {
         weaponData = weapon;
+    }
+
+    public void SetCharacterData(CharacterData character)
+    {
+        characterData = character;
     }
 }

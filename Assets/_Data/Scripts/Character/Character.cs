@@ -22,7 +22,8 @@ public class Character : MonoBehaviour, IDamagable
 
     private void OnEnable()
     {
-        ResetGameObject();
+        if (characterData != null)
+            ResetGameObject();
     }
 
     protected virtual void Update()
@@ -84,6 +85,11 @@ public class Character : MonoBehaviour, IDamagable
         }
     }
 
+    public void Init(CharacterData data)
+    {
+        characterData = data;
+        //ResetGameObject();
+    }
 
     private void ResetGameObject()
     {

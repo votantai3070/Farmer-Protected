@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
   m_Name: Shovel Lv2
   m_EditorClassIdentifier: 
-  weaponName: Shovel
+  upgradeName: Shovel
   level: 2
+  weaponName: Shovel
   description: Stronger and Faster
   weaponType: 4
   ingameSprite: Weapon 0

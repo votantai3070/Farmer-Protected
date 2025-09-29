@@ -1,5 +1,4 @@
-using NUnit.Framework;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : Character
@@ -11,6 +10,9 @@ public class PlayerController : Character
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        string data = PlayerPrefs.GetString("Character", "Player Lv1");
+        characterData = Resources.Load<CharacterData>($"Upgrade/Player/{data}");
+        Init(characterData);
     }
 
     private void Start()
@@ -18,6 +20,8 @@ public class PlayerController : Character
         Sprite sprite = GameManager.Instance.characterAtlas.GetSprite("Stand 0");
         spriteRenderer.sprite = sprite;
     }
+
+
 
     public void HandleAttack()
     {

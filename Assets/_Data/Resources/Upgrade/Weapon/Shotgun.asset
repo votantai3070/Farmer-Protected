@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  weaponName: Shotgun
+  upgradeName: Shotgun
   level: 1
+  weaponName: Shotgun
   description: Unlock Shotgun
   weaponType: 3
   ingameSprite: Weapon 5

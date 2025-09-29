@@ -74,7 +74,6 @@
     <Compile Include="Assets\_Data\Scripts\UI\DamagePopupAnimation.cs" />
     <Compile Include="Assets\_Data\Scripts\Knockback.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\ObjectDestroy.cs" />
-    <Compile Include="Assets\_Data\Scripts\Upgrade\AvailableWeapon.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Slime\SlimeAttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Upgrade\UpgradeManager.cs" />
     <Compile Include="Assets\IsometricElfFreeVer\scripts\PotionManager.cs" />
@@ -85,7 +84,6 @@
     <Compile Include="Assets\IsometricElfFreeVer\scripts\ArrowManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Enemy.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Bone\BoneAttackCollider.cs" />
-    <Compile Include="Assets\_Data\Scripts\ScriptableObjects\UpgradeData.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Player\Attack.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerWeapon.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\CloseWeaponMovement.cs" />
@@ -105,6 +103,7 @@
     <Compile Include="Assets\_Data\Scripts\GameManager.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Player\PlayerGhostDestroy.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\CharacterData.cs" />
+    <Compile Include="Assets\_Data\Scripts\Upgrade\AvailableUpgrade.cs" />
     <Compile Include="Assets\_Data\Scripts\ScriptableObjects\ItemData.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Rat\RatAttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Interface\IDamagable.cs" />
@@ -133,6 +132,7 @@
     <Compile Include="Assets\_Data\Scripts\Items\SpeedItemController.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\EnemyAnimation.cs" />
     <Compile Include="Assets\_Data\Scripts\Weapons\StoneDestroy.cs" />
+    <Compile Include="Assets\_Data\Scripts\Menu\ChooseUpgradeCharacter.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\EnemyMovementGFX.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Player\AttackAMS.cs" />
     <Compile Include="Assets\_Data\Scripts\Character\Enemy\Golem\GolemControler.cs" />
