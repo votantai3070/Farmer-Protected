@@ -15,7 +15,7 @@ public class GolemControler : Enemy
         spawnEnemy = FindAnyObjectByType<SpawnEnemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    private void Start()
+    public override void Start()
     {
         Sprite sprite = GameManager.Instance.characterAtlas.GetSprite("Golem_IdleB_0");
         spriteRenderer.sprite = sprite;

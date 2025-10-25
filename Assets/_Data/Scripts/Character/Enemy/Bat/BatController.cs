@@ -16,7 +16,7 @@ public class BatController : Enemy
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Start()
+    public override void Start()
     {
         Sprite sprite = GameManager.Instance.characterAtlas.GetSprite("Bat_Fly_0");
         spriteRenderer.sprite = sprite;

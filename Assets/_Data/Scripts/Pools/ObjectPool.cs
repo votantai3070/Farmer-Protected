@@ -1,42 +1,94 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    public GameObject objectPrefab;
-    [SerializeField] private List<GameObject> objectPool = new();
-    [SerializeField] int instanceCount = 5;
+    public static ObjectPool instance;
+    [SerializeField] int poolSize = 5;
+    Dictionary<GameObject, Queue<GameObject>> poolDict = new();
+
+    [SerializeField] GameObject ratPrefab;
+    [SerializeField] GameObject batPrefab;
+    [SerializeField] GameObject undead1Prefab;
+    [SerializeField] GameObject undead2Prefab;
+    [SerializeField] GameObject undead3Prefab;
+    [SerializeField] GameObject bonePrefab;
+    [SerializeField] GameObject golemPrefab;
+
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
-        // Pre-instantiate a few arrows to populate the pool
-        for (int i = 0; i < instanceCount; i++)
-        {
-            GameObject obj = Instantiate(objectPrefab);
-            obj.SetActive(false);
-            objectPool.Add(obj);
-        }
+        InitializeNewPool(ratPrefab);
+        InitializeNewPool(batPrefab);
+        InitializeNewPool(undead1Prefab);
+        InitializeNewPool(undead2Prefab);
+        InitializeNewPool(undead3Prefab);
+        InitializeNewPool(bonePrefab);
+        InitializeNewPool(golemPrefab);
     }
 
-    public GameObject Get()
+    private void InitializeNewPool(GameObject prefab)
     {
-        foreach (var obj in objectPool)
-        {
-            if (!obj.activeInHierarchy)
-            {
-                obj.SetActive(true);
-                return obj;
-            }
-        }
+        poolDict[prefab] = new Queue<GameObject>();
 
-        GameObject newObj = Instantiate(objectPrefab);
-        newObj.SetActive(true);
-        objectPool.Add(newObj);
-        return newObj;
+        for (int i = 0; i < poolSize; i++)
+            CreateNewPool(prefab);
     }
 
-    public void ReturnPool(GameObject obj)
+    private void CreateNewPool(GameObject prefab)
     {
+        GameObject obj = Instantiate(prefab);
+        obj.AddComponent<PooledObject>().SetPrefab(prefab);
         obj.SetActive(false);
+
+        poolDict[prefab].Enqueue(obj);
     }
+
+    public GameObject GetObject(GameObject prefab)
+    {
+        if (!poolDict.ContainsKey(prefab))
+            InitializeNewPool(prefab);
+
+        if (poolDict[prefab].Count == 0)
+            CreateNewPool(prefab);
+
+        GameObject objectToGet = poolDict[prefab].Dequeue();
+
+        objectToGet.SetActive(true);
+        objectToGet.transform.parent = null;
+        return objectToGet;
+    }
+
+    #region Return Pool
+    private void ReturnPool(GameObject objectToReturn)
+    {
+        GameObject originalPool = objectToReturn.GetComponent<PooledObject>().prefab;
+
+        objectToReturn.SetActive(false);
+        objectToReturn.transform.parent = transform;
+
+        poolDict[originalPool].Enqueue(objectToReturn);
+    }
+
+    public void DelayReturnToPool(GameObject objectToReturn, float delay = 0.01f)
+    {
+        StartCoroutine(DelayReturn(delay, objectToReturn));
+    }
+
+    IEnumerator DelayReturn(float delay, GameObject objectToReturn)
+    {
+        yield return new WaitForSeconds(delay);
+
+        ReturnPool(objectToReturn);
+    }
+    #endregion
 }

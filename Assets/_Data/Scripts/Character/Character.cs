@@ -8,7 +8,6 @@ using static CharacterData;
 public class Character : MonoBehaviour, IDamagable
 {
     [Header("Character Setting")]
-    public AIPath path;
     public CharacterData characterData;
     public EnemyAnimation enemyAnimation;
     public Slider charhealthSlider;
@@ -31,7 +30,7 @@ public class Character : MonoBehaviour, IDamagable
         if (enemyAnimation != null)
         {
             bool isHit = enemyAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
-            path.canMove = !isHit;
+            //path.canMove = !isHit;
         }
 
     }
@@ -94,9 +93,9 @@ public class Character : MonoBehaviour, IDamagable
     private void ResetGameObject()
     {
         if (characterData.characterType == CharacterType.Enemy)
-            path.canMove = true;
+            //path.canMove = true;
 
-        CurrentHealth = MaxHealth;
+            CurrentHealth = MaxHealth;
 
         if (charhealthSlider != null)
         {

@@ -22,7 +22,7 @@ public class UndeadController : Enemy
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Start()
+    public override void Start()
     {
         sprites = new Sprite[GameManager.Instance.characterAtlas.spriteCount];
         GameManager.Instance.characterAtlas.GetSprites(sprites);

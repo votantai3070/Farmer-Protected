@@ -1,18 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+
+//[System.Serializable]
+//public struct Prefabs
+//{
+//    public GameObject rat;
+//    public GameObject bat;
+//    public GameObject undead;
+//    public GameObject bone;
+//    public GameObject golem;
+//}
 
 public class SpawnEnemy : MonoBehaviour
 {
+
     [Header("Spawn Enemy Setting")]
+    //public Prefabs enemyPrefabs;
     public Transform player;
     [SerializeField] private DifficultData defaultDiffData;
 
-    [SerializeField] private List<ObjectPool> enemyPhase1Pools = new();
-    [SerializeField] private List<ObjectPool> enemyPhase2Pools = new();
-    [SerializeField] private List<ObjectPool> enemyPhase3Pools = new();
-    [SerializeField] private List<ObjectPool> enemyPhase4Pools = new();
+    [SerializeField] private List<GameObject> enemiesPhase1 = new();
+    [SerializeField] private List<GameObject> enemiesPhase2 = new();
+    [SerializeField] private List<GameObject> enemiesPhase3 = new();
+    [SerializeField] private List<GameObject> enemiesPhase4 = new();
 
 
     [SerializeField] private float spawnRadius;
@@ -30,7 +41,6 @@ public class SpawnEnemy : MonoBehaviour
 
     [SerializeField] private float spawnTime;
 
-    ObjectPool pool;
     [SerializeField] int maxEnemies;
     [SerializeField] int startTime;
 
@@ -39,7 +49,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         StartCoroutine(Wait());
 
-        InvokeRepeating(nameof(HandleSpawnEnemy), 2f, spawnTime);
+        InvokeRepeating(nameof(CheckConditionSpawnEnemy), 2f, spawnTime);
     }
 
     IEnumerator Wait()
@@ -63,6 +73,9 @@ public class SpawnEnemy : MonoBehaviour
 
     void CheckConditionSpawnEnemy()
     {
+
+        HandleSpawnEnemy();
+
         float currentTime = GameManager.Instance.currentTime;
 
         float phase1Start = startTime * phase1Time;
@@ -71,59 +84,61 @@ public class SpawnEnemy : MonoBehaviour
 
         if (currentTime > phase1Start)
         {
-            ObjectPool selectedPool = enemyPhase1Pools[Random.Range(0, enemyPhase1Pools.Count)];
-            pool = selectedPool;
+            RandomEnemyInPhase(enemiesPhase1);
+
             maxEnemies = maxEnemiesPhase1;
             Debug.Log("Phase 1");
 
         }
         else if (currentTime > phase2Start)
         {
-            ObjectPool selectedPool = enemyPhase2Pools[Random.Range(0, enemyPhase2Pools.Count)];
-            pool = selectedPool;
+            RandomEnemyInPhase(enemiesPhase2);
+
             maxEnemies = maxEnemiesPhase2;
             Debug.Log("Phase 2");
         }
         else if (currentTime > phase3Start)
         {
-            ObjectPool selectedPool = enemyPhase3Pools[Random.Range(0, enemyPhase3Pools.Count)];
-            pool = selectedPool;
+            RandomEnemyInPhase(enemiesPhase3);
+
             maxEnemies = maxEnemiesPhase3;
             Debug.Log("Phase 3");
 
         }
         else
         {
-            ObjectPool selectedPool = enemyPhase4Pools[Random.Range(0, enemyPhase4Pools.Count)];
-            pool = selectedPool;
+            RandomEnemyInPhase(enemiesPhase4);
+
             maxEnemies = maxEnemiesPhase4;
             Debug.Log("Phase 4");
         }
     }
 
+    private void RandomEnemyInPhase(List<GameObject> enemyPhase)
+    {
+        int randomEnemy = Random.Range(0, enemyPhase.Count);
+
+        GameObject enemy = enemiesPhase1[randomEnemy];
+
+        GameObject enemyGetToPool = ObjectPool.instance.GetObject(enemy);
+
+        Vector3 spawnPos = GetRandomPositionNearPlayer();
+
+        enemyGetToPool.transform.position = spawnPos;
+
+        activeEnemies.Add(enemyGetToPool);
+    }
 
     private void HandleSpawnEnemy()
     {
         if (player == null
-            && enemyPhase1Pools.Count == 0
-            && enemyPhase2Pools.Count == 0
-            && enemyPhase3Pools.Count == 0
-            && enemyPhase4Pools.Count == 0)
+            && enemiesPhase1.Count == 0
+            && enemiesPhase2.Count == 0
+            && enemiesPhase3.Count == 0
+            && enemiesPhase4.Count == 0)
             return;
 
         if (activeEnemies.Count >= maxEnemies) return;
-
-        CheckConditionSpawnEnemy();
-
-        GameObject enemy = pool.Get();
-
-        Debug.Log(enemy);
-
-        Vector3 spawnPos = GetRandomPositionNearPlayer();
-
-        enemy.transform.position = spawnPos;
-
-        activeEnemies.Add(enemy);
     }
 
     private Vector3 GetRandomPositionNearPlayer()
@@ -134,7 +149,7 @@ public class SpawnEnemy : MonoBehaviour
 
     public void ReturnEnemy(GameObject enemy, ObjectPool pool)
     {
-        pool.ReturnPool(enemy);
+        //pool.ReturnPool(enemy);
         activeEnemies.Remove(enemy);
     }
 

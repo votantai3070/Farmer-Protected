@@ -14,16 +14,8 @@ public class PlayerAttack : MonoBehaviour
     public Bullet bullet;
     bool isReloading;
 
-    [Header("Pool Setting")]
-    [SerializeField] private ObjectPool shovelPool;
-    [SerializeField] private ObjectPool rakePool;
-    [SerializeField] private ObjectPool sicklePool;
-    [SerializeField] private ObjectPool rifleBulletPool;
-    [SerializeField] private ObjectPool pistolBulletPool;
-    [SerializeField] private ObjectPool shotgunBulletPool;
-
     [SerializeField] private HotBarManager hotBarManager;
-    private Dictionary<string, ObjectPool> weaponPools;
+    //private Dictionary<string, ObjectPool> weaponPools;
 
     [Header("Shotgun Setting")]
     [SerializeField] int pelletCount = 6;
@@ -31,15 +23,15 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        weaponPools = new Dictionary<string, ObjectPool>
-        {
-            { "Shovel", shovelPool },
-            { "Rake", rakePool },
-            { "Sickle", sicklePool },
-            { "Rifle Gun", rifleBulletPool },
-            { "Pistol Gun", pistolBulletPool },
-            { "Shotgun", shotgunBulletPool }
-        };
+        //weaponPools = new Dictionary<string, ObjectPool>
+        //{
+        //    { "Shovel", shovelPool },
+        //    { "Rake", rakePool },
+        //    { "Sickle", sicklePool },
+        //    { "Rifle Gun", rifleBulletPool },
+        //    { "Pistol Gun", pistolBulletPool },
+        //    { "Shotgun", shotgunBulletPool }
+        //};
     }
     private void Update()
     {
@@ -100,10 +92,6 @@ public class PlayerAttack : MonoBehaviour
 
     private void GetWeaponFromPool(WeaponData weaponData)
     {
-        if (shovelPool == null)
-        {
-            Debug.LogError("Pool reference is missing!"); return;
-        }
         Vector3 mousePos = inputManager.HandleMovementFollowMouse();
 
         Vector3 lookDir = (mousePos - transform.position).normalized;
@@ -116,30 +104,22 @@ public class PlayerAttack : MonoBehaviour
 
     void UpdateWeapon(float angle, WeaponData weaponData)
     {
-        string weaponName = weaponData.weaponName;
+        GameObject currentPrefab = player.visuals.CurrentPrefab(weaponData);
 
-        if (weaponPools.TryGetValue(weaponName, out ObjectPool pool))
-        {
-            if (weaponData.weaponType == WeaponData.WeaponType.Shotgun)
-                for (int i = 0; i < pelletCount; i++)
-                {
-                    float shotgunBulletAngle = Random.Range(angle - spreadAngle, angle + spreadAngle);
-                    GameObject weapon = pool.Get();
-                    weapon.transform.SetPositionAndRotation(firePoint.position, Quaternion.Euler(0, 0, shotgunBulletAngle - 90f));
-                    weapon.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
-                }
-            else
+        if (weaponData.weaponType == WeaponData.WeaponType.Shotgun)
+            for (int i = 0; i < pelletCount; i++)
             {
-                GameObject weapon = pool.Get();
-                weapon.transform.SetPositionAndRotation(firePoint.position, Quaternion.Euler(0, 0, angle - 90f));
-
+                float shotgunBulletAngle = Random.Range(angle - spreadAngle, angle + spreadAngle);
+                GameObject weapon = ObjectPool.instance.GetObject(currentPrefab);
+                weapon.transform.SetPositionAndRotation(firePoint.position, Quaternion.Euler(0, 0, shotgunBulletAngle - 90f));
                 weapon.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
             }
-
-        }
         else
         {
-            Debug.LogWarning($"No pool found for weapon: {weaponName}");
+            GameObject weapon = ObjectPool.instance.GetObject(currentPrefab);
+            weapon.transform.SetPositionAndRotation(firePoint.position, Quaternion.Euler(0, 0, angle - 90f));
+
+            weapon.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(false);
         }
     }
 }

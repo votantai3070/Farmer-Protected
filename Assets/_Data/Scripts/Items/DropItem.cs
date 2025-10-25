@@ -14,8 +14,8 @@ public class DropItem : MonoBehaviour
     {
         if (pool == null) return;
 
-        GameObject obj = pool.Get();
-        obj.transform.SetPositionAndRotation(pos, rot);
+        //GameObject obj = pool.GetObject();
+        //obj.transform.SetPositionAndRotation(pos, rot);
     }
 
     public void DropExp1(Transform transform) => Drop(exp1Pool, transform.position, transform.rotation);

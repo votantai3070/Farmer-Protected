@@ -16,7 +16,7 @@ public class BoneController : Enemy
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Start()
+    public override void Start()
     {
         Sprite sprite = GameManager.Instance.characterAtlas.GetSprite("Bones_SingleSkull_Idle_0");
         spriteRenderer.sprite = sprite;

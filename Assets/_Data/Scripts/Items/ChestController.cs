@@ -36,17 +36,17 @@ public class ChestController : MonoBehaviour
 
         if (random == 0)
         {
-            var potion = potionPool.Get();
-            potion.transform.SetPositionAndRotation(transform.position + Vector3.up, transform.rotation);
-            //potion.transform.DOMove(transform.position + Vector3.up, 0.5f);
-            potion.SetActive(true);
+            //var potion = potionPool.GetObject();
+            //potion.transform.SetPositionAndRotation(transform.position + Vector3.up, transform.rotation);
+            ////potion.transform.DOMove(transform.position + Vector3.up, 0.5f);
+            //potion.SetActive(true);
         }
         else
         {
-            var bulletItem = bulletItemPool.Get();
-            bulletItem.transform.SetPositionAndRotation(transform.position + Vector3.up, transform.rotation);
-            //bulletItem.transform.DOMove(transform.position + Vector3.up, 0.5f);
-            bulletItem.SetActive(true);
+            //var bulletItem = bulletItemPool.GetObject();
+            //bulletItem.transform.SetPositionAndRotation(transform.position + Vector3.up, transform.rotation);
+            ////bulletItem.transform.DOMove(transform.position + Vector3.up, 0.5f);
+            //bulletItem.SetActive(true);
         }
 
         transform.tag = "Untagged";

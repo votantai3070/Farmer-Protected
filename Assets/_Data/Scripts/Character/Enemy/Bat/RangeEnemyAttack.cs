@@ -66,9 +66,9 @@ public class RangeEnemyAttack : MonoBehaviour
 
     void GetStoneFromPool()
     {
-        GameObject stone = stonePool.Get();
-        stone.transform.position = stoneSpawnPoint.position;
+        //GameObject stone = stonePool.GetObject();
+        //stone.transform.position = stoneSpawnPoint.position;
 
-        stone.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(true);
+        //stone.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(true);
     }
 }

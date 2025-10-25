@@ -108,7 +108,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 AddExp(exp.itemData.value);
             }
-            exp1Pool.ReturnPool(collision.gameObject);
+            //exp1Pool.ReturnPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("Exp2"))
@@ -117,7 +117,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 AddExp(exp.itemData.value);
             }
-            exp2Pool.ReturnPool(collision.gameObject);
+            //exp2Pool.ReturnPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("Exp3"))
@@ -126,7 +126,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 AddExp(exp.itemData.value);
             }
-            exp3Pool.ReturnPool(collision.gameObject);
+            //exp3Pool.ReturnPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("BulletItem"))
@@ -135,7 +135,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 bullet.AddAmmo(bulletItem.itemData);
             }
-            bulletItemPool.ReturnPool(collision.gameObject);
+            //bulletItemPool.ReturnPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("Potion"))
@@ -144,7 +144,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 player.Heal(potion.itemData.value);
             }
-            potionPool.ReturnPool(collision.gameObject);
+            //potionPool.ReturnPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("Chest"))
@@ -163,7 +163,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 StartCoroutine(playerMovement.BoostSpeed(speed.itemData.value, speed.itemData.timeLimit));
             }
-            speedPool.ReturnPool(collision.gameObject);
+            //speedPool.ReturnPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("Magnet"))
@@ -173,7 +173,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 StartCoroutine(mag.MagnetEffect());
             }
-            speedPool.ReturnPool(collision.gameObject);
+            //speedPool.ReturnPool(collision.gameObject);
         }
     }
 

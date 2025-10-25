@@ -7,8 +7,12 @@ public class PlayerController : Character
     [HideInInspector] public bool isAttacked = false;
     public PlayerAnimation playerAnimation;
 
+    public PlayerVisuals visuals { get; private set; }
+
     private void Awake()
     {
+        visuals = GetComponent<PlayerVisuals>();
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         string data = PlayerPrefs.GetString("Character", "Player Lv1");
         characterData = Resources.Load<CharacterData>($"Upgrade/Player/{data}");
