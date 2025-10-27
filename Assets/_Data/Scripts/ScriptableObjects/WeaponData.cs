@@ -20,7 +20,7 @@ public class WeaponData : ScriptableObject
     public int firstDamage;
     public int lastDamage;
     public float range;
-    public float speed;
+    public float bulletSpeed;
     public float criticalChange;
     public float criticalDamage;
     public float stamina;

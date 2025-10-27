@@ -52,8 +52,6 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = inputManager.MoveInput * Speed;
 
         playerAnimation.SwitchAnimationState("RUN");
-
-        //Flip();
     }
 
     public IEnumerator BoostSpeed(float boostAmount, float duration)
@@ -83,12 +81,4 @@ public class PlayerMovement : MonoBehaviour
 
         isDashing = false;
     }
-
-    //private void Flip()
-    //{
-    //    if (inputManager.MoveInput.x > 0)
-    //        transform.parent.localScale = new Vector3(1, 1, 1);
-    //    else if (inputManager.MoveInput.x < 0)
-    //        transform.parent.localScale = new Vector3(-1, 1, 1);
-    //}
 }

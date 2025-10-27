@@ -6,14 +6,6 @@ using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [Header("Pool Setting")]
-    [SerializeField] private ObjectPool exp1Pool;
-    [SerializeField] private ObjectPool exp2Pool;
-    [SerializeField] private ObjectPool exp3Pool;
-    [SerializeField] private ObjectPool bulletItemPool;
-    [SerializeField] private ObjectPool potionPool;
-    [SerializeField] private ObjectPool speedPool;
-
     [Header("Exp Slider Setting")]
     [SerializeField] private List<float> expTable;
     [SerializeField] private ItemData exp;
@@ -108,7 +100,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 AddExp(exp.itemData.value);
             }
-            //exp1Pool.ReturnPool(collision.gameObject);
+            ObjectPool.instance.DelayReturnToPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("Exp2"))
@@ -117,7 +109,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 AddExp(exp.itemData.value);
             }
-            //exp2Pool.ReturnPool(collision.gameObject);
+            ObjectPool.instance.DelayReturnToPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("Exp3"))
@@ -126,7 +118,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 AddExp(exp.itemData.value);
             }
-            //exp3Pool.ReturnPool(collision.gameObject);
+            ObjectPool.instance.DelayReturnToPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("BulletItem"))
@@ -135,7 +127,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 bullet.AddAmmo(bulletItem.itemData);
             }
-            //bulletItemPool.ReturnPool(collision.gameObject);
+            ObjectPool.instance.DelayReturnToPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("Potion"))
@@ -144,7 +136,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 player.Heal(potion.itemData.value);
             }
-            //potionPool.ReturnPool(collision.gameObject);
+            ObjectPool.instance.DelayReturnToPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("Chest"))
@@ -163,7 +155,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 StartCoroutine(playerMovement.BoostSpeed(speed.itemData.value, speed.itemData.timeLimit));
             }
-            //speedPool.ReturnPool(collision.gameObject);
+            ObjectPool.instance.DelayReturnToPool(collision.gameObject);
         }
 
         else if (collision.CompareTag("Magnet"))
@@ -173,7 +165,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 StartCoroutine(mag.MagnetEffect());
             }
-            //speedPool.ReturnPool(collision.gameObject);
+            ObjectPool.instance.DelayReturnToPool(collision.gameObject);
         }
     }
 

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
   m_Name: Rifle Lv3
   m_EditorClassIdentifier: 
-  upgradeName: Rifle
-  level: 3
   weaponName: Rifle Gun
+  level: 3
   description: Upgrade lv 3
   weaponType: 1
   ingameSprite: Weapon 4
@@ -23,7 +22,7 @@ MonoBehaviour:
   firstDamage: 8
   lastDamage: 10
   range: 0
-  speed: 20
+  bulletSpeed: 10
   criticalChange: 0.5
   criticalDamage: 2.5
   stamina: 0

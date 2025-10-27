@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
   m_Name: Shovel
   m_EditorClassIdentifier: 
-  upgradeName: Shovel
-  level: 1
   weaponName: Shovel
+  level: 1
   description: 
   weaponType: 4
   ingameSprite: Weapon 0
@@ -23,7 +22,7 @@ MonoBehaviour:
   firstDamage: 1
   lastDamage: 3
   range: 0
-  speed: 6
+  bulletSpeed: 8
   criticalChange: 0.1
   criticalDamage: 1.2
   stamina: 1

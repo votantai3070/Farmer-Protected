@@ -22,7 +22,7 @@ MonoBehaviour:
   firstDamage: 1
   lastDamage: 2
   range: 0
-  speed: 8
+  bulletSpeed: 5
   criticalChange: 0
   criticalDamage: 0
   stamina: 0

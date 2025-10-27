@@ -21,19 +21,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] int pelletCount = 6;
     [SerializeField] float spreadAngle = 15f;
 
-    private void Awake()
-    {
-        //weaponPools = new Dictionary<string, ObjectPool>
-        //{
-        //    { "Shovel", shovelPool },
-        //    { "Rake", rakePool },
-        //    { "Sickle", sicklePool },
-        //    { "Rifle Gun", rifleBulletPool },
-        //    { "Pistol Gun", pistolBulletPool },
-        //    { "Shotgun", shotgunBulletPool }
-        //};
-    }
     private void Update()
+    {
+        HandleAttack();
+    }
+
+    private void HandleAttack()
     {
         WeaponData weaponData = hotBarManager.currentWeaponData;
 

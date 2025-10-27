@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
   m_Name: Rake Lv3
   m_EditorClassIdentifier: 
-  upgradeName: Rake
-  level: 3
   weaponName: Rake
+  level: 3
   description: 
   weaponType: 4
   ingameSprite: Weapon 1
@@ -23,7 +22,7 @@ MonoBehaviour:
   firstDamage: 4
   lastDamage: 6
   range: 0
-  speed: 12
+  bulletSpeed: 14
   criticalChange: 0.5
   criticalDamage: 1.5
   stamina: 2

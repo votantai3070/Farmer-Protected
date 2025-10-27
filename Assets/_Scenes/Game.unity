@@ -2778,58 +2778,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598466514}
   m_CullTransparentMesh: 1
---- !u!1 &634152864
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 634152866}
-  - component: {fileID: 634152865}
-  m_Layer: 0
-  m_Name: SpeedItemPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &634152865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634152864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!4 &634152866
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634152864}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &634586410
 GameObject:
   m_ObjectHideFlags: 0
@@ -4733,58 +4681,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &962642973
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 962642974}
-  - component: {fileID: 962642975}
-  m_Layer: 0
-  m_Name: Undead2Pool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &962642974
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962642973}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &962642975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962642973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!1 &971685811
 GameObject:
   m_ObjectHideFlags: 0
@@ -4882,7 +4778,7 @@ GameObject:
   - component: {fileID: 997324296}
   - component: {fileID: 997324297}
   m_Layer: 5
-  m_Name: PLayerStaminaSlider
+  m_Name: PlayerStaminaSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6591,8 +6487,6 @@ MonoBehaviour:
   defaultDiffData: {fileID: 11400000, guid: 7f891c95d512cb940bc41b7f3afc1756, type: 2}
   enemiesPhase1:
   - {fileID: 591002243151847616, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-  - {fileID: 4753377814908305406, guid: 8f3101ccc671911498d578638197770e, type: 3}
-  - {fileID: 838070134182777163, guid: 48ba4de6473b1774d9e020f2c669a6ae, type: 3}
   enemiesPhase2: []
   enemiesPhase3: []
   enemiesPhase4: []
@@ -7134,58 +7028,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676851950}
   m_CullTransparentMesh: 1
---- !u!1 &1684170699
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1684170700}
-  - component: {fileID: 1684170701}
-  m_Layer: 0
-  m_Name: MagnetPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1684170700
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684170699}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1684170701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684170699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!1 &1694045337
 GameObject:
   m_ObjectHideFlags: 0
@@ -7583,58 +7425,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786478830}
   m_CullTransparentMesh: 1
---- !u!1 &1809736569
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1809736570}
-  - component: {fileID: 1809736571}
-  m_Layer: 0
-  m_Name: Undead3Pool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1809736570
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809736569}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1809736571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809736569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!1 &1810271775
 GameObject:
   m_ObjectHideFlags: 0
@@ -8560,7 +8350,7 @@ GameObject:
   - component: {fileID: 1942803589}
   - component: {fileID: 1942803590}
   m_Layer: 5
-  m_Name: PLayerHealthSlider
+  m_Name: PlayerHealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9254,12 +9044,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bd562f311c1d544bd9fa7aa0acf049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletItemPool: {fileID: 3467068945363058040}
-  speedItemPool: {fileID: 0}
-  exp1Pool: {fileID: 12884027524876054}
-  exp2Pool: {fileID: 5974082364206227164}
-  exp3Pool: {fileID: 6339921111813435562}
-  potionPool: {fileID: 3195451272546380360}
+  bulletItemPrefab: {fileID: 2074168441948522104, guid: 9f9766ef934875642a94200f095ed615, type: 3}
+  speedItemPrefab: {fileID: 957580346086532500, guid: 2d6f3410f6125f44f958c0762a2911d5, type: 3}
+  exp1Prefab: {fileID: 9149498901420744604, guid: c348aebae669ff440adf058d220426bd, type: 3}
+  exp2Prefab: {fileID: 1197946436179513297, guid: 3b895ccd7331dee4d87f731a57a59514, type: 3}
+  exp3Prefab: {fileID: 8175567501612571803, guid: 47ffb3154eafc734c8b17556e6cd0044, type: 3}
+  potionPrefab: {fileID: 5533547265174939777, guid: 4edfe09ded4588649b14ec6e1f35a8e8, type: 3}
 --- !u!1 &2034570631 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7510432050082875987, guid: 15a2629212ddbe044908d1217e1c6f1b, type: 3}
@@ -9646,58 +9436,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2088827493
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2088827494}
-  - component: {fileID: 2088827495}
-  m_Layer: 0
-  m_Name: Undead1Pool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2088827494
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088827493}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2088827495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088827493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!114 &2104307024 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6790970311646568083, guid: 4fba2f7fecfc2bd49963510e8d2f9e51, type: 3}
@@ -9709,61 +9447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c5b267b46e486418361c80bfd119a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2117800959
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2117800961}
-  m_Layer: 0
-  m_Name: PoolManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2117800961
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117800959}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2712305500157499614}
-  - {fileID: 401406927245995415}
-  - {fileID: 5061436620908076419}
-  - {fileID: 8545157054881766172}
-  - {fileID: 5342604522866234784}
-  - {fileID: 6361942708230699546}
-  - {fileID: 4089726665509489503}
-  - {fileID: 9211464888107327169}
-  - {fileID: 543455508988371183}
-  - {fileID: 297973993468211529}
-  - {fileID: 5841172843318119849}
-  - {fileID: 3274160650509050336}
-  - {fileID: 8500603995004525645}
-  - {fileID: 504355093115284657}
-  - {fileID: 2460119460384472755}
-  - {fileID: 6877471321328418880}
-  - {fileID: 2191542352623600985}
-  - {fileID: 5739130456738410670}
-  - {fileID: 6271073914830875123}
-  - {fileID: 634152866}
-  - {fileID: 1684170700}
-  - {fileID: 2088827494}
-  - {fileID: 962642974}
-  - {fileID: 1809736570}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2128072243
 GameObject:
   m_ObjectHideFlags: 0
@@ -9900,26 +9583,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128072243}
   m_CullTransparentMesh: 1
---- !u!114 &12884027524876054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008747745896996637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!1 &223897419347538464
 GameObject:
   m_ObjectHideFlags: 0
@@ -9932,197 +9595,6 @@ GameObject:
   - component: {fileID: 7418379110601969207}
   m_Layer: 0
   m_Name: PlayerStamina
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &297973993468211529
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 810676346165031961}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &310648260041519594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9221147166763734041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!4 &401406927245995415
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6883252616564685109}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &504355093115284657
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7967193229612897153}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519603285104573818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107592704246809841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!114 &526314134003112910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6149287985710806838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!4 &543455508988371183
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594938847944381045}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &551297657995612776
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8500603995004525645}
-  - component: {fileID: 5974082364206227164}
-  m_Layer: 0
-  m_Name: Exp2Pool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &650551409146276334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6661599612375342226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!1 &810676346165031961
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 297973993468211529}
-  - component: {fileID: 5163358155866815674}
-  m_Layer: 0
-  m_Name: RakePool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &820261777497496074
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5342604522866234784}
-  - component: {fileID: 1632248724317508320}
-  m_Layer: 0
-  m_Name: StoneBossPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10260,23 +9732,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &945033704973423105
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2460119460384472755}
-  - component: {fileID: 7254597909984641528}
-  m_Layer: 0
-  m_Name: RifleBulletPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &948615528824892025
 GameObject:
   m_ObjectHideFlags: 0
@@ -10508,43 +9963,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8387391351053326318}
   m_CullTransparentMesh: 1
---- !u!1 &1594938847944381045
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 543455508988371183}
-  - component: {fileID: 8720778084510917728}
-  m_Layer: 0
-  m_Name: ShovelPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1632248724317508320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820261777497496074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!95 &1718794520508255377
 Animator:
   serializedVersion: 7
@@ -10567,75 +9985,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2001132218250661249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5888869233868039055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!1 &2008747745896996637
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3274160650509050336}
-  - component: {fileID: 12884027524876054}
-  m_Layer: 0
-  m_Name: Exp1Pool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &2107592704246809841
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5061436620908076419}
-  - component: {fileID: 519603285104573818}
-  m_Layer: 0
-  m_Name: ArrowPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2191542352623600985
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6252535304279499997}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2312973148134393753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10833,21 +10182,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &2460119460384472755
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945033704973423105}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2601996061407158077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10869,21 +10203,6 @@ MonoBehaviour:
   dashDuration: 0.2
   dashCooldown: 1
   ghostInterval: 0.05
---- !u!4 &2712305500157499614
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3095902593703101363}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2713162556408811603
 GameObject:
   m_ObjectHideFlags: 0
@@ -10982,58 +10301,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &3095902593703101363
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2712305500157499614}
-  - component: {fileID: 5642292622831229327}
-  m_Layer: 0
-  m_Name: BatPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &3195451272546380360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6168988508261687423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!4 &3274160650509050336
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008747745896996637}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3453118393602197156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11076,26 +10343,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
---- !u!114 &3467068945363058040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6252535304279499997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!4 &3651774797211033906
 Transform:
   m_ObjectHideFlags: 0
@@ -11313,21 +10560,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4089726665509489503
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6149287985710806838}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4119570046870934945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11340,12 +10572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3a58848528ea7458aa00bd270d6331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp1Pool: {fileID: 12884027524876054}
-  exp2Pool: {fileID: 5974082364206227164}
-  exp3Pool: {fileID: 6339921111813435562}
-  bulletItemPool: {fileID: 3467068945363058040}
-  potionPool: {fileID: 3195451272546380360}
-  speedPool: {fileID: 634152865}
   expTable:
   - 5
   - 10
@@ -11365,23 +10591,6 @@ MonoBehaviour:
   player: {fileID: 8693987913249710362}
   availableWeapon: {fileID: 2074171159}
   playerMovement: {fileID: 2601996061407158077}
---- !u!1 &4122757474137826650
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9211464888107327169}
-  - component: {fileID: 4661686750421472550}
-  m_Layer: 0
-  m_Name: GolemPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!212 &4350985771141358862
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11479,26 +10688,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2329963298219600699}
   m_CullTransparentMesh: 1
---- !u!114 &4661686750421472550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4122757474137826650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!4 &4667901983059757769
 Transform:
   m_ObjectHideFlags: 0
@@ -11523,7 +10712,7 @@ Transform:
   m_GameObject: {fileID: 8053098933135526503}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28, y: -0.36, z: 0}
+  m_LocalPosition: {x: -0.026, y: -0.139, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11584,21 +10773,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &5061436620908076419
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107592704246809841}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &5062501594108134143
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11656,23 +10830,6 @@ RectTransform:
   m_AnchoredPosition: {x: 788, y: -103}
   m_SizeDelta: {x: 541.6, y: 70.32}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &5111400337500533842
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6361942708230699546}
-  - component: {fileID: 5501382899665966616}
-  m_Layer: 0
-  m_Name: BonePool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &5117661425777960211
 GameObject:
   m_ObjectHideFlags: 0
@@ -11690,26 +10847,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5163358155866815674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 810676346165031961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!61 &5260704852308031202
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11744,7 +10881,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.03852409}
+  m_Offset: {x: -0.010761976, y: -0.03852415}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11754,78 +10891,8 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.577861}
+  m_Size: {x: 0.72020006, y: 1.0182588}
   m_EdgeRadius: 0
---- !u!4 &5342604522866234784
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820261777497496074}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5501382899665966616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5111400337500533842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!114 &5642292622831229327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3095902593703101363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!4 &5739130456738410670
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6168988508261687423}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &5773271644693939536
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11889,58 +10956,6 @@ RectTransform:
   m_AnchoredPosition: {x: 675, y: -375}
   m_SizeDelta: {x: 1300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &5841172843318119849
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5888869233868039055}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5888869233868039055
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5841172843318119849}
-  - component: {fileID: 2001132218250661249}
-  m_Layer: 0
-  m_Name: SicklePool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &5974082364206227164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551297657995612776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!114 &6125382640421393399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11963,107 +10978,6 @@ MonoBehaviour:
   hotBarManager: {fileID: 1546075878}
   pelletCount: 6
   spreadAngle: 15
---- !u!1 &6149287985710806838
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4089726665509489503}
-  - component: {fileID: 526314134003112910}
-  m_Layer: 0
-  m_Name: RatPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &6168988508261687423
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5739130456738410670}
-  - component: {fileID: 3195451272546380360}
-  m_Layer: 0
-  m_Name: PotionPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &6252535304279499997
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2191542352623600985}
-  - component: {fileID: 3467068945363058040}
-  m_Layer: 0
-  m_Name: BulletItemPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6271073914830875123
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8392933349370839489}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6339921111813435562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7967193229612897153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!4 &6361942708230699546
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5111400337500533842}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6468306106601388864
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12098,7 +11012,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.029345512, y: 0}
+  m_Offset: {x: -0.01858306, y: -0.021523267}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12108,7 +11022,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2065458, y: 1.6666666}
+  m_Size: {x: 0.840652, y: 1.1070645}
   m_EdgeRadius: 0
 --- !u!222 &6491572865319244414
 CanvasRenderer:
@@ -12224,23 +11138,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &6661599612375342226
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8545157054881766172}
-  - component: {fileID: 650551409146276334}
-  m_Layer: 0
-  m_Name: StonePool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &6752248918596850283
 Transform:
   m_ObjectHideFlags: 0
@@ -12285,58 +11182,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentAmmo: 0
   reserveAmmo: 0
---- !u!4 &6877471321328418880
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9221147166763734041}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6883252616564685109
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 401406927245995415}
-  - component: {fileID: 8271277759190780013}
-  m_Layer: 0
-  m_Name: SlimePool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &7254597909984641528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945033704973423105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!114 &7384407666534049909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12427,23 +11272,6 @@ MonoBehaviour:
   weaponData: {fileID: 0}
   characterData: {fileID: 0}
   upgradePlayer: 0
---- !u!1 &7967193229612897153
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 504355093115284657}
-  - component: {fileID: 6339921111813435562}
-  m_Layer: 0
-  m_Name: Exp3Pool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &8053098933135526503
 GameObject:
   m_ObjectHideFlags: 0
@@ -12733,46 +11561,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &8271277759190780013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6883252616564685109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!114 &8301679418914886896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8392933349370839489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
 --- !u!1 &8387391350239627104
 GameObject:
   m_ObjectHideFlags: 0
@@ -12827,23 +11615,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &8392933349370839489
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6271073914830875123}
-  - component: {fileID: 8301679418914886896}
-  m_Layer: 0
-  m_Name: ShotgunBulletPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &8422652953184431887
 Transform:
   m_ObjectHideFlags: 0
@@ -12886,36 +11657,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!4 &8500603995004525645
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551297657995612776}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &8545157054881766172
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6661599612375342226}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8693987913249710362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12929,7 +11670,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: c00c13f40961cf847bf6b28c9f086905, type: 2}
-  enemyAnimation: {fileID: 0}
   charhealthSlider: {fileID: 1942803590}
   playerHpText: {fileID: 1978195044}
   isAttacked: 0
@@ -12953,99 +11693,6 @@ MonoBehaviour:
   - {fileID: 7622892143791801114, guid: 2b8056ada99ae904890af984d249989b, type: 3}
   - {fileID: 2073049429066439964, guid: 1cacd79252bbcba4d8f238f454e057a7, type: 3}
   - {fileID: 3625538829900668618, guid: f1964aa1505e30a46b663612b7dcaf09, type: 3}
---- !u!114 &8720778084510917728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594938847944381045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c95fc8c985bfa4d83255b392f34785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  ratPrefab: {fileID: 0}
-  batPrefab: {fileID: 0}
-  undead1Prefab: {fileID: 0}
-  undead2Prefab: {fileID: 0}
-  undead3Prefab: {fileID: 0}
-  bonePrefab: {fileID: 0}
-  golemPrefab: {fileID: 0}
---- !u!1001 &8941665785756610049
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 591002243151847616, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_Name
-      value: Rat
-      objectReference: {fileID: 0}
-    - target: {fileID: 591002243151847616, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654101237866661762, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: prefab
-      value: 
-      objectReference: {fileID: 591002243151847616, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-    - target: {fileID: 2674779613380558414, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674779613380558414, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7618228639430549701, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 7618228639430549701, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 7618228639430549701, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7618228639430549701, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7618228639430549701, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7618228639430549701, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7618228639430549701, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7618228639430549701, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7618228639430549701, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7618228639430549701, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
 --- !u!1001 &8954465508573081582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13118,38 +11765,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2953017084707564543}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &9211464888107327169
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4122757474137826650}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2117800961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9221147166763734041
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6877471321328418880}
-  - component: {fileID: 310648260041519594}
-  m_Layer: 0
-  m_Name: PistolBulletPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -13160,7 +11775,6 @@ SceneRoots:
   - {fileID: 406421746}
   - {fileID: 1660744319}
   - {fileID: 873255805}
-  - {fileID: 2117800961}
   - {fileID: 2016126879}
   - {fileID: 1546075879}
   - {fileID: 2002130237}
@@ -13168,5 +11782,4 @@ SceneRoots:
   - {fileID: 1333722336}
   - {fileID: 2083854502}
   - {fileID: 2074171156}
-  - {fileID: 8941665785756610049}
   - {fileID: 1050181689}

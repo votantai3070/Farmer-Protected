@@ -8,7 +8,6 @@ public class RangeWeaponMovement : Weapon
     private SpriteRenderer sr;
     private HotBarManager hotBarManager;
 
-    [SerializeField] float radius = 5f;
     [SerializeField] LayerMask enemyLayer;
 
 
@@ -40,12 +39,12 @@ public class RangeWeaponMovement : Weapon
         {
             isEnemyWeapon = true;
             Vector2 direction = (player.position - transform.position).normalized;
-            rb.linearVelocity = direction * weaponData.speed;
+            rb.linearVelocity = direction * weaponData.bulletSpeed;
         }
         else
         {
             isEnemyWeapon = false;
-            rb.linearVelocity = transform.up * weaponData.speed;
+            rb.linearVelocity = transform.up * weaponData.bulletSpeed;
 
         }
     }
@@ -76,7 +75,7 @@ public class RangeWeaponMovement : Weapon
                 if (nearestEnemy != null)
                 {
                     Vector2 direction = (nearestEnemy.position - transform.position).normalized;
-                    rb.linearVelocity = direction * weaponData.speed;
+                    rb.linearVelocity = direction * weaponData.bulletSpeed;
                     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                     rb.rotation = angle - 90f;
                 }
@@ -86,21 +85,18 @@ public class RangeWeaponMovement : Weapon
 
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radius);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        Debug.Log(collision.tag);
+
         if (collision.CompareTag("Player") && isEnemyWeapon)
         {
             if (collision.TryGetComponent<IDamagable>(out var damagable))
             {
                 Attack(damagable);
             }
-            gameObject.SetActive(false);
+            ObjectPool.instance.DelayReturnToPool(gameObject);
         }
 
         else if (collision.CompareTag("Enemy") && !isEnemyWeapon)
@@ -109,7 +105,7 @@ public class RangeWeaponMovement : Weapon
             {
                 Attack(damagable);
             }
-            gameObject.SetActive(false);
+            ObjectPool.instance.DelayReturnToPool(gameObject);
         }
     }
 }

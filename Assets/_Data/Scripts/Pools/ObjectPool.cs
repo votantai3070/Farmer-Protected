@@ -16,7 +16,6 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] GameObject bonePrefab;
     [SerializeField] GameObject golemPrefab;
 
-
     private void Awake()
     {
         if (instance == null)
@@ -47,7 +46,8 @@ public class ObjectPool : MonoBehaviour
     private void CreateNewPool(GameObject prefab)
     {
         GameObject obj = Instantiate(prefab);
-        obj.AddComponent<PooledObject>().SetPrefab(prefab);
+        if (obj.GetComponent<PooledObject>() == null)
+            obj.AddComponent<PooledObject>().SetPrefab(prefab);
         obj.SetActive(false);
 
         poolDict[prefab].Enqueue(obj);
@@ -73,6 +73,10 @@ public class ObjectPool : MonoBehaviour
     {
         GameObject originalPool = objectToReturn.GetComponent<PooledObject>().prefab;
 
+
+        if (!poolDict.ContainsKey(originalPool))
+            InitializeNewPool(originalPool);
+
         objectToReturn.SetActive(false);
         objectToReturn.transform.parent = transform;
 
@@ -81,6 +85,8 @@ public class ObjectPool : MonoBehaviour
 
     public void DelayReturnToPool(GameObject objectToReturn, float delay = 0.01f)
     {
+        //Debug.Log("Returning to pool: " + objectToReturn);
+
         StartCoroutine(DelayReturn(delay, objectToReturn));
     }
 

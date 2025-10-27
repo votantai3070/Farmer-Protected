@@ -2,16 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//[System.Serializable]
-//public struct Prefabs
-//{
-//    public GameObject rat;
-//    public GameObject bat;
-//    public GameObject undead;
-//    public GameObject bone;
-//    public GameObject golem;
-//}
-
 public class SpawnEnemy : MonoBehaviour
 {
 
@@ -27,10 +17,10 @@ public class SpawnEnemy : MonoBehaviour
 
 
     [SerializeField] private float spawnRadius;
-    [SerializeField] private int maxEnemiesPhase1;
-    [SerializeField] private int maxEnemiesPhase2;
-    [SerializeField] private int maxEnemiesPhase3;
-    [SerializeField] private int maxEnemiesPhase4;
+    private int maxEnemiesPhase1;
+    private int maxEnemiesPhase2;
+    private int maxEnemiesPhase3;
+    private int maxEnemiesPhase4;
 
     [SerializeField]
     private float phase1Time;
@@ -49,7 +39,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         StartCoroutine(Wait());
 
-        InvokeRepeating(nameof(CheckConditionSpawnEnemy), 2f, spawnTime);
+        InvokeRepeating(nameof(HandleSpawnEnemy), 2f, spawnTime);
     }
 
     IEnumerator Wait()
@@ -68,13 +58,22 @@ public class SpawnEnemy : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log("maxEnemies: " + maxEnemies);
+        //Debug.Log("activeEnemies Count: " + activeEnemies.Count);
+
         GameManager.Instance.ShowTime(startTime);
     }
 
-    void CheckConditionSpawnEnemy()
+    void HandleSpawnEnemy()
     {
+        if (player == null
+          && enemiesPhase1.Count == 0
+          && enemiesPhase2.Count == 0
+          && enemiesPhase3.Count == 0
+          && enemiesPhase4.Count == 0)
+            return;
 
-        HandleSpawnEnemy();
+        if (activeEnemies.Count >= maxEnemies) return;
 
         float currentTime = GameManager.Instance.currentTime;
 
@@ -103,7 +102,6 @@ public class SpawnEnemy : MonoBehaviour
 
             maxEnemies = maxEnemiesPhase3;
             Debug.Log("Phase 3");
-
         }
         else
         {
@@ -118,7 +116,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         int randomEnemy = Random.Range(0, enemyPhase.Count);
 
-        GameObject enemy = enemiesPhase1[randomEnemy];
+        GameObject enemy = enemyPhase[randomEnemy];
 
         GameObject enemyGetToPool = ObjectPool.instance.GetObject(enemy);
 
@@ -129,27 +127,14 @@ public class SpawnEnemy : MonoBehaviour
         activeEnemies.Add(enemyGetToPool);
     }
 
-    private void HandleSpawnEnemy()
-    {
-        if (player == null
-            && enemiesPhase1.Count == 0
-            && enemiesPhase2.Count == 0
-            && enemiesPhase3.Count == 0
-            && enemiesPhase4.Count == 0)
-            return;
-
-        if (activeEnemies.Count >= maxEnemies) return;
-    }
-
     private Vector3 GetRandomPositionNearPlayer()
     {
         Vector3 pos = Random.insideUnitCircle.normalized * spawnRadius;
         return player.position + new Vector3(pos.x, pos.y, 0);
     }
 
-    public void ReturnEnemy(GameObject enemy, ObjectPool pool)
+    public void ReturnEnemy(GameObject enemy)
     {
-        //pool.ReturnPool(enemy);
         activeEnemies.Remove(enemy);
     }
 

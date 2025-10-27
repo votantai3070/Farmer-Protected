@@ -133,76 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf9961b0ac9c05438d5e93fe66d8257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
---- !u!1 &695838644623419506
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1950262173720439850}
-  - component: {fileID: 8823057101205175211}
-  m_Layer: 7
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1950262173720439850
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695838644623419506}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.56, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7335558061821466525}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &8823057101205175211
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695838644623419506}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.09, y: -1.26}
-  m_Size: {x: 1.5, y: 0.61}
-  m_Direction: 1
+  prefab: {fileID: 591002243151847616}
 --- !u!1 &1727174003055665607
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,9 +373,11 @@ GameObject:
   - component: {fileID: 654690910478151004}
   - component: {fileID: 1757055117613403967}
   - component: {fileID: 6808835070970351922}
-  - component: {fileID: 1261829054238705454}
-  - component: {fileID: 5898636687145210008}
+  - component: {fileID: 352155521748230670}
+  - component: {fileID: 5122769494721506828}
   - component: {fileID: 770695632700717783}
+  - component: {fileID: 9104428071304965654}
+  - component: {fileID: 1848080450797772839}
   m_Layer: 7
   m_Name: RatGFX
   m_TagString: Enemy
@@ -464,8 +397,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1950262173720439850}
+  m_Children: []
   m_Father: {fileID: 7618228639430549701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &654690910478151004
@@ -572,29 +504,44 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1261829054238705454
-MonoBehaviour:
+--- !u!70 &352155521748230670
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5695877149293632375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1f4533807f377244843a92eabf49be6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: 061bad2cdf9390140959704940fecc96, type: 2}
-  enemyAnimation: {fileID: 0}
-  charhealthSlider: {fileID: 4122885746436670022}
-  playerHpText: {fileID: 0}
-  idleTime: 2
-  aIPathSettings:
-    maxSpeed: 2
-    endReachedDistance: 0
-    repathRate: 1
-  attackCooldown: 1
---- !u!58 &5898636687145210008
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.02516739, y: -0.65}
+  m_Size: {x: 1.226267, y: 0.6100001}
+  m_Direction: 1
+--- !u!58 &5122769494721506828
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -642,6 +589,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f5df7ee37f530d4f80e5bc4aac01b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9104428071304965654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695877149293632375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e059716eb1c01b4c887d758013fd524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: 061bad2cdf9390140959704940fecc96, type: 2}
+  charhealthSlider: {fileID: 4122885746436670022}
+  playerHpText: {fileID: 0}
+  idleTime: 1
+  aIPathSettings:
+    maxSpeed: 2
+    endReachedDistance: 1
+    repathRate: 1.5
+  enemyName: 0
+  spriteName: Rat_Idle_0
+  attackCooldown: 1
+--- !u!114 &1848080450797772839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695877149293632375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814170f37eaed594c9ccf9f764d35613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyWeaponData: {fileID: 11400000, guid: 1d64a349a8aab5240b72b6d20136f421, type: 2}
 --- !u!1 &6339346451915659017
 GameObject:
   m_ObjectHideFlags: 0

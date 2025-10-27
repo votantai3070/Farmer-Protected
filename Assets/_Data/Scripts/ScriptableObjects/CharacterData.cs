@@ -9,9 +9,7 @@ public class CharacterData : ScriptableObject
     public Color rareColor;
     public enum CharacterType
     {
-        Warrior,
-        Mage,
-        Archer,
+        Player,
         Enemy
     }
 

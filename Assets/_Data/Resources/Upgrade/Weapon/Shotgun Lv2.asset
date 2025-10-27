@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
   m_Name: Shotgun Lv2
   m_EditorClassIdentifier: 
-  upgradeName: Shotgun
-  level: 2
   weaponName: Shotgun
+  level: 2
   description: Upgrade lv 2
   weaponType: 3
   ingameSprite: Weapon 5
@@ -23,7 +22,7 @@ MonoBehaviour:
   firstDamage: 4
   lastDamage: 5
   range: 0
-  speed: 15
+  bulletSpeed: 6
   criticalChange: 0.3
   criticalDamage: 1.8
   stamina: 0

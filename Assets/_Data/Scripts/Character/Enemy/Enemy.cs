@@ -9,6 +9,8 @@ public struct AIPathSettings
     public float repathRate;
 }
 
+public enum EnemyName { Rat, Bat, Undead, Bone, Golem, Slime }
+
 public class Enemy : Character
 {
     [Header("Enemy Setting")]
@@ -17,19 +19,28 @@ public class Enemy : Character
     public float idleTime = 2f;
 
     public AIPathSettings aIPathSettings;
+    public EnemyName enemyName;
 
+    public SpawnEnemy spawnEnemy { get; private set; }
+    public PlayerController player { get; private set; }
     public StateMachine stateMachine { get; private set; }
     public AIPath aIPath { get; private set; }
     public Animator anim { get; private set; }
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
         stateMachine = new StateMachine();
         aIPath = GetComponentInParent<AIPath>();
         anim = GetComponent<Animator>();
+        spawnEnemy = GameObject.Find("SpawnEnemy").GetComponent<SpawnEnemy>();
 
-        InitializeAIPath();
         drop = GameObject.Find("GameManager").GetComponent<DropItem>();
+        InitializeAIPath();
+    }
+
+    protected virtual void Start()
+    {
+
     }
 
     protected override void Update()
@@ -37,9 +48,24 @@ public class Enemy : Character
         Flip();
     }
 
-    public virtual void Start()
+    protected override void Die()
     {
+        base.Die();
+        DropItem();
+    }
 
+    private void DropItem()
+    {
+        Transform enemyRoot = transform.parent;
+
+        drop.SetEnemyDropItem(enemyRoot, characterData);
+
+        if (enemyName == EnemyName.Rat || enemyName == EnemyName.Slime || enemyName == EnemyName.Undead)
+            drop.DropExp1(enemyRoot);
+        else if (enemyName == EnemyName.Bat || enemyName == EnemyName.Bone)
+            drop.DropExp2(enemyRoot);
+        else if (enemyName == EnemyName.Golem)
+            drop.DropExp3(enemyRoot);
     }
 
     public void CanMove(bool activeMove)

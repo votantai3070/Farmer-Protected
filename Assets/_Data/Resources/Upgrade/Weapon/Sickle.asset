@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4a412648f2175439ceb41a8d684b00, type: 3}
   m_Name: Sickle
   m_EditorClassIdentifier: 
-  upgradeName: Sickle
-  level: 1
   weaponName: Sickle
+  level: 1
   description: 
   weaponType: 4
   ingameSprite: Weapon 2
@@ -23,7 +22,7 @@ MonoBehaviour:
   firstDamage: 3
   lastDamage: 5
   range: 0
-  speed: 12
+  bulletSpeed: 12
   criticalChange: 0.1
   criticalDamage: 1.3
   stamina: 4

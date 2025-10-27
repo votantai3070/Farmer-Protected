@@ -31,6 +31,5 @@ public class CharacterState
     public virtual void Update()
     {
         stateTime -= Time.deltaTime;
-
     }
 }

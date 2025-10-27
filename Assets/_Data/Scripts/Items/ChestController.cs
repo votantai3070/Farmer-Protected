@@ -7,16 +7,12 @@ public class ChestController : MonoBehaviour
     private SpriteRenderer sr;
     private Sprite openedChestSprite;
     private Sprite closedChestSprite;
-    private ObjectPool potionPool;
-    private ObjectPool bulletItemPool;
 
     public bool isOpened = false;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        potionPool = GameObject.Find("PotionPool").GetComponent<ObjectPool>();
-        bulletItemPool = GameObject.Find("BulletItemPool").GetComponent<ObjectPool>();
     }
 
     private void Start()

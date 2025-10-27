@@ -1,5 +1,4 @@
 using DG.Tweening;
-using Pathfinding;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +8,6 @@ public class Character : MonoBehaviour, IDamagable
 {
     [Header("Character Setting")]
     public CharacterData characterData;
-    public EnemyAnimation enemyAnimation;
     public Slider charhealthSlider;
     public TextMeshProUGUI playerHpText;
     protected SpriteRenderer spriteRenderer;
@@ -19,20 +17,39 @@ public class Character : MonoBehaviour, IDamagable
     public float CurrentHealth { get; private set; }
     float MaxHealth => characterData.maxHealth;
 
+    protected virtual void Awake()
+    {
+        if (characterData != null && characterData.characterType == CharacterType.Player)
+            InitializePlayer();
+    }
+
+    private void InitializePlayer()
+    {
+        CurrentHealth = MaxHealth;
+
+        if (charhealthSlider != null)
+        {
+            charhealthSlider.maxValue = MaxHealth;
+            charhealthSlider.value = CurrentHealth;
+        }
+
+        if (playerHpText != null)
+            playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
+
+        if (characterData.characterType == CharacterType.Enemy)
+            gameObject.GetComponent<Collider2D>().enabled = true;
+    }
+
     private void OnEnable()
     {
-        if (characterData != null)
+        if (characterData != null && characterData.characterType == CharacterType.Enemy)
             ResetGameObject();
     }
 
     protected virtual void Update()
     {
-        if (enemyAnimation != null)
-        {
-            bool isHit = enemyAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
-            //path.canMove = !isHit;
-        }
-
+        //Debug.Log(gameObject.name + ": " + CurrentHealth);
+        //Debug.Log(gameObject.name + ": " + MaxHealth);
     }
 
     public void Heal(int amount)
@@ -51,8 +68,6 @@ public class Character : MonoBehaviour, IDamagable
 
     public void TakeDamage(int damage, bool isCrit)
     {
-        if (enemyAnimation != null)
-            enemyAnimation.GetAnimationHitForEnemy();
 
         CurrentHealth -= damage;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
@@ -69,9 +84,7 @@ public class Character : MonoBehaviour, IDamagable
             playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
 
         if (CurrentHealth <= 0)
-        {
             Die();
-        }
     }
 
     protected virtual void Die()
@@ -84,18 +97,14 @@ public class Character : MonoBehaviour, IDamagable
         }
     }
 
-    public void Init(CharacterData data)
+    public void InitializeCharacterData(CharacterData data)
     {
         characterData = data;
-        //ResetGameObject();
     }
 
     private void ResetGameObject()
     {
-        if (characterData.characterType == CharacterType.Enemy)
-            //path.canMove = true;
-
-            CurrentHealth = MaxHealth;
+        CurrentHealth = MaxHealth;
 
         if (charhealthSlider != null)
         {
@@ -103,8 +112,8 @@ public class Character : MonoBehaviour, IDamagable
             charhealthSlider.value = CurrentHealth;
         }
 
-        if (playerHpText != null)
-            playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
+        //if (playerHpText != null)
+        //    playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
 
         gameObject.GetComponent<Collider2D>().enabled = true;
     }

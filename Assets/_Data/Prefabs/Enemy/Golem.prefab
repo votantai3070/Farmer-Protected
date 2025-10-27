@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4208233355196635647}
   - component: {fileID: 6710188578898915922}
   - component: {fileID: 5972130599617434465}
+  - component: {fileID: 7282064228731101246}
   m_Layer: 7
   m_Name: Golem
   m_TagString: Enemy
@@ -120,116 +121,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!1 &1806239798835976405
-GameObject:
+--- !u!114 &7282064228731101246
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4060183551078593071}
-  - component: {fileID: 7498159840505813602}
-  - component: {fileID: 6067202920058878421}
-  m_Layer: 0
-  m_Name: GolemAttackFX
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4060183551078593071
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806239798835976405}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7246101130107338365}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &7498159840505813602
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806239798835976405}
+  m_GameObject: {fileID: 794311964374166010}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be40c69f97eb515418dac40ef83ca978, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!212 &6067202920058878421
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806239798835976405}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 11009065
-  m_SortingLayer: 7
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 8, y: 8}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf9961b0ac9c05438d5e93fe66d8257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 794311964374166010}
 --- !u!1 &2125737546706848860
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,76 +400,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4799730624223119049
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2131078615864144966}
-  - component: {fileID: 7868347880056028052}
-  - component: {fileID: 8552844804134132088}
-  m_Layer: 0
-  m_Name: GolemAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2131078615864144966
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4799730624223119049}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7246101130107338365}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7868347880056028052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4799730624223119049}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2aaaf256c971a3438f57abd6126aae8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 7536711171cd29546a5cd905b6cc723b, type: 2}
-  enemyAnimation: {fileID: 5746702881192441351}
-  enemy: {fileID: 1028623342845072428}
-  rb: {fileID: 7549491117530745887}
-  attackFX: {fileID: 1806239798835976405}
-  _activeTime: 1
-  _delayTime: 3
---- !u!114 &8552844804134132088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4799730624223119049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 184881f8e11211740a23feb44202b9d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stonePrefab: {fileID: 1711477378067531987, guid: 212801917db99f847ac482c296eb7d48, type: 3}
-  stoneSpawnPoint: {fileID: 1020187971750928983}
-  enemyAnimation: {fileID: 5746702881192441351}
-  enemy: {fileID: 1028623342845072428}
-  rb: {fileID: 7549491117530745887}
-  delayTime: 3
 --- !u!1 &6363248254114582635
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +413,8 @@ GameObject:
   - component: {fileID: 7549491117530745887}
   - component: {fileID: 7304841724841216957}
   - component: {fileID: 6118460517332147738}
-  - component: {fileID: 1028623342845072428}
+  - component: {fileID: 3601950450076670170}
+  - component: {fileID: 1854429960403898138}
   m_Layer: 7
   m_Name: GolemGFX
   m_TagString: Enemy
@@ -600,10 +435,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1746204616258187527}
-  - {fileID: 2131078615864144966}
-  - {fileID: 6079659410738919489}
-  - {fileID: 4060183551078593071}
   - {fileID: 1020187971750928983}
   m_Father: {fileID: 4295117820090636661}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -699,7 +530,7 @@ Animator:
   m_GameObject: {fileID: 6363248254114582635}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f07ff1d9981f12b4f874d3c4ed3f4fce, type: 2}
+  m_Controller: {fileID: 22100000, guid: e989fe0009319fd4d8420e63acfb1bc9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -747,7 +578,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.09854233}
   m_Radius: 1.6162804
---- !u!114 &1028623342845072428
+--- !u!114 &3601950450076670170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -756,124 +587,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 6363248254114582635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21961b647c013d243b1edfa3180484b9, type: 3}
+  m_Script: {fileID: 11500000, guid: de2ae9750b8a75e49856c69760d5ad2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: {fileID: 6710188578898915922}
   characterData: {fileID: 11400000, guid: 1125387675471ce4a8ce809dce3f3975, type: 2}
-  enemyAnimation: {fileID: 5746702881192441351}
   charhealthSlider: {fileID: 750296374491298861}
   playerHpText: {fileID: 0}
---- !u!1 &6925193436072709546
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1746204616258187527}
-  - component: {fileID: 8701083458042831265}
-  - component: {fileID: 4884303119968467448}
-  m_Layer: 0
-  m_Name: GolemMovement
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1746204616258187527
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6925193436072709546}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7246101130107338365}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8701083458042831265
+  idleTime: 1
+  aIPathSettings:
+    maxSpeed: 5
+    endReachedDistance: 5
+    repathRate: 1.5
+  enemyName: 4
+  attackCooldown: 1
+  stonePrefab: {fileID: 1711477378067531987, guid: 212801917db99f847ac482c296eb7d48, type: 3}
+  spriteName: Golem_IdleB_0
+--- !u!114 &1854429960403898138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6925193436072709546}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a1d552b8b626f40b1d747c1d541100, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 1028623342845072428}
-  rb: {fileID: 7549491117530745887}
-  enemyAnimation: {fileID: 5746702881192441351}
---- !u!114 &4884303119968467448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6925193436072709546}
+  m_GameObject: {fileID: 6363248254114582635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdaeaa86064315644aa0948cf8e05610, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f5df7ee37f530d4f80e5bc4aac01b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aIPath: {fileID: 6710188578898915922}
-  enemy: {fileID: 1028623342845072428}
-  enemyAnimation: {fileID: 5746702881192441351}
---- !u!1 &7105613035945450553
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6079659410738919489}
-  - component: {fileID: 5746702881192441351}
-  m_Layer: 0
-  m_Name: GolemAnimation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6079659410738919489
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7105613035945450553}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7246101130107338365}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5746702881192441351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7105613035945450553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36dee87f88984c941963e271d03972eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 1028623342845072428}
-  animator: {fileID: 7304841724841216957}
-  attackAnimation: {fileID: 7498159840505813602}
 --- !u!1 &8682030033824005399
 GameObject:
   m_ObjectHideFlags: 0

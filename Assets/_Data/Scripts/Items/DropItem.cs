@@ -3,27 +3,27 @@ using UnityEngine;
 
 public class DropItem : MonoBehaviour
 {
-    [SerializeField] private ObjectPool bulletItemPool;
-    [SerializeField] private ObjectPool speedItemPool;
-    [SerializeField] private ObjectPool exp1Pool;
-    [SerializeField] private ObjectPool exp2Pool;
-    [SerializeField] private ObjectPool exp3Pool;
-    [SerializeField] private ObjectPool potionPool;
+    [SerializeField] private GameObject bulletItemPrefab;
+    [SerializeField] private GameObject speedItemPrefab;
+    [SerializeField] private GameObject exp1Prefab;
+    [SerializeField] private GameObject exp2Prefab;
+    [SerializeField] private GameObject exp3Prefab;
+    [SerializeField] private GameObject potionPrefab;
 
-    private void Drop(ObjectPool pool, Vector3 pos, Quaternion rot)
+    private void Drop(GameObject prefab, Vector3 pos, Quaternion rot)
     {
-        if (pool == null) return;
+        if (prefab == null) return;
 
-        //GameObject obj = pool.GetObject();
-        //obj.transform.SetPositionAndRotation(pos, rot);
+        GameObject obj = ObjectPool.instance.GetObject(prefab);
+        obj.transform.SetPositionAndRotation(pos, rot);
     }
 
-    public void DropExp1(Transform transform) => Drop(exp1Pool, transform.position, transform.rotation);
-    public void DropExp2(Transform transform) => Drop(exp2Pool, transform.position, transform.rotation);
-    public void DropExp3(Transform transform) => Drop(exp3Pool, transform.position, transform.rotation);
-    void DropPotion(Transform transform) => Drop(potionPool, transform.position, transform.rotation);
-    void DropSpeedItem(Transform transform) => Drop(speedItemPool, transform.position, transform.rotation);
-    void DropBulletItem(Transform transform) => Drop(bulletItemPool, transform.position, transform.rotation);
+    public void DropExp1(Transform transform) => Drop(exp1Prefab, transform.position, transform.rotation);
+    public void DropExp2(Transform transform) => Drop(exp2Prefab, transform.position, transform.rotation);
+    public void DropExp3(Transform transform) => Drop(exp3Prefab, transform.position, transform.rotation);
+    void DropPotion(Transform transform) => Drop(potionPrefab, transform.position, transform.rotation);
+    void DropSpeedItem(Transform transform) => Drop(speedItemPrefab, transform.position, transform.rotation);
+    void DropBulletItem(Transform transform) => Drop(bulletItemPrefab, transform.position, transform.rotation);
 
 
     public void SetEnemyDropItem(Transform transform, CharacterData data)

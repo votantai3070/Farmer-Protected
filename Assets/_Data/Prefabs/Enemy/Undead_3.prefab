@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 2396016463899320397}
   - component: {fileID: 3416080273665307449}
   - component: {fileID: 5119442256023314367}
+  - component: {fileID: -12267842264882443}
   m_Layer: 7
   m_Name: Undead_3
   m_TagString: Enemy
@@ -270,53 +271,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!1 &3913892988458460748
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 525092602036925211}
-  - component: {fileID: 3746709219502668570}
-  m_Layer: 7
-  m_Name: UndeadAnimation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &525092602036925211
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3913892988458460748}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6831786146959119372}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3746709219502668570
+--- !u!114 &-12267842264882443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3913892988458460748}
+  m_GameObject: {fileID: 3120486929975905185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36dee87f88984c941963e271d03972eb, type: 3}
+  m_Script: {fileID: 11500000, guid: ddf9961b0ac9c05438d5e93fe66d8257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4479501063369710096}
-  animator: {fileID: 8272350249157766074}
-  attackAnimation: {fileID: 0}
+  prefab: {fileID: 3120486929975905185}
 --- !u!1 &4751150165213756216
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,146 +422,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1 &5558245198021090538
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7441598571183631067}
-  - component: {fileID: 9212458804114837349}
-  m_Layer: 7
-  m_Name: UndeadMovement
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7441598571183631067
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5558245198021090538}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6831786146959119372}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9212458804114837349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5558245198021090538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdaeaa86064315644aa0948cf8e05610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aIPath: {fileID: 3416080273665307449}
-  enemy: {fileID: 4479501063369710096}
-  enemyAnimation: {fileID: 3746709219502668570}
---- !u!1 &7072464295524636666
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7042091591069172795}
-  - component: {fileID: 36097910247733238}
-  - component: {fileID: 1782228933701705909}
-  m_Layer: 7
-  m_Name: UndeadAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7042091591069172795
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7072464295524636666}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6831786146959119372}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &36097910247733238
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7072464295524636666}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.027817965, y: -0.06490892}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.9072733, y: 1.1298177}
-  m_EdgeRadius: 0
---- !u!114 &1782228933701705909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7072464295524636666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba524130a7262b849bdc2f5e72510ba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: b2f7e09612658874284636a54cb853c8, type: 2}
-  enemyAnimation: {fileID: 3746709219502668570}
 --- !u!1 &8337967764078599989
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +435,9 @@ GameObject:
   - component: {fileID: 4979671819138476857}
   - component: {fileID: 5840226896633191522}
   - component: {fileID: 8272350249157766074}
-  - component: {fileID: 4479501063369710096}
+  - component: {fileID: 504107318102357557}
+  - component: {fileID: 7128973855017123272}
+  - component: {fileID: 8043330412322756503}
   m_Layer: 7
   m_Name: Undead
   m_TagString: Enemy
@@ -628,10 +457,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7441598571183631067}
-  - {fileID: 525092602036925211}
-  - {fileID: 7042091591069172795}
+  m_Children: []
   m_Father: {fileID: 3066775750725471737}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2761923943030561145
@@ -784,7 +610,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4479501063369710096
+--- !u!114 &504107318102357557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -793,16 +619,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 8337967764078599989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259fb2e4d45948a4e883e376e1b7508f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e059716eb1c01b4c887d758013fd524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: {fileID: 3416080273665307449}
   characterData: {fileID: 11400000, guid: 24e07790aa200654aadc6ab7ff0aa808, type: 2}
-  enemyAnimation: {fileID: 3746709219502668570}
   charhealthSlider: {fileID: 1518525158276778928}
   playerHpText: {fileID: 0}
-  enemyName: Enemy 3
-  undeadPoolName: Undead3Pool
+  idleTime: 2
+  aIPathSettings:
+    maxSpeed: 4
+    endReachedDistance: 1
+    repathRate: 1.5
+  enemyName: 2
+  spriteName: Enemy 3
+  attackCooldown: 1
+--- !u!114 &7128973855017123272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8337967764078599989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5df7ee37f530d4f80e5bc4aac01b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8043330412322756503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8337967764078599989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814170f37eaed594c9ccf9f764d35613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyWeaponData: {fileID: 11400000, guid: b2f7e09612658874284636a54cb853c8, type: 2}
 --- !u!1 &9020754991028851005
 GameObject:
   m_ObjectHideFlags: 0

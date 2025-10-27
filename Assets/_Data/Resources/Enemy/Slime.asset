@@ -15,7 +15,9 @@ MonoBehaviour:
   characterName: Slime
   level: 0
   description: 
-  characterType: 3
+  rareColor: {r: 0, g: 0, b: 0, a: 0}
+  characterType: 1
+  characterSprite: 
   speed: 3
   maxHealth: 3
   stamina: 0

@@ -6,8 +6,6 @@ public class PlayerAnimation : MonoBehaviour
     public InputManager inputManager;
     public PlayerController player;
 
-    Vector2 lastMoveDir;
-
     private void Update()
     {
         if (player.isAttacked) return;

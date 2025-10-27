@@ -2,14 +2,7 @@ using UnityEngine;
 
 public class StoneDestroy : MonoBehaviour
 {
-    private ObjectPool stonePool;
-
     public float lifetime = 5f;
-
-    private void Start()
-    {
-        stonePool = GameObject.Find("StonePool").GetComponent<ObjectPool>();
-    }
 
     private void OnEnable()
     {
@@ -23,9 +16,6 @@ public class StoneDestroy : MonoBehaviour
 
     private void DestroyStone()
     {
-        if (stonePool != null)
-        {
-            //stonePool.ReturnPool(gameObject);
-        }
+        ObjectPool.instance.DelayReturnToPool(gameObject);
     }
 }

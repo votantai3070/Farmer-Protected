@@ -3,14 +3,19 @@ using UnityEngine;
 
 public class MagnetController : Item
 {
-    public static MagnetController Instance;
+    public static MagnetController instance;
 
-    [HideInInspector] public bool isMagnetActive = false;
+    private bool isMagnetActive = false;
     protected override void Awake()
     {
         base.Awake();
-        Instance = this;
+
+        instance = this;
+
     }
+
+    public bool IsMagnetActive() => isMagnetActive;
+
     public IEnumerator MagnetEffect()
     {
         isMagnetActive = true;
