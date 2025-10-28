@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1136860005383364863}
   - component: {fileID: 702397371734707388}
   - component: {fileID: 1267145883198978594}
-  - component: {fileID: 7256539992372070187}
   - component: {fileID: 892133151788578584}
+  - component: {fileID: 1858064815820236295}
   m_Layer: 0
   m_Name: Shovel
   m_TagString: Untagged
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 768275879
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1737672109, guid: 34aa22406fba8c34b8866e7a131f3063, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -164,23 +164,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.39507163, y: 1.0155336}
   m_EdgeRadius: 0
---- !u!114 &7256539992372070187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2073049429066439964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c3d755d4d965149b29305753fcd7a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 5e6e69b9f74d82148a761f23aa805a4f, type: 2}
-  radius: 5
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &892133151788578584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,4 +177,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 5
-  poolName: ShovelPool
+--- !u!114 &1858064815820236295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073049429066439964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c8083b179e5f44b936a6bbac1d3906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 5e6e69b9f74d82148a761f23aa805a4f, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0

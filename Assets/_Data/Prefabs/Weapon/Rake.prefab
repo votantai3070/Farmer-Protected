@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 883382266993705263}
   - component: {fileID: 2815019628531415300}
   - component: {fileID: 2106294557778474572}
-  - component: {fileID: 4333214762819842183}
   - component: {fileID: 1502333066105148471}
+  - component: {fileID: 6618983358678955763}
   m_Layer: 0
   m_Name: Rake
   m_TagString: Untagged
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 768275879
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -703694536, guid: 34aa22406fba8c34b8866e7a131f3063, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -164,23 +164,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.40224755, y: 1.0075153}
   m_EdgeRadius: 0
---- !u!114 &4333214762819842183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2335932798336283176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c3d755d4d965149b29305753fcd7a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: ed609f3f8d14ddf4d86c25bf6b6399c1, type: 2}
-  radius: 5
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &1502333066105148471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,4 +177,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 5
-  poolName: ShovelPool
+--- !u!114 &6618983358678955763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2335932798336283176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c8083b179e5f44b936a6bbac1d3906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: ed609f3f8d14ddf4d86c25bf6b6399c1, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0

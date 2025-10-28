@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
-    [Header("Weapon Upgrade")]
+    [Header("TakeDamaged Upgrade")]
     [SerializeField] private List<WeaponData> upgradeList = new();
     public List<WeaponData> currentUpgradeList = new();
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2847645486317138953}
   - component: {fileID: 4547691732820295410}
   - component: {fileID: 5462170186856611476}
+  - component: {fileID: 4549785469729457076}
   m_Layer: 0
   m_Name: Magnet
   m_TagString: Magnet
@@ -103,7 +104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 66bbc941512b59d498b9cdf6223f8666, type: 2}
-  isMagnetActive: 0
 --- !u!61 &4547691732820295410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -177,3 +177,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4549785469729457076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434208298004371772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf9961b0ac9c05438d5e93fe66d8257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 434208298004371772}

@@ -1,14 +1,15 @@
 using UnityEngine;
 
-public class RangeWeaponMovement : Weapon
+public class BulletMovement : TakeDamaged
 {
-    [Header("Range Weapon Movement Setting")]
+    [Header("Range TakeDamaged Movement Setting")]
     private Rigidbody2D rb;
     private Transform player;
     private SpriteRenderer sr;
     private HotBarManager hotBarManager;
 
     [SerializeField] LayerMask enemyLayer;
+    public Weapon weapon;
 
 
     private bool isEnemyWeapon = false;
@@ -33,20 +34,35 @@ public class RangeWeaponMovement : Weapon
             AutoFindEnemy();
     }
 
-    public void HandleRangeWeaponMovement(bool enemyWeapon)
-    {
-        if (enemyWeapon)
-        {
-            isEnemyWeapon = true;
-            Vector2 direction = (player.position - transform.position).normalized;
-            rb.linearVelocity = direction * weaponData.bulletSpeed;
-        }
-        else
-        {
-            isEnemyWeapon = false;
-            rb.linearVelocity = transform.up * weaponData.bulletSpeed;
+    public void InitializeWeapon(WeaponData weaponData) => weapon = new Weapon(weaponData);
 
-        }
+    public void HandleBulletMovement(bool enemyWeapon, Weapon weapon)
+    {
+        if (this.weapon != weapon || this.weapon == null)
+            this.weapon = weapon;
+
+        if (weapon != null)
+            if (enemyWeapon)
+            {
+                isEnemyWeapon = true;
+                rb.linearVelocity = BulletEnemyDirection() * weapon.bulletSpeed;
+            }
+            else
+            {
+                isEnemyWeapon = false;
+                rb.linearVelocity = BulletPlayerDirection() * weapon.bulletSpeed;
+            }
+    }
+
+    private Vector3 BulletEnemyDirection()
+    {
+        Vector2 direction = (player.position - transform.position).normalized;
+        return weapon.ApplySpread(direction);
+    }
+    private Vector3 BulletPlayerDirection()
+    {
+        Vector2 direction = ((Vector3)InputManager.Instance.GetMousePosition() - transform.position).normalized;
+        return weapon.ApplySpread(direction);
     }
 
     void AutoFindEnemy()
@@ -54,7 +70,7 @@ public class RangeWeaponMovement : Weapon
         if (hotBarManager.currentWeaponData == null) return;
 
         if (hotBarManager.currentWeaponData.level == 3
-            && hotBarManager.currentWeaponData.weaponType == WeaponData.WeaponType.Throw)
+            && hotBarManager.currentWeaponData.weaponType == WeaponType.Throw)
         {
 
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 5f, enemyLayer);
@@ -87,8 +103,7 @@ public class RangeWeaponMovement : Weapon
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        Debug.Log(collision.tag);
+        //Debug.Log(collision.name);
 
         if (collision.CompareTag("Player") && isEnemyWeapon)
         {

@@ -1,4 +1,3 @@
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -22,7 +21,7 @@ public class InputManager : MonoBehaviour
         AssignInputEvents();
     }
 
-    public Vector2 HandleMovementFollowMouse()
+    public Vector2 GetMousePosition()
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }

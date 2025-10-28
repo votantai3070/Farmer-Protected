@@ -27,6 +27,9 @@ MonoBehaviour:
   criticalDamage: 2
   stamina: 0
   magazineSize: 30
+  bulletShotSize: 1
+  fireRate: 2
+  baseSpreadAngle: 0
   currentAmmo: 30
   reserveAmmo: 90
   attackDelayTime: 0.2

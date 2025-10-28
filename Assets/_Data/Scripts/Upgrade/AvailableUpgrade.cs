@@ -29,9 +29,9 @@ public class AvailableUpgrade : MonoBehaviour
              .Take(Mathf.Min(3, availableList.Count))
              .ToList();
 
-        Debug.Log($"Available Weapons: {string.Join(", ", availableList.Select(w => w.weaponName + " Lv" + w.level))}");
+        //Debug.Log($"Available Weapons: {string.Join(", ", availableList.Select(w => w.weaponName + " Lv" + w.level))}");
 
-        Debug.Log($"Available Weapons Count: {availableSort.Count}");
+        //Debug.Log($"Available Weapons Count: {availableSort.Count}");
 
         for (int i = 0; i < chooseUpgrade.transform.childCount; i++)
         {

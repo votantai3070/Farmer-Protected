@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5823071988473175155}
   - component: {fileID: 8256876965176515357}
   - component: {fileID: 5988600769241471295}
+  - component: {fileID: -940371835948102760}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Potion
@@ -199,4 +200,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 5692b7e9ae717804386406442b28d5e2, type: 2}
-  spriteRenderer: {fileID: 5533547265174939779}
+--- !u!114 &-940371835948102760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533547265174939777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf9961b0ac9c05438d5e93fe66d8257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5533547265174939777}

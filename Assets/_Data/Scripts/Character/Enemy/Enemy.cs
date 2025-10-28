@@ -1,5 +1,6 @@
 using Pathfinding;
 using UnityEngine;
+using static CharacterData;
 
 [System.Serializable]
 public struct AIPathSettings
@@ -40,7 +41,8 @@ public class Enemy : Character
 
     protected virtual void Start()
     {
-
+        if (characterData.characterType == CharacterType.Enemy)
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
     }
 
     protected override void Update()
@@ -51,6 +53,12 @@ public class Enemy : Character
     protected override void Die()
     {
         base.Die();
+        if (characterData.characterType == CharacterType.Enemy)
+        {
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            UIManager.Instance.UpdateDefeatEnemy(characterData.reward);
+        }
+
         DropItem();
     }
 

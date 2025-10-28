@@ -38,7 +38,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void GetRotateWeaponFollowMouse()
     {
-        Vector3 mousePos = inputManager.HandleMovementFollowMouse();
+        Vector3 mousePos = inputManager.GetMousePosition();
 
         Vector3 direction = (mousePos - transform.position).normalized;
 

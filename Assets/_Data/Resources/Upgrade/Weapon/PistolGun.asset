@@ -22,11 +22,14 @@ MonoBehaviour:
   firstDamage: 3
   lastDamage: 4
   range: 0
-  bulletSpeed: 6
+  bulletSpeed: 8
   criticalChange: 0.1
   criticalDamage: 1.5
   stamina: 0
   magazineSize: 7
+  bulletShotSize: 1
+  fireRate: 0.75
+  baseSpreadAngle: 0
   currentAmmo: 7
   reserveAmmo: 70
   attackDelayTime: 0.4

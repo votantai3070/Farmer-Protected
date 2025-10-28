@@ -1,15 +1,10 @@
 using UnityEngine;
 
 [SerializeField]
-public struct BatControllerSettings
-{
-    public float bulletSpeed;
-}
 
 public class Enemy_Range : Enemy
 {
     [Header("Enemy Range Controller Setting")]
-    public BatControllerSettings settings;
     public float attackCooldown = 1f;
     [SerializeField] private GameObject stonePrefab;
     [SerializeField] private string spriteName;
@@ -17,6 +12,7 @@ public class Enemy_Range : Enemy
     public IdleState_Range idleState { get; private set; }
     public MoveState_Range moveState { get; private set; }
     public AttackState_Range attackState { get; private set; }
+    public DeadState_Range deadState_Range { get; private set; }
 
 
     protected override void Awake()
@@ -26,6 +22,8 @@ public class Enemy_Range : Enemy
         idleState = new IdleState_Range(this, stateMachine, "Idle");
         moveState = new MoveState_Range(this, stateMachine, "Move");
         attackState = new AttackState_Range(this, stateMachine, "Attack");
+        deadState_Range = new DeadState_Range(this, stateMachine, "Dead");
+
 
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -36,7 +34,6 @@ public class Enemy_Range : Enemy
         Sprite sprite = GameManager.Instance.characterAtlas.GetSprite(spriteName);
         spriteRenderer.sprite = sprite;
 
-        Debug.Log("Bat Settings Bullet Speed: " + settings.bulletSpeed);
 
         stateMachine.Initialize(idleState);
     }
@@ -44,7 +41,6 @@ public class Enemy_Range : Enemy
     protected override void Update()
     {
         base.Update();
-
 
         if (stateMachine.currentState != null)
             stateMachine.currentState.Update();
@@ -56,12 +52,14 @@ public class Enemy_Range : Enemy
         stone.transform.position = transform.position;
         stone.transform.rotation = Quaternion.identity;
 
-        stone.GetComponent<RangeWeaponMovement>().HandleRangeWeaponMovement(true);
+        BulletMovement stoneBullet = stone.GetComponent<BulletMovement>();
+        stoneBullet.InitializeWeapon(stoneBullet.weaponData);
+
+        stoneBullet.HandleBulletMovement(true, stoneBullet.weapon);
     }
 
     protected override void Die()
     {
         base.Die();
-
     }
 }

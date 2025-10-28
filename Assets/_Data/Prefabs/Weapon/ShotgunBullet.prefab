@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 463392867659465421}
   - component: {fileID: 145640847583863709}
-  - component: {fileID: 4464610340790573738}
   - component: {fileID: -8701926566400755830}
   - component: {fileID: 5265702966625924762}
   - component: {fileID: -6517536635001485388}
+  - component: {fileID: 3220595596898306144}
   m_Layer: 0
   m_Name: ShotgunBullet
   m_TagString: Untagged
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 768275879
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 154122315, guid: 34aa22406fba8c34b8866e7a131f3063, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -91,22 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4464610340790573738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7622892143791801114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c3d755d4d965149b29305753fcd7a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 51d29ba567cdd834a9f8a6639ad24ce5, type: 2}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &-8701926566400755830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 5
-  poolName: ShotgunBulletPool
 --- !u!50 &5265702966625924762
 Rigidbody2D:
   serializedVersion: 5
@@ -194,3 +177,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.33333334, y: 0.33333334}
   m_EdgeRadius: 0
+--- !u!114 &3220595596898306144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7622892143791801114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c8083b179e5f44b936a6bbac1d3906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 51d29ba567cdd834a9f8a6639ad24ce5, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0

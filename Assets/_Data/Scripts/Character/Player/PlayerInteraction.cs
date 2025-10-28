@@ -25,7 +25,7 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Chest")]
     private ChestController nearbyChest;
 
-    [Header("Select Weapon")]
+    [Header("Select TakeDamaged")]
     [SerializeField] private AvailableUpgrade availableWeapon;
 
     [Header("Speed Item")]

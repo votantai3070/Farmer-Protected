@@ -7,18 +7,18 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public Image image;
     public WeaponData weaponData;
 
-    [HideInInspector] public Transform parentAfterDrag;
-    private GameObject parentBeforeDrag;
+    [HideInInspector] public Transform parentBeforeDrag;
+    private GameObject parentAfterDrag;
 
     private void Start()
     {
-        parentBeforeDrag = GameObject.Find("Inventory");
+        parentAfterDrag = GameObject.Find("Inventory");
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        parentAfterDrag = transform.parent;
-        transform.SetParent(parentBeforeDrag.transform);
+        parentBeforeDrag = transform.parent;
+        transform.SetParent(parentAfterDrag.transform);
         transform.SetAsLastSibling();
         image.raycastTarget = false;
     }
@@ -30,7 +30,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(parentAfterDrag);
+        transform.SetParent(parentBeforeDrag);
         image.raycastTarget = true;
     }
 

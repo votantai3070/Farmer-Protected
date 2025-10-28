@@ -1,5 +1,6 @@
 using DG.Tweening;
 using TMPro;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.UI;
 using static CharacterData;
@@ -36,8 +37,7 @@ public class Character : MonoBehaviour, IDamagable
         if (playerHpText != null)
             playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
 
-        if (characterData.characterType == CharacterType.Enemy)
-            gameObject.GetComponent<Collider2D>().enabled = true;
+
     }
 
     private void OnEnable()
@@ -89,12 +89,7 @@ public class Character : MonoBehaviour, IDamagable
 
     protected virtual void Die()
     {
-        gameObject.GetComponent<Collider2D>().enabled = false;
 
-        if (characterData.characterType == CharacterType.Enemy)
-        {
-            UIManager.Instance.UpdateDefeatEnemy(characterData.reward);
-        }
     }
 
     public void InitializeCharacterData(CharacterData data)
@@ -115,6 +110,6 @@ public class Character : MonoBehaviour, IDamagable
         //if (playerHpText != null)
         //    playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
 
-        gameObject.GetComponent<Collider2D>().enabled = true;
+        gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
     }
 }

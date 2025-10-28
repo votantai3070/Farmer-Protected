@@ -1,18 +1,11 @@
 using UnityEngine;
-[CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon/WeaponData")]
+[CreateAssetMenu(fileName = "New TakeDamaged", menuName = "TakeDamaged/WeaponData")]
 public class WeaponData : ScriptableObject
 {
     public string weaponName;
     public int level;
     public string description;
-    public enum WeaponType
-    {
-        Enemy_Attack,
-        Rifle,
-        Pistol,
-        Shotgun,
-        Throw
-    }
+
     public WeaponType weaponType;
     public string ingameSprite;
     public string bulletSprite;
@@ -25,6 +18,9 @@ public class WeaponData : ScriptableObject
     public float criticalDamage;
     public float stamina;
     public int magazineSize;
+    public int bulletShotSize;
+    public float fireRate;
+    public float baseSpreadAngle;
     public int currentAmmo;
     public int reserveAmmo;
     public float attackDelayTime;

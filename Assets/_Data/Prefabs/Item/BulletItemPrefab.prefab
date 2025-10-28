@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6051263222027641559}
   - component: {fileID: 1657000532879338735}
   - component: {fileID: 6575614150489579869}
+  - component: {fileID: -5869495572529739069}
   m_Layer: 0
   m_Name: BulletItemPrefab
   m_TagString: BulletItem
@@ -127,7 +128,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5625, y: 0.5625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -148,4 +149,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: b79e43ca4a583954e9ac22bb1d0e32bf, type: 2}
-  spriteRenderer: {fileID: 6051263222027641559}
+--- !u!114 &-5869495572529739069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074168441948522104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf9961b0ac9c05438d5e93fe66d8257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2074168441948522104}

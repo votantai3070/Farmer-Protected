@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8625134828268736514}
   - component: {fileID: 3918516390809112133}
   - component: {fileID: 1367524138187028328}
+  - component: {fileID: -7811759563091109900}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Chest
@@ -101,10 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26da6fefd2c64c04f8d51d17a77e7166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openedChestSprite: {fileID: 1777749549, guid: e9178c3064f975f479fcfad001d71a2b, type: 3}
-  closedChestSprite: {fileID: -155058199, guid: e9178c3064f975f479fcfad001d71a2b, type: 3}
-  potionPool: {fileID: 0}
-  bulletItemPool: {fileID: 0}
+  itemPrefab:
+  - {fileID: 5533547265174939777, guid: 4edfe09ded4588649b14ec6e1f35a8e8, type: 3}
+  - {fileID: 2074168441948522104, guid: 9f9766ef934875642a94200f095ed615, type: 3}
   isOpened: 0
 --- !u!61 &1367524138187028328
 BoxCollider2D:
@@ -144,7 +144,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8333334, y: 1.4444444}
+    oldSize: {x: 1.03125, y: 0.8125}
     newSize: {x: 1.8333334, y: 1.4444444}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -152,3 +152,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4884527, y: 1.291164}
   m_EdgeRadius: 0
+--- !u!114 &-7811759563091109900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978977098023042372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf9961b0ac9c05438d5e93fe66d8257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1978977098023042372}

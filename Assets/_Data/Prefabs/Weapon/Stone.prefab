@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3692649692897829789}
   - component: {fileID: -1753798775158499273}
   - component: {fileID: 2266361229288070881}
-  - component: {fileID: 6857027402599389113}
   - component: {fileID: 90449965597291919}
+  - component: {fileID: 831470374454652187}
   m_Layer: 3
   m_Name: Stone
   m_TagString: Untagged
@@ -154,23 +154,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.028439343}
   m_Radius: 0.18400759
---- !u!114 &6857027402599389113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4519717574271983928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c3d755d4d965149b29305753fcd7a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 7cc2460750d2388438f29e10d6a75854, type: 2}
-  radius: 5
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &90449965597291919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +167,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 5
+--- !u!114 &831470374454652187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519717574271983928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c8083b179e5f44b936a6bbac1d3906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 7cc2460750d2388438f29e10d6a75854, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0

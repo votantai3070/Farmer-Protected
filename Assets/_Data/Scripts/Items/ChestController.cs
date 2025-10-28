@@ -3,6 +3,10 @@ using DG.Tweening;
 
 public class ChestController : MonoBehaviour
 {
+    [SerializeField] GameObject[] itemPrefab;
+
+    [Space]
+
     [Header("Chest Setting")]
     private SpriteRenderer sr;
     private Sprite openedChestSprite;
@@ -28,22 +32,11 @@ public class ChestController : MonoBehaviour
 
         sr.sprite = openedChestSprite;
 
-        int random = Random.Range(0, 2);
+        int random = Random.Range(0, itemPrefab.Length);
 
-        if (random == 0)
-        {
-            //var potion = potionPool.GetObject();
-            //potion.transform.SetPositionAndRotation(transform.position + Vector3.up, transform.rotation);
-            ////potion.transform.DOMove(transform.position + Vector3.up, 0.5f);
-            //potion.SetActive(true);
-        }
-        else
-        {
-            //var bulletItem = bulletItemPool.GetObject();
-            //bulletItem.transform.SetPositionAndRotation(transform.position + Vector3.up, transform.rotation);
-            ////bulletItem.transform.DOMove(transform.position + Vector3.up, 0.5f);
-            //bulletItem.SetActive(true);
-        }
+        var item = ObjectPool.instance.GetObject(itemPrefab[random]);
+        item.transform.SetPositionAndRotation(transform.position + Vector3.up, transform.rotation);
+
 
         transform.tag = "Untagged";
     }

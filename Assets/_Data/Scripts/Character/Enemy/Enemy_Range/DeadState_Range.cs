@@ -1,16 +1,26 @@
 using UnityEngine;
 
-public class DeadState_Range : MonoBehaviour
+public class DeadState_Range : CharacterState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Enemy_Range enemy;
+
+    public DeadState_Range(Enemy enemyBase, StateMachine stateMachine, string animBoolName) : base(enemyBase, stateMachine, animBoolName)
     {
-        
+        this.enemy = enemyBase as Enemy_Range;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Enter()
     {
-        
+        base.Enter();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+    }
+
+    public override void Update()
+    {
+        base.Update();
     }
 }

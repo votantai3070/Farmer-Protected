@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerVisuals : MonoBehaviour
@@ -6,15 +5,15 @@ public class PlayerVisuals : MonoBehaviour
     public GameObject[] prefabs;
 
 
-    public GameObject CurrentPrefab(WeaponData weaponData)
+    public GameObject CurrentBulletPrefab(Weapon weapon)
     {
         foreach (GameObject prefab in prefabs)
         {
-            RangeWeaponMovement weapon = prefab.GetComponent<RangeWeaponMovement>();
+            BulletMovement bullet = prefab.GetComponent<BulletMovement>();
 
-            if (weapon.weaponData.weaponName == weaponData.weaponName)
+            if (bullet.weaponData.weaponName == weapon.weaponData.weaponName)
             {
-                return weapon.gameObject;
+                return bullet.gameObject;
             }
         }
 

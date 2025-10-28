@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 832453919906072629}
   - component: {fileID: 3085152699621920250}
   - component: {fileID: 5843826339412642153}
+  - component: {fileID: 8758633547772023859}
   m_Layer: 0
   m_Name: Exp 2
   m_TagString: Exp3
@@ -166,4 +167,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 9bdc63c1140e59d45ae0f4c87f092090, type: 2}
-  spriteRenderer: {fileID: 1650331270548000072}
+--- !u!114 &8758633547772023859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175567501612571803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf9961b0ac9c05438d5e93fe66d8257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8175567501612571803}

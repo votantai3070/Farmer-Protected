@@ -26,9 +26,6 @@ public class HotBarManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) UseWeaponInSlot(0);
         if (Input.GetKeyDown(KeyCode.Alpha2)) UseWeaponInSlot(1);
         if (Input.GetKeyDown(KeyCode.Alpha3)) UseWeaponInSlot(2);
-        //if (Input.GetKeyDown(KeyCode.Alpha4)) UseWeaponInSlot(3);
-        //if (Input.GetKeyDown(KeyCode.Alpha5)) UseWeaponInSlot(4);
-        //if (Input.GetKeyDown(KeyCode.Alpha6)) UseWeaponInSlot(5);
 
         if (currentWeaponData != null)
             UpdateWeapon();
@@ -72,13 +69,10 @@ public class HotBarManager : MonoBehaviour
 
                 currentWeaponData = weapon;
 
-                if (weapon.weaponType == WeaponData.WeaponType.Rifle
-                    || weapon.weaponType == WeaponData.WeaponType.Pistol
-                    || weapon.weaponType == WeaponData.WeaponType.Shotgun)
+                if (weapon.weaponType == WeaponType.Rifle
+                    || weapon.weaponType == WeaponType.Pistol
+                    || weapon.weaponType == WeaponType.Shotgun)
                 {
-                    //var current = bullet.weaponDatas.Find(w => w.weaponName == weapon.weaponName).currentAmmo;
-                    //var reserve = bullet.weaponDatas.Find(w => w.weaponName == weapon.weaponName).reserveAmmo;
-
                     var (current, reserve, _) = bullet.ammoMap[(weapon.weaponName, weapon.level)];
 
                     UIManager.Instance.ammoText.enabled = true;
@@ -105,13 +99,17 @@ public class HotBarManager : MonoBehaviour
 
             if (weapon != null)
             {
-                hotbarSlotItems[i].transform.GetChild(0).GetComponent<Image>().sprite = GameManager.Instance.UIAtlas.GetSprite(weapon.UISprite);
+                hotbarSlotItems[i].transform.GetChild(0).GetComponent<Image>().sprite =
+                    GameManager.Instance.UIAtlas.GetSprite(weapon.UISprite);
+
                 hotbarSlotItems[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{weapon.level}";
                 hotbarSlotItems[i].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = $"{i + 1}";
             }
             else
             {
-                hotbarSlotItems[i].transform.GetChild(0).GetComponent<Image>().sprite = GameManager.Instance.UIAtlas.GetSprite("Panel");
+                hotbarSlotItems[i].transform.GetChild(0).GetComponent<Image>().sprite =
+                    GameManager.Instance.UIAtlas.GetSprite("Panel");
+
                 hotbarSlotItems[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
                 hotbarSlotItems[i].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = $"{i + 1}";
             }

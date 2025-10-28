@@ -9,10 +9,14 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
+        InitializeNewWeaponInSlot();
+    }
+
+    private void InitializeNewWeaponInSlot()
+    {
         for (int i = 0; i < weaponDatas.Length && i < slots.Length; i++)
         {
             DraggableItem newItem = Instantiate(draggablePrefab, slots[i].transform);
-
             newItem.SetItem(weaponDatas[i]);
         }
     }
