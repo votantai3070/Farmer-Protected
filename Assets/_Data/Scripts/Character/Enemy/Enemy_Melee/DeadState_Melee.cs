@@ -16,8 +16,7 @@ public class DeadState_Melee : CharacterState
 
         enemy.CanMove(false);
 
-        ObjectPool.instance.DelayReturnToPool(enemy.transform.parent.gameObject, enemy.GetAnimationClipDuration("Dead"));
-        enemy.spawnEnemy.ReturnEnemy(enemy.transform.parent.gameObject);
+
     }
 
     public override void Exit()
@@ -29,6 +28,8 @@ public class DeadState_Melee : CharacterState
     {
         base.Update();
 
+        ObjectPool.instance.DelayReturnToPool(enemy.transform.parent.gameObject, enemy.GetAnimationClipDuration("Dead"));
+        enemy.spawnEnemy.ReturnEnemy(enemy.transform.parent.gameObject);
     }
 
 }

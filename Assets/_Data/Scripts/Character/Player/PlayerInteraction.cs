@@ -1,11 +1,14 @@
 using DG.Tweening;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public PlayerControls controls;
+
     [Header("Exp Slider Setting")]
     [SerializeField] private List<float> expTable;
     [SerializeField] private ItemData exp;
@@ -29,7 +32,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private AvailableUpgrade availableWeapon;
 
     [Header("Speed Item")]
-    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private PlayerDash playerMovement;
 
     private void Start()
     {
@@ -44,6 +47,14 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
+        AssignInputEvents();
+
+
+        ResetLevelUpBar();
+    }
+
+    private void ResetLevelUpBar()
+    {
         if (_currentExp >= _expToNextLevel && _currentLevel < expTable.Count)
         {
             _currentExp -= _expToNextLevel;
@@ -51,12 +62,6 @@ public class PlayerInteraction : MonoBehaviour
 
             LevelUp();
         }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            UseChest();
-        }
-
     }
 
     void AddExp(float amountExp)
@@ -84,6 +89,7 @@ public class PlayerInteraction : MonoBehaviour
         else
             return expTable[expTable.Count - 1];
     }
+
     private void ShowSelectWeaponPanel()
     {
         availableWeapon.SetWeaponAvailable();
@@ -152,8 +158,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (collision.TryGetComponent<SpeedItemController>(out var speed))
             {
-
-                StartCoroutine(playerMovement.BoostSpeed(speed.itemData.value, speed.itemData.timeLimit));
+                if (!player.IsBoostedSpeed())
+                    StartCoroutine(player.BoostSpeed(speed.itemData.value, speed.itemData.timeLimit));
             }
             ObjectPool.instance.DelayReturnToPool(collision.gameObject);
         }
@@ -162,7 +168,6 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (collision.TryGetComponent<MagnetController>(out var mag))
             {
-
                 StartCoroutine(mag.MagnetEffect());
             }
             ObjectPool.instance.DelayReturnToPool(collision.gameObject);
@@ -185,5 +190,12 @@ public class PlayerInteraction : MonoBehaviour
             nearbyChest.OpenChest();
             nearbyChest = null;
         }
+    }
+
+    private void AssignInputEvents()
+    {
+        controls = player.controls;
+
+        controls.Player.Interaction.performed += ctx => UseChest();
     }
 }

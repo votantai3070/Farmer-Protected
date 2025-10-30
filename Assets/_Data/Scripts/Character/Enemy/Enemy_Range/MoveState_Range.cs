@@ -28,5 +28,7 @@ public class MoveState_Range : CharacterState
         {
             stateMachine.ChangeState(enemy.attackState);
         }
+
+        enemy.DeadAnimation();
     }
 }

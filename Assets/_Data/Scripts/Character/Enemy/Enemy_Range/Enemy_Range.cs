@@ -1,3 +1,4 @@
+using System.Xml;
 using UnityEngine;
 
 [SerializeField]
@@ -12,7 +13,7 @@ public class Enemy_Range : Enemy
     public IdleState_Range idleState { get; private set; }
     public MoveState_Range moveState { get; private set; }
     public AttackState_Range attackState { get; private set; }
-    public DeadState_Range deadState_Range { get; private set; }
+    public DeadState_Range deadState { get; private set; }
 
 
     protected override void Awake()
@@ -22,7 +23,7 @@ public class Enemy_Range : Enemy
         idleState = new IdleState_Range(this, stateMachine, "Idle");
         moveState = new MoveState_Range(this, stateMachine, "Move");
         attackState = new AttackState_Range(this, stateMachine, "Attack");
-        deadState_Range = new DeadState_Range(this, stateMachine, "Dead");
+        deadState = new DeadState_Range(this, stateMachine, "Dead");
 
 
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -44,6 +45,14 @@ public class Enemy_Range : Enemy
 
         if (stateMachine.currentState != null)
             stateMachine.currentState.Update();
+    }
+
+    public void DeadAnimation()
+    {
+        if (CurrentHealth <= 0)
+        {
+            stateMachine.ChangeState(deadState);
+        }
     }
 
     public void HandleAttack()

@@ -12,9 +12,17 @@ public class DamagePopupGenerator : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        Invoke(nameof(ReturnToPool), 2f);
+    }
+
     public void DisplayDamage(Vector3 position, float damageText, bool isCrit)
     {
-        GameObject popup = Instantiate(damagePrefab, position, Quaternion.identity);
+        GameObject popup = ObjectPool.instance.GetObject(damagePrefab);
+        popup.transform.position = position;
+        popup.transform.rotation = Quaternion.identity;
+
         var temp = popup.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         temp.text = damageText.ToString();
         if (isCrit)
@@ -22,5 +30,10 @@ public class DamagePopupGenerator : MonoBehaviour
 
         else
             temp.color = normalColor;
+    }
+
+    private void ReturnToPool()
+    {
+        ObjectPool.instance.DelayReturnToPool(gameObject);
     }
 }

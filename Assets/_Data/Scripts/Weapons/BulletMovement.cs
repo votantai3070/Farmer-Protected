@@ -30,7 +30,7 @@ public class BulletMovement : TakeDamaged
 
     private void Update()
     {
-        if (hotBarManager.currentWeaponData != null)
+        if (weapon != null)
             AutoFindEnemy();
     }
 
@@ -79,9 +79,11 @@ public class BulletMovement : TakeDamaged
             {
                 Transform nearestEnemy = null;
                 float minDistance = Mathf.Infinity;
+
                 foreach (var enemy in hitEnemies)
                 {
                     float distance = Vector2.Distance(transform.position, enemy.transform.position);
+
                     if (distance < minDistance)
                     {
                         minDistance = distance;
@@ -103,7 +105,7 @@ public class BulletMovement : TakeDamaged
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(collision.name);
+        Debug.Log(collision.name);
 
         if (collision.CompareTag("Player") && isEnemyWeapon)
         {

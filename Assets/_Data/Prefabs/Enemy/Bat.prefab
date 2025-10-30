@@ -264,7 +264,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!58 &6547415237093325528
 CircleCollider2D:
@@ -273,7 +273,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4398804037218549111}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -334,6 +334,7 @@ MonoBehaviour:
     maxSpeed: 3
     endReachedDistance: 4
     repathRate: 1
+  enemyType: 1
   enemyName: 1
   attackCooldown: 1
   stonePrefab: {fileID: 4519717574271983928, guid: 62b8eb074c4a7834393fe734d65eaa32, type: 3}

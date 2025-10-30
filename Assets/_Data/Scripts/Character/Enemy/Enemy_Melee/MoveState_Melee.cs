@@ -15,6 +15,11 @@ public class MoveState_Melee : CharacterState
         base.Enter();
         enemy.CanMove(true);
 
+
+        if (enemy.enemyName == EnemyName.Undead)
+        {
+            enemy.EnableCollider2D(true);
+        }
     }
 
     public override void Exit()
@@ -26,11 +31,15 @@ public class MoveState_Melee : CharacterState
     public override void Update()
     {
         base.Update();
+
+
         if (enemy.aIPath.reachedEndOfPath)
         {
             //Debug.Log("Switch to Attack State");
             if (enemy.enemyName == EnemyName.Undead)
+            {
                 stateMachine.ChangeState(enemy.idleState);
+            }
             else
                 stateMachine.ChangeState(enemy.attackState);
         }

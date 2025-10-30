@@ -15,6 +15,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] GameObject undead3Prefab;
     [SerializeField] GameObject bonePrefab;
     [SerializeField] GameObject golemPrefab;
+    [SerializeField] GameObject damagePrefab;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class ObjectPool : MonoBehaviour
         InitializeNewPool(undead3Prefab);
         InitializeNewPool(bonePrefab);
         InitializeNewPool(golemPrefab);
+        InitializeNewPool(damagePrefab);
     }
 
     private void InitializeNewPool(GameObject prefab)
@@ -64,7 +66,7 @@ public class ObjectPool : MonoBehaviour
         GameObject objectToGet = poolDict[prefab].Dequeue();
 
         objectToGet.SetActive(true);
-        objectToGet.transform.parent = null;
+        //objectToGet.transform.parent = null;
         return objectToGet;
     }
 
@@ -78,7 +80,7 @@ public class ObjectPool : MonoBehaviour
             InitializeNewPool(originalPool);
 
         objectToReturn.SetActive(false);
-        objectToReturn.transform.parent = transform;
+        //objectToReturn.transform.parent = transform;
 
         poolDict[originalPool].Enqueue(objectToReturn);
     }

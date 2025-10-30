@@ -25,6 +25,8 @@ public class AttackState_Range : CharacterState
         base.Update();
 
         Attack();
+
+        enemy.DeadAnimation();
     }
 
     private void Attack()

@@ -1,4 +1,5 @@
 using Pathfinding;
+using System.Collections;
 using UnityEngine;
 using static CharacterData;
 
@@ -10,6 +11,8 @@ public struct AIPathSettings
     public float repathRate;
 }
 
+public enum EnemyType { Melee, Range }
+
 public enum EnemyName { Rat, Bat, Undead, Bone, Golem, Slime }
 
 public class Enemy : Character
@@ -20,21 +23,20 @@ public class Enemy : Character
     public float idleTime = 2f;
 
     public AIPathSettings aIPathSettings;
+    public EnemyType enemyType;
     public EnemyName enemyName;
 
     public SpawnEnemy spawnEnemy { get; private set; }
     public PlayerController player { get; private set; }
-    public StateMachine stateMachine { get; private set; }
     public AIPath aIPath { get; private set; }
-    public Animator anim { get; private set; }
 
     protected override void Awake()
     {
-        stateMachine = new StateMachine();
-        aIPath = GetComponentInParent<AIPath>();
-        anim = GetComponent<Animator>();
-        spawnEnemy = GameObject.Find("SpawnEnemy").GetComponent<SpawnEnemy>();
+        base.Awake();
 
+        aIPath = GetComponentInParent<AIPath>();
+        spawnEnemy = GameObject.Find("SpawnEnemy").GetComponent<SpawnEnemy>();
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
         drop = GameObject.Find("GameManager").GetComponent<DropItem>();
         InitializeAIPath();
     }
@@ -42,7 +44,7 @@ public class Enemy : Character
     protected virtual void Start()
     {
         if (characterData.characterType == CharacterType.Enemy)
-            gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
     }
 
     protected override void Update()
@@ -55,11 +57,19 @@ public class Enemy : Character
         base.Die();
         if (characterData.characterType == CharacterType.Enemy)
         {
-            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-            UIManager.Instance.UpdateDefeatEnemy(characterData.reward);
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
         }
+        UIManager.Instance.UpdateDefeatEnemy(characterData.reward);
+
+        StartCoroutine(ReturnToPoolAfterDelay());
 
         DropItem();
+    }
+
+    IEnumerator ReturnToPoolAfterDelay(float delay = 1f)
+    {
+        yield return new WaitForSeconds(delay);
+        ObjectPool.instance.DelayReturnToPool(transform.parent.gameObject);
     }
 
     private void DropItem()

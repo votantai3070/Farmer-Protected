@@ -4,9 +4,9 @@ using UnityEngine;
 public class Enemy_Melee : Enemy
 {
     [Header("Enemy Melee Controller Setting")]
-    private CapsuleCollider2D capsuleCollider;
 
     [Space]
+    private CapsuleCollider2D capsuleCollider;
     [SerializeField] private string spriteName;
     public float attackCooldown = 1f;
 
@@ -26,7 +26,6 @@ public class Enemy_Melee : Enemy
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-
     }
 
     protected override void Start()
@@ -40,6 +39,8 @@ public class Enemy_Melee : Enemy
     protected override void Update()
     {
         base.Update();
+
+        Debug.Log("Capsule: " + capsuleCollider.enabled);
 
         stateMachine.currentState.Update();
     }
@@ -57,15 +58,17 @@ public class Enemy_Melee : Enemy
         capsuleCollider.enabled = active;
     }
 
+    public bool NearPlayer()
+    {
+        float distance = Vector2.Distance(player.transform.position, gameObject.transform.position);
+        if (distance <= aIPathSettings.endReachedDistance)
+            return true;
+
+        return false;
+    }
+
     protected override void Die()
     {
         base.Die();
-        StartCoroutine(ReturnToPoolAfterDelay(1f));
-    }
-
-    IEnumerator ReturnToPoolAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        ObjectPool.instance.DelayReturnToPool(gameObject);
     }
 }

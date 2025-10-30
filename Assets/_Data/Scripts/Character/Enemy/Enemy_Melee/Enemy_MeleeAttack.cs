@@ -6,14 +6,12 @@ public class Enemy_MeleeAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy")) return;
+        //Debug.Log("collision: " + collision);
 
         if (collision.CompareTag("Player"))
         {
-            IDamagable damagable = collision.GetComponent<IDamagable>();
-            if (damagable != null)
+            if (collision.TryGetComponent<IDamagable>(out var damagable))
             {
-                //bool isCrit = Random.value <= enemyWeaponData.critChance;
                 int randomValue = Random.Range(enemyWeaponData.firstDamage, enemyWeaponData.lastDamage + 1);
 
                 damagable.TakeDamage(randomValue);

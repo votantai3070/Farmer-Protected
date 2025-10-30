@@ -12,6 +12,10 @@ public class DeadState_Range : CharacterState
     public override void Enter()
     {
         base.Enter();
+
+        enemy.CanMove(false);
+
+
     }
 
     public override void Exit()
@@ -22,5 +26,8 @@ public class DeadState_Range : CharacterState
     public override void Update()
     {
         base.Update();
+
+        ObjectPool.instance.DelayReturnToPool(enemy.transform.parent.gameObject, enemy.GetAnimationClipDuration("Dead"));
+        enemy.spawnEnemy.ReturnEnemy(enemy.transform.parent.gameObject);
     }
 }

@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerDash : MonoBehaviour
 {
     [Header("Player Movement Settings")]
     public Rigidbody2D rb;
     public PlayerAnimation playerAnimation;
     public PlayerController player;
-    public InputManager inputManager;
     public SpriteRenderer sprite;
     float speed;
 
@@ -42,24 +41,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        HandleMovement();
-    }
 
-    private void HandleMovement()
-    {
-        rb.linearVelocity = inputManager.MoveInput * Speed;
-
-        playerAnimation.SwitchAnimationState("RUN");
-    }
-
-    public IEnumerator BoostSpeed(float boostAmount, float duration)
-    {
-        Speed += boostAmount;
-        yield return new WaitForSeconds(duration);
-        Speed -= boostAmount;
-    }
 
     private IEnumerator HandleDashing()
     {
@@ -70,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         while (elapsed < dashDuration)
         {
-            rb.linearVelocity = inputManager.MoveInput.normalized *
+            rb.linearVelocity = InputManager.Instance.MoveInput.normalized *
                                 (player.characterData.speed + player.characterData.dashSpeed);
 
             Instantiate(playerGhostPrefab, transform.parent.position, transform.rotation);

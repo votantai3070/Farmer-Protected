@@ -4893,6 +4893,7 @@ MonoBehaviour:
   undead3Prefab: {fileID: 3120486929975905185, guid: e69dbfc74ec994543a1c55ca9743938a, type: 3}
   bonePrefab: {fileID: 1805347106945079667, guid: 25cd358c26875f14abaa71a2b0924d16, type: 3}
   golemPrefab: {fileID: 794311964374166010, guid: 42a4e64f86c566740a33feae1b7b39e8, type: 3}
+  damagePrefab: {fileID: 5750709807272935550, guid: 49b3863da112abb4db8e50080bc90f25, type: 3}
 --- !u!4 &1050181689
 Transform:
   m_ObjectHideFlags: 0
@@ -6442,9 +6443,10 @@ MonoBehaviour:
   player: {fileID: 2953017084707564543}
   defaultDiffData: {fileID: 11400000, guid: 7f891c95d512cb940bc41b7f3afc1756, type: 2}
   enemiesPhase1:
+  - {fileID: 838070134182777163, guid: 48ba4de6473b1774d9e020f2c669a6ae, type: 3}
+  - {fileID: 2303835589568145589, guid: 217158d24cdaaa74a897766c3a533e0f, type: 3}
   - {fileID: 591002243151847616, guid: a57651c277922fd409b0035aff86b3d9, type: 3}
   - {fileID: 5200893909166241099, guid: 37de0dd31f01b8941a46e1ecf7937c9c, type: 3}
-  - {fileID: 838070134182777163, guid: 48ba4de6473b1774d9e020f2c669a6ae, type: 3}
   enemiesPhase2:
   - {fileID: 4753377814908305406, guid: 8f3101ccc671911498d578638197770e, type: 3}
   - {fileID: 838070134182777163, guid: 48ba4de6473b1774d9e020f2c669a6ae, type: 3}
@@ -10112,9 +10114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8472307436133650394}
-  playerAnimation: {fileID: 6805250012014321906}
+  playerAnimation: {fileID: 0}
   player: {fileID: 8693987913249710362}
-  inputManager: {fileID: 873255804}
   sprite: {fileID: 4877718624664909846}
   playerGhostPrefab: {fileID: 5087973414621930900, guid: 40f19f05d5ce8d94f941f2b64f255910, type: 3}
   dashDuration: 0.2
@@ -10188,7 +10189,6 @@ Transform:
   m_Children:
   - {fileID: 8422652953184431887}
   - {fileID: 8969462614149028743}
-  - {fileID: 4667901983059757769}
   - {fileID: 4828415829122536507}
   - {fileID: 3651774797211033906}
   - {fileID: 988827540260036167}
@@ -10605,21 +10605,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2329963298219600699}
   m_CullTransparentMesh: 1
---- !u!4 &4667901983059757769
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7490189872361999135}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2953017084707564543}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4828415829122536507
 Transform:
   m_ObjectHideFlags: 0
@@ -10887,7 +10872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8693987913249710362}
   playerStamina: {fileID: 7418379110601969207}
-  playerAnimation: {fileID: 6805250012014321906}
+  playerAnimation: {fileID: 0}
   rb: {fileID: 8472307436133650394}
   firePoint: {fileID: 4828415829122536507}
   bullet: {fileID: 6869615092051540359}
@@ -11067,21 +11052,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2953017084707564543}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6805250012014321906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7490189872361999135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 420f86aa2ac862c4c88585d5f170be78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1718794520508255377}
-  inputManager: {fileID: 873255804}
-  player: {fileID: 8693987913249710362}
 --- !u!114 &6869615092051540359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11124,23 +11094,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8693987913249710362}
   staminaSlider: {fileID: 997324297}
---- !u!1 &7490189872361999135
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4667901983059757769}
-  - component: {fileID: 6805250012014321906}
-  m_Layer: 0
-  m_Name: PlayerAnimation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!114 &7719044288528961403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11586,8 +11539,10 @@ MonoBehaviour:
   characterData: {fileID: 11400000, guid: c00c13f40961cf847bf6b28c9f086905, type: 2}
   charhealthSlider: {fileID: 1942803590}
   playerHpText: {fileID: 1978195044}
+  settings:
+    speed: 0
   isAttacked: 0
-  playerAnimation: {fileID: 6805250012014321906}
+  playerAnimation: {fileID: 0}
 --- !u!114 &8693987913249710363
 MonoBehaviour:
   m_ObjectHideFlags: 0

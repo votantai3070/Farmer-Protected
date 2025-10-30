@@ -13,13 +13,20 @@ public class Character : MonoBehaviour, IDamagable
     public TextMeshProUGUI playerHpText;
     protected SpriteRenderer spriteRenderer;
 
+    public StateMachine stateMachine { get; private set; }
+
+
     private Tweener hpTween;
 
+    public Animator anim { get; private set; }
     public float CurrentHealth { get; private set; }
     float MaxHealth => characterData.maxHealth;
 
     protected virtual void Awake()
     {
+        stateMachine = new StateMachine();
+        anim = GetComponent<Animator>();
+
         if (characterData != null && characterData.characterType == CharacterType.Player)
             InitializePlayer();
     }
@@ -92,6 +99,7 @@ public class Character : MonoBehaviour, IDamagable
 
     }
 
+
     public void InitializeCharacterData(CharacterData data)
     {
         characterData = data;
@@ -110,6 +118,6 @@ public class Character : MonoBehaviour, IDamagable
         //if (playerHpText != null)
         //    playerHpText.text = $"{CurrentHealth}/{MaxHealth}";
 
-        gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
     }
 }

@@ -518,7 +518,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &3444921920404248643
 MonoBehaviour:
@@ -540,6 +540,7 @@ MonoBehaviour:
     maxSpeed: 2
     endReachedDistance: 1
     repathRate: 1.5
+  enemyType: 0
   enemyName: 5
   spriteName: Slime_Spiked_Idle_0
   attackCooldown: 1

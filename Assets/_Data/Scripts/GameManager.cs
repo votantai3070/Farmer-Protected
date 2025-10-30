@@ -49,8 +49,7 @@ public class GameManager : MonoBehaviour, IGameManager
             selectDiffPanel.SetActive(false);
         if (gameWinPanel != null)
             gameWinPanel.SetActive(false);
-        //if (timeText != null)
-        //    timeText.enabled = false;
+
         string diff = PlayerPrefs.GetString("Difficulty", "Easy");
 
         currentDifficultData = Resources.Load<DifficultData>($"Difficulties/{diff}");
@@ -63,6 +62,8 @@ public class GameManager : MonoBehaviour, IGameManager
             currentTime -= Time.deltaTime;
             ShowTime(currentTime);
         }
+
+        if (currentTime <= 0) GameWin();
     }
 
     public void ShowTime(float timeToShow)

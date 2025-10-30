@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 6118460517332147738}
   - component: {fileID: 3601950450076670170}
   - component: {fileID: 1854429960403898138}
+  - component: {fileID: 5627900402378964295}
   m_Layer: 7
   m_Name: GolemGFX
   m_TagString: Enemy
@@ -518,7 +519,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!95 &7304841724841216957
 Animator:
@@ -549,7 +550,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6363248254114582635}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -598,6 +599,7 @@ MonoBehaviour:
     maxSpeed: 5
     endReachedDistance: 5
     repathRate: 1.5
+  enemyType: 1
   enemyName: 4
   attackCooldown: 1
   stonePrefab: {fileID: 1711477378067531987, guid: 212801917db99f847ac482c296eb7d48, type: 3}
@@ -614,6 +616,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f5df7ee37f530d4f80e5bc4aac01b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &5627900402378964295
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363248254114582635}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 4, y: 4}
+  m_Direction: 0
 --- !u!1 &8682030033824005399
 GameObject:
   m_ObjectHideFlags: 0

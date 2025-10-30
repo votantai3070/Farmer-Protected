@@ -502,7 +502,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!70 &352155521748230670
 CapsuleCollider2D:
@@ -609,6 +609,7 @@ MonoBehaviour:
     maxSpeed: 2
     endReachedDistance: 1
     repathRate: 1.5
+  enemyType: 0
   enemyName: 0
   spriteName: Rat_Idle_0
   attackCooldown: 1
